@@ -10,7 +10,6 @@ use Magento\Setup\Module\Setup;
 class SetCarbonoGlobal implements DataPatchInterface
 {
     const THEME_PATH = "design/theme/theme_id";
-
     private $moduleDataSetup;
     private $writer;
     private $themeProvider;
