@@ -6,24 +6,29 @@ use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\View\Design\Theme\ThemeProviderInterface;
 use Magento\Framework\App\Config\ScopeConfigInterface;
+use Magento\Store\Api\WebsiteRepositoryInterface;
 use Magento\Setup\Module\Setup;
 
 class SetThemeAutomotive implements DataPatchInterface
 {
     const THEME_PATH = "design/theme/theme_id";
+
     private $moduleDataSetup;
     private $writer;
     private $themeProvider;
+    private $websiteRepository;
 
-    function __construct(
+    public function __construct(
         ModuleDataSetupInterface $moduleDataSetup,
         WriterInterface $writer,
-        ThemeProviderInterface $themeProvider
+        ThemeProviderInterface $themeProvider,
+        WebsiteRepositoryInterface $websiteRepository
     )
     {
         $this->moduleDataSetup = $moduleDataSetup;
         $this->writer = $writer;
         $this->themeProvider = $themeProvider;
+        $this->websiteRepository = $websiteRepository;
     }
 
     public static function getDependencies()
@@ -40,11 +45,13 @@ class SetThemeAutomotive implements DataPatchInterface
             ->getThemeByFullPath("frontend/Webjump/theme-automotive")
             ->getId();
 
+        $website = $this->websiteRepository->get('automotivo');
+
         $this->writer->save(
             self::THEME_PATH,
             $themeId,
             $scopeConfig = "websites",
-            $scopeId = 2
+            $scopeId = $website->getId()
         );
 
         $this->moduleDataSetup->getConnection()->endSetup();
