@@ -304,7 +304,7 @@ return [
         'Magento_AsynchronousOperations' => 1,
         'Magento_ThemeGraphQl' => 1,
         'Magento_Translation' => 1,
-        'Magento_TwoFactorAuth' => 1,
+        'Magento_TwoFactorAuth' => 0,
         'Magento_GoogleOptimizer' => 1,
         'Magento_Ups' => 1,
         'Magento_SampleData' => 1,
@@ -331,6 +331,7 @@ return [
         'Webjump_Carbono' => 1,
         'Webjump_CarbonoSales' => 1,
         'Webjump_CmsPageTranslator' => 1,
+        'Webjump_ConfigCarbono' => 1,
         'Webjump_CoreConfigurator' => 1,
         'Webjump_CustomerBr' => 1,
         'Webjump_DisableRegistration' => 1,
@@ -338,5 +339,113 @@ return [
         'Webjump_PostCode' => 1,
         'Webjump_ProductIncrementButtons' => 1,
         'Webjump_ViaCep' => 0
+    ],
+    'scopes' => [
+        'websites' => [
+            'admin' => [
+                'website_id' => '0',
+                'code' => 'admin',
+                'name' => 'Admin',
+                'sort_order' => '0',
+                'default_group_id' => '0',
+                'is_default' => '0'
+            ],
+            'Main Website' => [
+                'website_id' => '1',
+                'code' => 'base',
+                'name' => 'Main Website',
+                'sort_order' => '0',
+                'default_group_id' => '1',
+                'is_default' => '1'
+            ],
+            'Automotivo' => [
+                'website_id' => '2',
+                'code' => 'automotivo',
+                'name' => 'Automotivo',
+                'sort_order' => '0',
+                'default_group_id' => '2',
+                'is_default' => '0'
+            ],
+            'Festas' => [
+                'website_id' => '3',
+                'code' => 'festas',
+                'name' => 'Festas',
+                'sort_order' => '0',
+                'default_group_id' => '3',
+                'is_default' => '0'
+            ]
+        ],
+        'groups' => [
+            [
+                'group_id' => '0',
+                'website_id' => '0',
+                'code' => 'default',
+                'name' => 'Default',
+                'root_category_id' => '0',
+                'default_store_id' => '0'
+            ],
+            [
+                'group_id' => '1',
+                'website_id' => '1',
+                'code' => 'main_website_store',
+                'name' => 'Main Website Store',
+                'root_category_id' => '2',
+                'default_store_id' => '1'
+            ],
+            [
+                'group_id' => '2',
+                'website_id' => '2',
+                'code' => 'automotivo_store',
+                'name' => 'Automotivo Store',
+                'root_category_id' => '2',
+                'default_store_id' => '2'
+            ],
+            [
+                'group_id' => '3',
+                'website_id' => '3',
+                'code' => 'festas_store',
+                'name' => 'Festas Store',
+                'root_category_id' => '2',
+                'default_store_id' => '3'
+            ]
+        ],
+        'stores' => [
+            'admin' => [
+                'store_id' => '0',
+                'code' => 'admin',
+                'website_id' => '0',
+                'group_id' => '0',
+                'name' => 'Admin',
+                'sort_order' => '0',
+                'is_active' => '1'
+            ],
+            'Default Store View' => [
+                'store_id' => '1',
+                'code' => 'default',
+                'website_id' => '1',
+                'group_id' => '1',
+                'name' => 'Default Store View',
+                'sort_order' => '0',
+                'is_active' => '1'
+            ],
+            'Automotivo Store' => [
+                'store_id' => '2',
+                'code' => 'automotivo_store_view_pt',
+                'website_id' => '2',
+                'group_id' => '2',
+                'name' => 'Automotivo Store View PT',
+                'sort_order' => '0',
+                'is_active' => '1'
+            ],
+            'Festas Store' => [
+                'store_id' => '3',
+                'code' => 'festas_store_view_pt',
+                'website_id' => '3',
+                'group_id' => '3',
+                'name' => 'Festas Store View PT',
+                'sort_order' => '0',
+                'is_active' => '1'
+            ]
+        ]
     ]
 ];
