@@ -1,29 +1,34 @@
 <?php
-namespace Webjump\ConfigCarbono\Setup\Patch\Data;
+namespace Webjump\ConfigThemeAutomotive\Setup\Patch\Data;
 
 use Magento\Framework\App\Config\Storage\WriterInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\View\Design\Theme\ThemeProviderInterface;
+use Magento\Framework\App\Config\ScopeConfigInterface;
+use Magento\Store\Api\WebsiteRepositoryInterface;
 use Magento\Setup\Module\Setup;
 
-class SetCarbonoGlobal implements DataPatchInterface
+class SetThemeAutomotive implements DataPatchInterface
 {
     const THEME_PATH = "design/theme/theme_id";
 
     private $moduleDataSetup;
     private $writer;
     private $themeProvider;
+    private $websiteRepository;
 
-    function __construct(
+    public function __construct(
         ModuleDataSetupInterface $moduleDataSetup,
         WriterInterface $writer,
-        ThemeProviderInterface $themeProvider
+        ThemeProviderInterface $themeProvider,
+        WebsiteRepositoryInterface $websiteRepository
     )
     {
         $this->moduleDataSetup = $moduleDataSetup;
         $this->writer = $writer;
         $this->themeProvider = $themeProvider;
+        $this->websiteRepository = $websiteRepository;
     }
 
     public static function getDependencies()
@@ -37,11 +42,18 @@ class SetCarbonoGlobal implements DataPatchInterface
         $this->moduleDataSetup->getConnection()->startSetup();
 
         $themeId = $this->themeProvider
-            ->getThemeByFullPath("frontend/Webjump/theme-frontend-carbono")
+            ->getThemeByFullPath("frontend/Webjump/theme-automotive")
             ->getId();
 
-        $this->writer->save(self::THEME_PATH,$themeId);
-        
+        $website = $this->websiteRepository->get('automotivo');
+
+        $this->writer->save(
+            self::THEME_PATH,
+            $themeId,
+            $scopeConfig = "websites",
+            $scopeId = $website->getId()
+        );
+
         $this->moduleDataSetup->getConnection()->endSetup();
     }
 
