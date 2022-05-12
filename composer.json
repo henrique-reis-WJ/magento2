@@ -137,6 +137,10 @@
         {
             "type": "vcs",
             "url": "git@bitbucket.org:webjump/module-carbono-product-increment-buttons.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@bitbucket.org:henrique-wj/festa-theme.git"
         }
     ],
     "extra": {
