@@ -1,0 +1,104 @@
+.header.content {
+  padding: 0;
+  width: 100%;
+  max-width: calc(1920px - 2 * 340);
+  margin: 50px auto 30px auto;
+  padding: 0 20px;
+}
+.header .logo {
+  margin: 0;
+}
+.header .logo img {
+  width: 89px;
+  height: 91px;
+}
+.header .block.block-search {
+  float: left;
+  margin-left: 80px;
+  padding: 0;
+  width: 605px;
+  margin-top: 25px;
+}
+.header .form .input-text {
+  border: none;
+  border-bottom: 1px solid #000;
+  color: #cecaca;
+}
+.header .form .input-text::placeholder {
+  color: #cecaca;
+}
+.header .form .action.search {
+  opacity: 1;
+}
+.header .form .action.search::before {
+  color: #000;
+}
+.header .minicart-wrapper {
+  margin: 0;
+}
+.header .minicart-wrapper .action.showcart:before,
+.header .minicart-wrapper .action.showcart.active::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='31' height='27' viewBox='0 0 31 27'%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath d='M10 25a2 2 0 1 1 4 0 2 2 0 0 1-4 0z'/%3E%3C/g%3E%3Cg%3E%3Cpath d='M23 25a2 2 0 1 1 4 0 2 2 0 0 1-4 0z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='20' stroke-width='2' d='M1 1v0h5.273v0l3.532 17.853a2.643 2.643 0 0 0 2.637 2.146h12.813a2.643 2.643 0 0 0 2.636-2.146L30 7.666v0H7.59v0'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  margin-top: 30px;
+}
+.header.links {
+  float: left;
+  width: fit-content;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  margin-left: 132px;
+  margin-top: 35px;
+}
+.header.links li > * {
+  color: #000;
+  text-decoration: underline;
+}
+.header.links li > a {
+  font-weight: 700;
+}
+.header.links li.link.authorization-link > a::after {
+  content: " ou";
+  font-weight: 400;
+}
+.header.links li:not(.authorization-link) > a::before {
+  content: "\00a0";
+  font-weight: 400;
+}
+.header.links .greet.welcome {
+  display: none;
+}
+@media only screen and (max-width: 1168px) {
+  .header .block.block-search {
+    margin-left: 70px;
+  }
+  .header.links {
+    margin-left: 80px;
+  }
+  .header .block.block-search {
+    width: 540px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .header .block.block-search {
+    margin-left: 50px;
+  }
+  .header.links {
+    margin-left: 60px;
+  }
+  .header .block.block-search {
+    width: 494px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .header.content {
+    margin: 30px 0;
+  }
+  .header.links {
+    margin-left: 50px;
+  }
+  .header .block.block-search {
+    width: 248px;
+  }
+}
