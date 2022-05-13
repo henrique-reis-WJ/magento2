@@ -10,7 +10,6 @@ class CreateAccelerationCustomAttribute implements DataPatchInterface
 {
     private $moduleDataSetup;
     private $eavSetupFactory;
-    private $collectionFactory;
 
     public function __construct(
         EavSetupFactory $eavSetupFactory,
