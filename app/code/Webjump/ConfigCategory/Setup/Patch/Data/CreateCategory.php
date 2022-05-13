@@ -8,7 +8,7 @@ use Magento\Catalog\Model\Category;
 use Magento\Catalog\Model\CategoryRepository;
 
 
-class CreateCategoryAutomotivo implements DataPatchInterface
+class CreateCategory implements DataPatchInterface
 {   
     private CategoryFactory $categoryFactory;
     private CategoryRepository $categoryRepository;
