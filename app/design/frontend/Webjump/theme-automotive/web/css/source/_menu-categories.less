@@ -172,11 +172,17 @@
                     }
 
                     .level0.submenu{
-                        background: @light-grey;
+                        background: transparent;
+                        border-bottom: solid 1px #cecaca42;
                         li{
                             a{
                                 text-align: center;
                                 font-size: 1.6rem;
+                                color: white;
+                            }
+
+                            &:last-child{
+                                border-bottom: solid 1px #cecaca42;
                             }
                         }
                     }

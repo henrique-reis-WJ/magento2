@@ -129,11 +129,16 @@
     padding: 0;
   }
   .sections.nav-sections .section-items .section-item-content .navigation .level0.submenu {
-    background: #cecaca;
+    background: transparent;
+    border-bottom: solid 1px #cecaca42;
   }
   .sections.nav-sections .section-items .section-item-content .navigation .level0.submenu li a {
     text-align: center;
     font-size: 1.6rem;
+    color: white;
+  }
+  .sections.nav-sections .section-items .section-item-content .navigation .level0.submenu li:last-child {
+    border-bottom: solid 1px #cecaca42;
   }
   .sections.nav-sections .section-items .nav-sections-item-content ul.header.links {
     border-bottom: none;
