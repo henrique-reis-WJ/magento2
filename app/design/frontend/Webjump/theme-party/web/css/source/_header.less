@@ -1,0 +1,126 @@
+@header-panel-background-color: #eaeaea;
+@header-text-color: #000000;
+@search-input-text-color: #666666;
+@menu-button-color: #6215e1;
+
+
+.page-header {
+    .panel.wrapper {
+        background-color: @header-panel-background-color;
+    }
+}
+
+.header.panel {
+    background-color: @header-panel-background-color;
+
+    .header.links {
+        li {
+            color: @header-text-color;
+            font-family: 'Poppins-Regular';
+
+            a {
+                height: 22px;
+                color: @header-text-color;
+                font-family: 'Poppins-Regular';
+                font-size: 16px;
+                font-weight: 400;
+                font-style: normal;
+                letter-spacing: normal;
+                line-height: normal;
+                text-align: left;
+
+                &:hover {
+                    color: @header-text-color;
+                }
+            }
+        }
+    }
+}
+
+.block-search {
+    width: 400px;
+    height: 40px;
+
+    input {
+        border: 1px solid #000000;
+        color: @search-input-text-color;
+        font-family: 'Poppins-Regular';
+
+    }
+}
+
+.minicart-wrapper {
+    .action.showcart {
+        &::before {
+            content: '';
+            width: 23px;
+            height: 26px;
+            background: url('@{baseDir}images/bag.png');
+        }
+
+        .counter.qty {
+            background: @menu-button-color;
+
+        }
+    }
+
+    .action.showcart.active::before {
+        content: '';
+        width: 23px;
+        height: 26px;
+        background: url('@{baseDir}images/bag.png');
+    }
+
+}
+
+@media (max-width: 780px) {
+
+    .logo {}
+
+
+    .nav-toggle:before {
+        color: @menu-button-color;
+        font-weight: bold;
+        padding-top: 20px;
+    }
+
+    .nav-toggle:after {
+        color: @menu-button-color;
+        font-weight: bold;
+        padding-top: 20px;
+    }
+
+    .action.showcart {
+        padding-top: 20px;
+
+    }
+
+    .field.search {
+        padding-top: 20px;
+
+    }
+
+    .block-search {
+        width: 350px;
+
+        .control {
+            margin: 0 60px;
+        }
+    }
+
+    .header.content {
+        padding-bottom: 1px;
+    }
+
+    .page-header {
+        border-bottom: none;
+        margin-bottom: none;
+    }
+
+}
+
+@media (max-width: 280px) {
+    .block-search {
+        width: 250px;
+    }
+}
