@@ -1,0 +1,19 @@
+.header.panel {
+    background-color: #eaeaea;
+}
+
+.header.panel .header.links li {
+    color: #000;
+}
+
+.header.panel .header.links li a {
+    color: #000;
+}
+
+.minicart-wrapper .showcart::before {
+    content: "" !important;
+    background: url('images/logo.png') no-repeat;
+    width: 27px;
+    height: 25px;
+    padding-left: 37px !important;
+}
