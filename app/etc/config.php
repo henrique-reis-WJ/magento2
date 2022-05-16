@@ -332,6 +332,7 @@ return [
         'Webjump_CarbonoSales' => 1,
         'Webjump_CmsPageTranslator' => 1,
         'Webjump_ConfigCarbono' => 1,
+        'Webjump_ConfigLocaleAndLanguage' => 1,
         'Webjump_ConfigThemeAutomotive' => 1,
         'Webjump_ConfigThemeParty' => 1,
         'Webjump_CoreConfigurator' => 1,
@@ -446,6 +447,24 @@ return [
                 'website_id' => '3',
                 'group_id' => '3',
                 'name' => 'Festas Store View PT',
+                'sort_order' => '0',
+                'is_active' => '1'
+            ],
+            'Automotive Store' => [
+                'store_id' => '4',
+                'code' => 'automotive_store_view_us',
+                'website_id' => '2',
+                'group_id' => '2',
+                'name' => 'Automotive Store View US',
+                'sort_order' => '0',
+                'is_active' => '1'
+            ],
+            'Party Store' => [
+                'store_id' => '5',
+                'code' => 'party_store_view_us',
+                'website_id' => '3',
+                'group_id' => '3',
+                'name' => 'Party Store View US',
                 'sort_order' => '0',
                 'is_active' => '1'
             ]
