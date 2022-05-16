@@ -12,7 +12,7 @@ use Magento\Framework\Setup\Patch\DataPatchInterface;
 class SetCategoryAttributes implements DataPatchInterface
 {
     const ATTRIBUTE_AUTOMOTIVO = "Automotivo";
-    const ATTRIBUTE_MODA = "Festa";
+    const ATTRIBUTE_FESTA = "Festa";
 
 
     private ModuleDataSetupInterface $moduleDataSetup;
@@ -57,7 +57,7 @@ class SetCategoryAttributes implements DataPatchInterface
         ]);
 
         $eavSetup = $this->eavSetupFactory->create(['setup' => $this->moduleDataSetup]);
-        $eavSetup->addAttribute(Category::ENTITY,self::ATTRIBUTE_AUTOMOTIVO, [
+        $eavSetup->addAttribute(Category::ENTITY,self::ATTRIBUTE_FESTA, [
             'type' => 'int',
             'label' => 'Is baloon',
             'input' => 'boolean',
