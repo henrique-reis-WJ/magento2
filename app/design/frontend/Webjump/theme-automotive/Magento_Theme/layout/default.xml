@@ -4,12 +4,13 @@
     <body>
         <referenceBlock name="logo">
             <arguments>
-                <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+                <argument name="logo_file" xsi:type="string">images/logo_volks.png</argument>
                 <argument name="logo_alt" xsi:type="string">Logo automotivo</argument>
             </arguments>
         </referenceBlock>
 
-        <move element="header.links" destination="header-wrapper" />
         <referenceContainer name="header.panel" remove="true" />
+        <move element="header.links" destination="header-wrapper" after="top.search"/>
+        <move element="minicart" destination="header-wrapper" after="-"/>
     </body>
 </page>
