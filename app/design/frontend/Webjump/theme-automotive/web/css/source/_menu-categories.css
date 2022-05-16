@@ -39,14 +39,14 @@
   text-align: center;
   font-style: normal;
   letter-spacing: normal;
-  font-family: Montserrat;
+  font-family: 'Montserrat-Bold';
 }
 .section-items .navigation ul li.level0 a.level-top.ui-menu-item-wrapper span {
   padding: 30px 0;
 }
 .section-items .navigation ul li.level0 a.level-top.ui-menu-item-wrapper:hover {
   cursor: pointer;
-  color: #446dff;
+  color: #6d8dff;
   transition: 0.3s;
 }
 .section-items .navigation ul li.level0 a.level-top.ui-menu-item-wrapper:active {
@@ -70,7 +70,7 @@
   text-align: left;
   font-style: normal;
   letter-spacing: normal;
-  font-family: Montserrat;
+  font-family: 'Montserrat-Bold';
 }
 .section-items .navigation .level0.submenu li a:hover {
   background: #F1F1F1;
@@ -130,15 +130,11 @@
   }
   .sections.nav-sections .section-items .section-item-content .navigation .level0.submenu {
     background: transparent;
-    border-bottom: solid 1px #cecaca42;
   }
   .sections.nav-sections .section-items .section-item-content .navigation .level0.submenu li a {
     text-align: center;
     font-size: 1.6rem;
     color: white;
-  }
-  .sections.nav-sections .section-items .section-item-content .navigation .level0.submenu li:last-child {
-    border-bottom: solid 1px #cecaca42;
   }
   .sections.nav-sections .section-items .nav-sections-item-content ul.header.links {
     border-bottom: none;
