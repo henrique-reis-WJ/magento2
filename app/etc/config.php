@@ -449,6 +449,24 @@ return [
                 'name' => 'Festas Store View PT',
                 'sort_order' => '0',
                 'is_active' => '1'
+            ],
+            'Automotive Store' => [
+                'store_id' => '4',
+                'code' => 'automotive_store_view_us',
+                'website_id' => '2',
+                'group_id' => '2',
+                'name' => 'Automotive Store View US',
+                'sort_order' => '0',
+                'is_active' => '1'
+            ],
+            'Party Store' => [
+                'store_id' => '5',
+                'code' => 'party_store_view_us',
+                'website_id' => '3',
+                'group_id' => '3',
+                'name' => 'Party Store View US',
+                'sort_order' => '0',
+                'is_active' => '1'
             ]
         ]
     ]
