@@ -332,6 +332,7 @@ return [
         'Webjump_CarbonoSales' => 1,
         'Webjump_CmsPageTranslator' => 1,
         'Webjump_ConfigCarbono' => 1,
+        'Webjump_ConfigCategory' => 1,
         'Webjump_ConfigLocaleAndLanguage' => 1,
         'Webjump_ConfigThemeAutomotive' => 1,
         'Webjump_ConfigThemeParty' => 1,
