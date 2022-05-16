@@ -1,7 +1,14 @@
 @header-panel-background-color: #eaeaea;
 @header-text-color: #000000;
 @search-input-text-color: #666666;
-@menu-botton-color: #6215e1;
+@menu-button-color: #6215e1;
+
+
+.page-header {
+    .panel.wrapper {
+        background-color: @header-panel-background-color;
+    }
+}
 
 .header.panel {
     background-color: @header-panel-background-color;
@@ -31,7 +38,7 @@
 }
 
 .block-search {
-    width: 429px;
+    width: 400px;
     height: 40px;
 
     input {
@@ -52,7 +59,7 @@
         }
 
         .counter.qty {
-            background: @menu-botton-color;
+            background: @menu-button-color;
 
         }
     }
@@ -72,13 +79,13 @@
 
 
     .nav-toggle:before {
-        color: @menu-botton-color;
+        color: @menu-button-color;
         font-weight: bold;
         padding-top: 20px;
     }
 
     .nav-toggle:after {
-        color: @menu-botton-color;
+        color: @menu-button-color;
         font-weight: bold;
         padding-top: 20px;
     }
@@ -89,11 +96,15 @@
     }
 
     .field.search {
-        padding-left: 70px;
         padding-top: 20px;
 
+    }
+
+    .block-search {
+        width: 350px;
+
         .control {
-            margin: 0 550px;
+            margin: 0 60px;
         }
     }
 
@@ -104,5 +115,12 @@
     .page-header {
         border-bottom: none;
         margin-bottom: none;
+    }
+
+}
+
+@media (max-width: 280px) {
+    .block-search {
+        width: 250px;
     }
 }
