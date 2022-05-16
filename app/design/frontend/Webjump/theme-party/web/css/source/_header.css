@@ -1,0 +1,35 @@
+.header.panel {
+    background-color: #eaeaea;
+}
+
+.header.panel .header.links li {
+    color: #000000;
+    font-family: 'Poppins-Regular';
+}
+
+.header.panel .header.links li a {
+    height: 22px;
+    color: #000000;
+    font-family: 'Poppins-Regular';
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: normal;
+    text-align: left;
+}
+
+.header.panel .header.links li a:hover {
+    color: #000000;
+}
+
+.block-search {
+    width: 429px;
+    height: 40px;
+}
+
+.block-search input {
+    border: 1px solid #000000;
+    color: #666666;
+    font-family: 'Poppins-Regular';
+}
