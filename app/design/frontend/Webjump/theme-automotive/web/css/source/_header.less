@@ -1,3 +1,5 @@
+@import '_colors.less';
+
 .header {
 
     font-family: 'Montserrat-Regular';
@@ -40,11 +42,11 @@
         .form {
             .input-text {
                 border: none;
-                border-bottom: 1px solid #000;
-                color: #cecaca;
+                border-bottom: 1px solid @black;
+                color: @light-grey;
 
                 &::placeholder {
-                    color: #cecaca;
+                    color: @light-grey;
                 }
             }
 
@@ -53,7 +55,7 @@
                 opacity: 1;
 
                 &::before {
-                    color: #000;
+                    color: @black;
                 }
             }
 
@@ -80,7 +82,7 @@
         }
 
         li > * {
-            color: #000;
+            color: @black;
             text-decoration: underline;
         }
 
