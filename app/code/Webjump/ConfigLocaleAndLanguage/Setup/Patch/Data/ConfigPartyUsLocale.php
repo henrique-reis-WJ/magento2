@@ -5,7 +5,7 @@ use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Store\Model\StoreManagerInterface;
 use Webjump\ConfigLocaleAndLanguage\LocaleAndLanguageWriter;
 
-class ConfigPartyUSLocale implements DataPatchInterface
+class ConfigPartyUsLocale implements DataPatchInterface
 {
     private $localeWriter;
     private $storeManager;
