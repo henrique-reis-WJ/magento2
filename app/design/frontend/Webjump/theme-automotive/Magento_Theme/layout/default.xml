@@ -4,7 +4,7 @@
     <body>
         <referenceBlock name="logo">
             <arguments>
-                <argument name="logo_file" xsi:type="string">images/logo_volks.png</argument>
+                <argument name="logo_file" xsi:type="string">images/logo_volk.png</argument>
                 <argument name="logo_alt" xsi:type="string">Logo automotivo</argument>
             </arguments>
         </referenceBlock>
