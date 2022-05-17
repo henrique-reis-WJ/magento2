@@ -5,9 +5,10 @@
 @light-grey: #cecaca;
 @blue: #0d2b96;
 @light-blue: #6d8dff;
-@border-submenu-respons: #cecaca42;
 
 .section-items{
+    font-family: 'Montserrat-Regular';
+
     background-color: @smoke;
     .navigation{
         width: 100%;
@@ -91,7 +92,6 @@
                     text-align: left;
                     font-style:normal;
                     letter-spacing: normal;
-                    font-family: 'Montserrat-Bold';
     
                     &:hover{
                         background: @white;
@@ -122,15 +122,6 @@
     
                 a.nav-sections-item-switch {
                     color: @white;
-            
-                    &:hover {
-                      color:@light-grey;
-                      transition: 0.3s;
-                    }
-            
-                    &:active {
-                        color:@light-grey;
-                      }
                   }
             }
 
@@ -178,7 +169,7 @@
                             a{
                                 text-align: center;
                                 font-size: 1.6rem;
-                                color: white;
+                                color:@white;
                             }
                         }
                     }
@@ -198,11 +189,6 @@
                             border-top: none;
                             color:@white;
                             font-size: 1.7rem;
-
-                            &:hover{
-                                color: @light-grey;
-                                transition: 0.3s;
-                            }
                         }
                     }
                 }
