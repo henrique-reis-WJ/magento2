@@ -14,12 +14,11 @@ class CreateAutomotiveAttributeSet implements DataPatchInterface
     private $categorySetupFactory;
     private $attributeSet;
 
-    function __construct(
+    public function __construct(
         ModuleDataSetupInterface $moduleDataSetup,
         AttributeSetFactory $attributeSetFactory,
         CategorySetupFactory $categorySetupFactory
-    )
-    {
+    ) {
         $this->moduleDataSetup = $moduleDataSetup;
         $this->attributeSetFactory = $attributeSetFactory;
         $this->categorySetupFactory = $categorySetupFactory;
@@ -62,7 +61,7 @@ class CreateAutomotiveAttributeSet implements DataPatchInterface
         $attributeSet->initFromSkeleton($attributeSetId);
 
         $attributeSet->save();
-        
+
         $this->moduleDataSetup->getConnection()->endSetup();
     }
 

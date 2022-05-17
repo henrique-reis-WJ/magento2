@@ -1,4 +1,5 @@
 <?php
+
 namespace Webjump\ConfigLocaleAndLanguage\Setup\Patch\Data;
 
 use Magento\Framework\Setup\Patch\DataPatchInterface;
@@ -10,11 +11,10 @@ class ConfigAutomotiveBrLocale implements DataPatchInterface
     private $localeWriter;
     private $storeManager;
 
-    function __construct(
+    public function __construct(
         StoreManagerInterface $storeManager,
         LocaleAndLanguageWriter $localeWriter
-    )
-    {
+    ) {
         $this->storeManager = $storeManager;
         $this->localeWriter = $localeWriter;
     }

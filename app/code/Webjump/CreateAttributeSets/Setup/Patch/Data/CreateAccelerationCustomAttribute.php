@@ -1,4 +1,5 @@
 <?php
+
 namespace Webjump\CreateAttributeSets\Setup\Patch\Data;
 
 use Magento\Eav\Setup\EavSetup;
@@ -14,8 +15,7 @@ class CreateAccelerationCustomAttribute implements DataPatchInterface
     public function __construct(
         EavSetupFactory $eavSetupFactory,
         ModuleDataSetupInterface $moduleDataSetup
-    )
-    {
+    ) {
         $this->moduleDataSetup = $moduleDataSetup;
         $this->eavSetupFactory = $eavSetupFactory;
     }
@@ -61,10 +61,10 @@ class CreateAccelerationCustomAttribute implements DataPatchInterface
         $entityTypeId = $eavSetup->getEntityTypeId(
             \Magento\Catalog\Model\Product::ENTITY
         );
-        
+
         $attributeSetId = $eavSetup->getAttributeSet(
-            $entityTypeId, 
-            'Automotive_Attribute_Set', 
+            $entityTypeId,
+            'Automotive_Attribute_Set',
             'attribute_set_id'
         );
 
