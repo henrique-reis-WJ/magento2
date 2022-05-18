@@ -10,7 +10,6 @@
         </referenceBlock>
 
         <referenceContainer name="header.panel" remove="true" />
-        <move element="header.links" destination="header-wrapper" after="top.search"/>
-        <move element="minicart" destination="header-wrapper" after="-"/>
+        <move element="header.links" destination="header-wrapper" before="top.search"/>
     </body>
 </page>
