@@ -31,6 +31,20 @@ class SetNativePayment implements DataPatchInterface
       ];
   }
 
+  public function setValueAutomotivoWebsite(string $dbPath, string $dbValue) {
+    
+    $automotivoWebsiteId = $this->storeManager // Gets automotivo website Id by name
+    ->getWebsite("automotivo")
+    ->getId();
+
+    $this->writer->save(
+      $dbPath, // Here we specify the path stored in DB
+      $dbValue, // Here we specify the value in DB
+      "websites",
+      $automotivoWebsiteId
+    );
+  }
+
   public function setValueAutomotivoUS(string $dbPath, string $dbValue) {
     
     $automotivoStoreUsId = $this->storeManager // Gets automotivo storeview Id by name
@@ -56,6 +70,20 @@ class SetNativePayment implements DataPatchInterface
       $dbValue, // Here we specify the value in DB
       "stores",
       $automotivoStoreBrId
+    );
+  }
+
+  public function setValueFestasWebsite(string $dbPath, string $dbValue) {
+    
+    $festasWebsiteId = $this->storeManager // Gets automotivo website Id by name
+    ->getWebsite("festas")
+    ->getId();
+
+    $this->writer->save(
+      $dbPath, // Here we specify the path stored in DB
+      $dbValue, // Here we specify the value in DB
+      "websites",
+      $festasWebsiteId
     );
   }
 
@@ -92,25 +120,22 @@ class SetNativePayment implements DataPatchInterface
     $this->moduleDataSetup->getConnection()->startSetup();
 
     //Configuring Automotivo Money Payment US
-    $this->setValueAutomotivoUS("payment/checkmo/active", "1");
+    $this->setValueAutomotivoWebsite("payment/checkmo/active", "1");
     $this->setValueAutomotivoUS("payment/checkmo/title", "Money Payment");
-    $this->setValueAutomotivoUS("payment/checkmo/order_status", "pending");
+    $this->setValueAutomotivoWebsite("payment/checkmo/order_status", "pending");
     $this->setValueAutomotivoUS("payment/checkmo/specificcountry", "US");
-    $this->setValueAutomotivoUS("payment/checkmo/sort_order", "0");
+    $this->setValueAutomotivoWebsite("payment/checkmo/sort_order", "0");
 
     //Configuring Automotivo Money Payment BR
-    $this->setValueAutomotivoBR("payment/checkmo/active", "1");
     $this->setValueAutomotivoBR("payment/checkmo/title", "Pagamento em Dinheiro");
-    $this->setValueAutomotivoBR("payment/checkmo/order_status", "pending");
     $this->setValueAutomotivoBR("payment/checkmo/specificcountry", "BR");
-    $this->setValueAutomotivoBR("payment/checkmo/sort_order", "0");
 
     //Configuring Automotivo Bank Transfer US
-    $this->setValueAutomotivoUS("payment/banktransfer/active", "1");
+    $this->setValueAutomotivoWebsite("payment/banktransfer/active", "1");
     $this->setValueAutomotivoUS("payment/banktransfer/title", "Bank Transfer Payment");
-    $this->setValueAutomotivoUS("payment/banktransfer/order_status", "pending");
+    $this->setValueAutomotivoWebsite("payment/banktransfer/order_status", "pending");
     $this->setValueAutomotivoUS("payment/banktransfer/specificcountry", "US");
-    $this->setValueAutomotivoUS("payment/banktransfer/sort_order", "1");
+    $this->setValueAutomotivoWebsite("payment/banktransfer/sort_order", "1");
     $this->setValueAutomotivoUS("payment/banktransfer/instructions", "
     Bank account name: WebjumpAutomotive
     Bank account number: 99999
@@ -118,11 +143,8 @@ class SetNativePayment implements DataPatchInterface
     Bank address: California - United States");
 
     //Configuring Automotivo Bank Transfer BR
-    $this->setValueAutomotivoBR("payment/banktransfer/active", "1");
     $this->setValueAutomotivoBR("payment/banktransfer/title", "Pagamento por Transferência Bancária");
-    $this->setValueAutomotivoBR("payment/banktransfer/order_status", "pending");
     $this->setValueAutomotivoBR("payment/banktransfer/specificcountry", "BR");
-    $this->setValueAutomotivoBR("payment/banktransfer/sort_order", "1");
     $this->setValueAutomotivoBR("payment/banktransfer/instructions", "
     Nome da conta do banco: AutomotivoWebjump
     Número da conta do banco: 99999
@@ -130,25 +152,22 @@ class SetNativePayment implements DataPatchInterface
     Endereço do banco: São Paulo - SP");
 
     //Configuring Festas Money Payment US
-    $this->setValueFestasUS("payment/checkmo/active", "1");
+    $this->setValueFestasWebsite("payment/checkmo/active", "1");
     $this->setValueFestasUS("payment/checkmo/title", "Money Payment");
-    $this->setValueFestasUS("payment/checkmo/order_status", "pending");
+    $this->setValueFestasWebsite("payment/checkmo/order_status", "pending");
     $this->setValueFestasUS("payment/checkmo/specificcountry", "US");
-    $this->setValueFestasUS("payment/checkmo/sort_order", "0");
+    $this->setValueFestasWebsite("payment/checkmo/sort_order", "0");
 
     //Configuring Festas Money Payment BR
     $this->setValueFestasBR("payment/checkmo/active", "1");
     $this->setValueFestasBR("payment/checkmo/title", "Pagamento por Dinheiro");
-    $this->setValueFestasBR("payment/checkmo/order_status", "pending");
     $this->setValueFestasBR("payment/checkmo/specificcountry", "BR");
-    $this->setValueFestasBR("payment/checkmo/sort_order", "0");
 
     //Configuring Festas Bank Transfer US
-    $this->setValueFestasUS("payment/banktransfer/active", "1");
+    $this->setValueFestasWebsite("payment/banktransfer/active", "1");
     $this->setValueFestasUS("payment/banktransfer/title", "Bank Transfer Payment");
-    $this->setValueFestasUS("payment/banktransfer/order_status", "pending");
+    $this->setValueFestasWebsite("payment/banktransfer/order_status", "pending");
     $this->setValueFestasUS("payment/banktransfer/specificcountry", "US");
-    $this->setValueFestasUS("payment/banktransfer/sort_order", "1");
     $this->setValueFestasUS("payment/banktransfer/instructions", "
     Bank account name: WebjumpParty
     Bank account number: 99999
@@ -156,11 +175,8 @@ class SetNativePayment implements DataPatchInterface
     Bank address: California - United States");
 
     //Configuring Festas Bank Transfer BR
-    $this->setValueFestasBR("payment/banktransfer/active", "1");
     $this->setValueFestasBR("payment/banktransfer/title", "Pagamento por Transferência Bancária");
-    $this->setValueFestasBR("payment/banktransfer/order_status", "pending");
     $this->setValueFestasBR("payment/banktransfer/specificcountry", "BR");
-    $this->setValueFestasBR("payment/banktransfer/sort_order", "1");
     $this->setValueFestasBR("payment/banktransfer/instructions", "
     Nome da conta do banco: FestasWebjump
     Número da conta do banco: 99999
