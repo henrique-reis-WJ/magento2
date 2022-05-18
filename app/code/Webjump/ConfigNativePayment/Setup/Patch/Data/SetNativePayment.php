@@ -9,7 +9,6 @@ use Magento\Store\Model\StoreManagerInterface;
 
 class SetNativePayment implements DataPatchInterface 
 {
-  //  public const SCOPE_INTERFACE
 
   private $moduleDataSetup;
   private $writer;
@@ -32,31 +31,59 @@ class SetNativePayment implements DataPatchInterface
       ];
   }
 
-  public function setValueAutomotivo(string $dbPath, string $dbValue) {
+  public function setValueAutomotivoUS(string $dbPath, string $dbValue) {
     
-    $automotivoWebsiteId = $this->storeManager // Gets automotivo Website Id by name
-    ->getWebsite("automotivo")
+    $automotivoStoreUsId = $this->storeManager // Gets automotivo storeview Id by name
+    ->getStore("automotive_store_view_us")
     ->getId();
 
     $this->writer->save(
       $dbPath, // Here we specify the path stored in DB
       $dbValue, // Here we specify the value in DB
-      "websites",
-      $automotivoWebsiteId
+      "stores",
+      $automotivoStoreUsId
     );
   }
 
-  public function setValueFestas(string $dbPath, string $dbValue) {
+  public function setValueAutomotivoBR(string $dbPath, string $dbValue) {
     
-    $festasWebsiteId = $this->storeManager // Gets festas Website Id by name
-    ->getWebsite("festas")
+    $automotivoStoreBrId = $this->storeManager // Gets automotivo storeview Id by name
+    ->getStore("automotivo_store_view_pt")
     ->getId();
 
     $this->writer->save(
       $dbPath, // Here we specify the path stored in DB
       $dbValue, // Here we specify the value in DB
-      "websites",
-      $festasWebsiteId
+      "stores",
+      $automotivoStoreBrId
+    );
+  }
+
+  public function setValueFestasUS(string $dbPath, string $dbValue) {
+    
+    $festasStoreUsId = $this->storeManager // Gets festas storeview Id by name
+    ->getStore("party_store_view_us")
+    ->getId();
+
+    $this->writer->save(
+      $dbPath, // Here we specify the path stored in DB
+      $dbValue, // Here we specify the value in DB
+      "stores",
+      $festasStoreUsId
+    );
+  }
+
+  public function setValueFestasBR(string $dbPath, string $dbValue) {
+    
+    $festasStoreBrId = $this->storeManager // Gets festas storeview Id by name
+    ->getStore("festas_store_view_pt")
+    ->getId();
+
+    $this->writer->save(
+      $dbPath, // Here we specify the path stored in DB
+      $dbValue, // Here we specify the value in DB
+      "stores",
+      $festasStoreBrId
     );
   }
 
@@ -64,33 +91,62 @@ class SetNativePayment implements DataPatchInterface
   {
     $this->moduleDataSetup->getConnection()->startSetup();
 
-    //Configuring Automotivo Money Payment
-    $this->setValueAutomotivo("payment/checkmo/active", "1");
-    $this->setValueAutomotivo("payment/checkmo/title", "Pagamento por Dinheiro");
-    $this->setValueAutomotivo("payment/checkmo/order_status", "pending");
-    $this->setValueAutomotivo("payment/checkmo/specificcountry", "BR");
-    $this->setValueAutomotivo("payment/checkmo/sort_order", "0");
+    //Configuring Automotivo Money Payment US
+    $this->setValueAutomotivoUS("payment/checkmo/active", "1");
+    $this->setValueAutomotivoUS("payment/checkmo/title", "Money Payment");
+    $this->setValueAutomotivoUS("payment/checkmo/order_status", "pending");
+    $this->setValueAutomotivoUS("payment/checkmo/specificcountry", "US");
+    $this->setValueAutomotivoUS("payment/checkmo/sort_order", "0");
 
-    //Configuring Automotivo Bank Transfer
-    $this->setValueAutomotivo("payment/banktransfer/active", "1");
-    $this->setValueAutomotivo("payment/banktransfer/title", "Pagamento por Transferência Bancária");
-    $this->setValueAutomotivo("payment/banktransfer/order_status", "pending");
-    $this->setValueAutomotivo("payment/banktransfer/specificcountry", "BR");
-    $this->setValueAutomotivo("payment/banktransfer/sort_order", "1");
+    //Configuring Automotivo Money Payment BR
+    $this->setValueAutomotivoBR("payment/checkmo/active", "1");
+    $this->setValueAutomotivoBR("payment/checkmo/title", "Pagamento em Dinheiro");
+    $this->setValueAutomotivoBR("payment/checkmo/order_status", "pending");
+    $this->setValueAutomotivoBR("payment/checkmo/specificcountry", "BR");
+    $this->setValueAutomotivoBR("payment/checkmo/sort_order", "0");
 
-    //Configuring Festas Money Payment
-    $this->setValueFestas("payment/checkmo/active", "1");
-    $this->setValueFestas("payment/checkmo/title", "Pagamento por Dinheiro");
-    $this->setValueFestas("payment/checkmo/order_status", "pending");
-    $this->setValueFestas("payment/checkmo/specificcountry", "BR");
-    $this->setValueFestas("payment/checkmo/sort_order", "0");
+    //Configuring Automotivo Bank Transfer US
+    $this->setValueAutomotivoUS("payment/banktransfer/active", "1");
+    $this->setValueAutomotivoUS("payment/banktransfer/title", "Bank Transfer Payment");
+    $this->setValueAutomotivoUS("payment/banktransfer/order_status", "pending");
+    $this->setValueAutomotivoUS("payment/banktransfer/specificcountry", "US");
+    $this->setValueAutomotivoUS("payment/banktransfer/sort_order", "1");
 
-    //Configuring Automotivo Bank Transfer
-    $this->setValueFestas("payment/banktransfer/active", "1");
-    $this->setValueFestas("payment/banktransfer/title", "Pagamento por Transferência Bancária");
-    $this->setValueFestas("payment/banktransfer/order_status", "pending");
-    $this->setValueFestas("payment/banktransfer/specificcountry", "BR");
-    $this->setValueFestas("payment/banktransfer/sort_order", "1");
+    //Configuring Automotivo Bank Transfer BR
+    $this->setValueAutomotivoBR("payment/banktransfer/active", "1");
+    $this->setValueAutomotivoBR("payment/banktransfer/title", "Pagamento por Transferência Bancária");
+    $this->setValueAutomotivoBR("payment/banktransfer/order_status", "pending");
+    $this->setValueAutomotivoBR("payment/banktransfer/specificcountry", "BR");
+    $this->setValueAutomotivoBR("payment/banktransfer/sort_order", "1");
+
+    //Configuring Festas Money Payment US
+    $this->setValueFestasUS("payment/checkmo/active", "1");
+    $this->setValueFestasUS("payment/checkmo/title", "Money Payment");
+    $this->setValueFestasUS("payment/checkmo/order_status", "pending");
+    $this->setValueFestasUS("payment/checkmo/specificcountry", "US");
+    $this->setValueFestasUS("payment/checkmo/sort_order", "0");
+
+    //Configuring Festas Money Payment BR
+    $this->setValueFestasBR("payment/checkmo/active", "1");
+    $this->setValueFestasBR("payment/checkmo/title", "Pagamento por Dinheiro");
+    $this->setValueFestasBR("payment/checkmo/order_status", "pending");
+    $this->setValueFestasBR("payment/checkmo/specificcountry", "BR");
+    $this->setValueFestasBR("payment/checkmo/sort_order", "0");
+
+    //Configuring Festas Bank Transfer US
+    $this->setValueFestasUS("payment/banktransfer/active", "1");
+    $this->setValueFestasUS("payment/banktransfer/title", "Bank Transfer Payment");
+    $this->setValueFestasUS("payment/banktransfer/order_status", "pending");
+    $this->setValueFestasUS("payment/banktransfer/specificcountry", "US");
+    $this->setValueFestasUS("payment/banktransfer/sort_order", "1");
+
+    //Configuring Festas Bank Transfer BR
+    $this->setValueFestasBR("payment/banktransfer/active", "1");
+    $this->setValueFestasBR("payment/banktransfer/title", "Pagamento por Transferência Bancária");
+    $this->setValueFestasBR("payment/banktransfer/order_status", "pending");
+    $this->setValueFestasBR("payment/banktransfer/specificcountry", "BR");
+    $this->setValueFestasBR("payment/banktransfer/sort_order", "1");
+    
 
     $this->moduleDataSetup->getConnection()->endSetup();
   }
