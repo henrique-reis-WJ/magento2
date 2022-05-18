@@ -150,7 +150,7 @@ class SetNativePayment implements DataPatchInterface
     $this->setValueFestasUS("payment/banktransfer/specificcountry", "US");
     $this->setValueFestasUS("payment/banktransfer/sort_order", "1");
     $this->setValueFestasUS("payment/banktransfer/instructions", "
-    Bank account name: WebjumpAutomotive
+    Bank account name: WebjumpParty
     Bank account number: 99999
     Bank name: Webjump
     Bank address: California - United States");
