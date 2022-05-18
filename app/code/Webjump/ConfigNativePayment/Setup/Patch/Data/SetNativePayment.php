@@ -111,6 +111,11 @@ class SetNativePayment implements DataPatchInterface
     $this->setValueAutomotivoUS("payment/banktransfer/order_status", "pending");
     $this->setValueAutomotivoUS("payment/banktransfer/specificcountry", "US");
     $this->setValueAutomotivoUS("payment/banktransfer/sort_order", "1");
+    $this->setValueAutomotivoUS("payment/banktransfer/instructions", "
+    Bank account name
+    Bank account number
+    Bank name
+    Bank address");
 
     //Configuring Automotivo Bank Transfer BR
     $this->setValueAutomotivoBR("payment/banktransfer/active", "1");
@@ -118,6 +123,11 @@ class SetNativePayment implements DataPatchInterface
     $this->setValueAutomotivoBR("payment/banktransfer/order_status", "pending");
     $this->setValueAutomotivoBR("payment/banktransfer/specificcountry", "BR");
     $this->setValueAutomotivoBR("payment/banktransfer/sort_order", "1");
+    $this->setValueAutomotivoBR("payment/banktransfer/instructions", "
+    Nome da conta do banco
+    Número da conta do banco
+    Nome do banco
+    Endereço do banco");
 
     //Configuring Festas Money Payment US
     $this->setValueFestasUS("payment/checkmo/active", "1");
@@ -139,6 +149,11 @@ class SetNativePayment implements DataPatchInterface
     $this->setValueFestasUS("payment/banktransfer/order_status", "pending");
     $this->setValueFestasUS("payment/banktransfer/specificcountry", "US");
     $this->setValueFestasUS("payment/banktransfer/sort_order", "1");
+    $this->setValueFestasUS("payment/banktransfer/instructions", "
+    Bank account name
+    Bank account number
+    Bank name
+    Bank address");
 
     //Configuring Festas Bank Transfer BR
     $this->setValueFestasBR("payment/banktransfer/active", "1");
@@ -146,6 +161,11 @@ class SetNativePayment implements DataPatchInterface
     $this->setValueFestasBR("payment/banktransfer/order_status", "pending");
     $this->setValueFestasBR("payment/banktransfer/specificcountry", "BR");
     $this->setValueFestasBR("payment/banktransfer/sort_order", "1");
+    $this->setValueFestasBR("payment/banktransfer/instructions", "
+    Nome da conta do banco
+    Número da conta do banco
+    Nome do banco
+    Endereço do banco");
     
 
     $this->moduleDataSetup->getConnection()->endSetup();
