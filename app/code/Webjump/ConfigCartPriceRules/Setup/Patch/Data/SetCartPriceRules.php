@@ -31,7 +31,7 @@ class SetCartPriceRules implements DataPatchInterface
         ];
     }
 
-    public function createRule(string $name, string $description, string $discount){
+    public function createRule(string $name, string $description, string $discount, int $customerId){
         $ruleData = [
             "name" => $name,
             "description" => $description,
@@ -54,7 +54,7 @@ class SetCartPriceRules implements DataPatchInterface
             "use_auto_generation" => "0",
             "uses_per_coupon" => "0",
             "simple_free_shipping" => "0",
-            "customer_group_ids" => [0, 1, 2, 3],
+            "customer_group_ids" => [$customerId], // 0 = Not Logged, 1 = General, 2 = Wholesale, 4 = Retailer
             "website_ids" => [1],
             "coupon_code" => null,
             "store_labels" => [],
@@ -70,7 +70,7 @@ class SetCartPriceRules implements DataPatchInterface
     public function apply() {
         $this->moduleDataSetup->getConnection()->startSetup();
 
-        $this->createRule("NotLoggedAutomotivo10", "Usuários não logados recebem 10% de desconto", "10.000");
+        $this->createRule("NotLoggedAutomotivo10", "Usuários não logados recebem 10% de desconto", "10.000", 0);
 
         $this->moduleDataSetup->getConnection()->endSetup();
     }
