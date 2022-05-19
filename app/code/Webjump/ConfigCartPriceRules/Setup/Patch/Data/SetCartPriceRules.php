@@ -4,19 +4,23 @@ namespace Webjump\ConfigCartPriceRules\Setup\Patch\Data;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\SalesRule\Model\RuleFactory;
+use Magento\Framework\App\State;
 
 class SetCartPriceRules implements DataPatchInterface
 {
     private ModuleDataSetupInterface $moduleDataSetup;
     private RuleFactory $ruleFactory;
+    private State $state;
 
     public function __construct(
         ModuleDataSetupInterface $moduleDataSetup,
-        RuleFactory $ruleFactory
+        RuleFactory $ruleFactory,
+        State $state
         )
     {
         $this->moduleDataSetup = $moduleDataSetup;
         $this->ruleFactory = $ruleFactory;
+        $this->state = $state;
     }
 
     public function getAliases()
@@ -31,7 +35,7 @@ class SetCartPriceRules implements DataPatchInterface
         ];
     }
 
-    public function createRule(string $name, string $description, string $discount, int $customerId){
+    public function createRule(string $name, string $description, string $discount, int $customerGroupId, int $websiteId){
         $ruleData = [
             "name" => $name,
             "description" => $description,
@@ -54,8 +58,8 @@ class SetCartPriceRules implements DataPatchInterface
             "use_auto_generation" => "0",
             "uses_per_coupon" => "0",
             "simple_free_shipping" => "0",
-            "customer_group_ids" => [$customerId], // 0 = Not Logged, 1 = General, 2 = Wholesale, 4 = Retailer
-            "website_ids" => [1],
+            "customer_group_ids" => [$customerGroupId], // 0 = Not Logged, 1 = General, 2 = Wholesale, 4 = Retailer
+            "website_ids" => [$websiteId],
             "coupon_code" => null,
             "store_labels" => [],
             "conditions_serialized" => '',
@@ -69,8 +73,10 @@ class SetCartPriceRules implements DataPatchInterface
 
     public function apply() {
         $this->moduleDataSetup->getConnection()->startSetup();
+        
+        $this->state->setAreaCode(\Magento\Framework\App\Area::AREA_FRONTEND);
 
-        $this->createRule("NotLoggedAutomotivo10", "Usuários não logados recebem 10% de desconto", "10.000", 0);
+        $this->createRule("NotLoggedAutomotivo10", "Usuários não logados recebem 10% de desconto", "10.000", 0, 2);        $this->createRule("NotLoggedFestas5", "Usuários não logados recebem 5% de desconto", "5.000", 0, 3);
 
         $this->moduleDataSetup->getConnection()->endSetup();
     }
