@@ -66,22 +66,29 @@
 
             li > * {
                 color: @black;
-                text-decoration: underline;
             }
 
             li > a {
                 font-weight: 700;
                 font-size: 18px;
+
+                &:hover {
+                    text-decoration: underline;
+                }
             }
 
             li.link.authorization-link > a::after {
-                content: " ou";
+                content: "\00a0 ou";
                 font-weight: 400;
+                display: inline-block;
+                cursor: default;
             }
 
             li:not(.authorization-link) > a::before {
                 content: "\00a0";
                 font-weight: 400;
+                display: inline-block;
+                cursor: default;
             }
 
             .greet.welcome {
