@@ -119,23 +119,32 @@ class SetNativePayment implements DataPatchInterface
   {
     $this->moduleDataSetup->getConnection()->startSetup();
 
-    //Configuring Automotivo Money Payment US
+    //Configuring Automotivo Site
     $this->setValueAutomotivoWebsite("payment/checkmo/active", "1");
-    $this->setValueAutomotivoUS("payment/checkmo/title", "Money Payment");
     $this->setValueAutomotivoWebsite("payment/checkmo/order_status", "pending");
-    $this->setValueAutomotivoUS("payment/checkmo/specificcountry", "US");
     $this->setValueAutomotivoWebsite("payment/checkmo/sort_order", "0");
+    $this->setValueAutomotivoWebsite("payment/banktransfer/active", "1");
+    $this->setValueAutomotivoWebsite("payment/banktransfer/order_status", "pending");
+    $this->setValueAutomotivoWebsite("payment/banktransfer/sort_order", "1");
+
+    //Configuring Festas Site
+    $this->setValueFestasWebsite("payment/checkmo/active", "1");
+    $this->setValueFestasWebsite("payment/checkmo/order_status", "pending");
+    $this->setValueFestasWebsite("payment/checkmo/sort_order", "0");
+    $this->setValueFestasWebsite("payment/banktransfer/active", "1");
+    $this->setValueFestasWebsite("payment/banktransfer/order_status", "pending");
+
+    //Configuring Automotivo Money Payment US
+    $this->setValueAutomotivoUS("payment/checkmo/title", "Money Payment");
+    $this->setValueAutomotivoUS("payment/checkmo/specificcountry", "US");
 
     //Configuring Automotivo Money Payment BR
     $this->setValueAutomotivoBR("payment/checkmo/title", "Pagamento em Dinheiro");
     $this->setValueAutomotivoBR("payment/checkmo/specificcountry", "BR");
 
     //Configuring Automotivo Bank Transfer US
-    $this->setValueAutomotivoWebsite("payment/banktransfer/active", "1");
     $this->setValueAutomotivoUS("payment/banktransfer/title", "Bank Transfer Payment");
-    $this->setValueAutomotivoWebsite("payment/banktransfer/order_status", "pending");
     $this->setValueAutomotivoUS("payment/banktransfer/specificcountry", "US");
-    $this->setValueAutomotivoWebsite("payment/banktransfer/sort_order", "1");
     $this->setValueAutomotivoUS("payment/banktransfer/instructions", "
     Bank account name: WebjumpAutomotive
     Bank account number: 99999
@@ -152,21 +161,15 @@ class SetNativePayment implements DataPatchInterface
     Endereço do banco: São Paulo - SP");
 
     //Configuring Festas Money Payment US
-    $this->setValueFestasWebsite("payment/checkmo/active", "1");
     $this->setValueFestasUS("payment/checkmo/title", "Money Payment");
-    $this->setValueFestasWebsite("payment/checkmo/order_status", "pending");
     $this->setValueFestasUS("payment/checkmo/specificcountry", "US");
-    $this->setValueFestasWebsite("payment/checkmo/sort_order", "0");
 
     //Configuring Festas Money Payment BR
-    $this->setValueFestasBR("payment/checkmo/active", "1");
     $this->setValueFestasBR("payment/checkmo/title", "Pagamento por Dinheiro");
     $this->setValueFestasBR("payment/checkmo/specificcountry", "BR");
 
     //Configuring Festas Bank Transfer US
-    $this->setValueFestasWebsite("payment/banktransfer/active", "1");
     $this->setValueFestasUS("payment/banktransfer/title", "Bank Transfer Payment");
-    $this->setValueFestasWebsite("payment/banktransfer/order_status", "pending");
     $this->setValueFestasUS("payment/banktransfer/specificcountry", "US");
     $this->setValueFestasUS("payment/banktransfer/instructions", "
     Bank account name: WebjumpParty
