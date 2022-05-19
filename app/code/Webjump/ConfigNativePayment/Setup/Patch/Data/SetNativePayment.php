@@ -45,7 +45,7 @@ class SetNativePayment implements DataPatchInterface
     );
   }
 
-  public function setValueAutomotivoUS(string $dbPath, string $dbValue) {
+  public function setValueAutomotivoUsStoreview(string $dbPath, string $dbValue) {
     
     $automotivoStoreUsId = $this->storeManager // Gets automotivo storeview Id by name
     ->getStore("automotive_store_view_us")
@@ -59,7 +59,7 @@ class SetNativePayment implements DataPatchInterface
     );
   }
 
-  public function setValueAutomotivoBR(string $dbPath, string $dbValue) {
+  public function setValueAutomotivoBrStoreview(string $dbPath, string $dbValue) {
     
     $automotivoStoreBrId = $this->storeManager // Gets automotivo storeview Id by name
     ->getStore("automotivo_store_view_pt")
@@ -87,7 +87,7 @@ class SetNativePayment implements DataPatchInterface
     );
   }
 
-  public function setValueFestasUS(string $dbPath, string $dbValue) {
+  public function setValueFestasUsStoreview(string $dbPath, string $dbValue) {
     
     $festasStoreUsId = $this->storeManager // Gets festas storeview Id by name
     ->getStore("party_store_view_us")
@@ -101,7 +101,7 @@ class SetNativePayment implements DataPatchInterface
     );
   }
 
-  public function setValueFestasBR(string $dbPath, string $dbValue) {
+  public function setValueFestasBrStoreview(string $dbPath, string $dbValue) {
     
     $festasStoreBrId = $this->storeManager // Gets festas storeview Id by name
     ->getStore("festas_store_view_pt")
@@ -135,52 +135,52 @@ class SetNativePayment implements DataPatchInterface
     $this->setValueFestasWebsite("payment/banktransfer/order_status", "pending");
 
     //Configuring Automotivo Money Payment US
-    $this->setValueAutomotivoUS("payment/checkmo/title", "Money Payment");
-    $this->setValueAutomotivoUS("payment/checkmo/specificcountry", "US");
+    $this->setValueAutomotivoUsStoreview("payment/checkmo/title", "Money Payment");
+    $this->setValueAutomotivoUsStoreview("payment/checkmo/specificcountry", "US");
 
     //Configuring Automotivo Money Payment BR
-    $this->setValueAutomotivoBR("payment/checkmo/title", "Pagamento em Dinheiro");
-    $this->setValueAutomotivoBR("payment/checkmo/specificcountry", "BR");
+    $this->setValueAutomotivoBrStoreview("payment/checkmo/title", "Pagamento em Dinheiro");
+    $this->setValueAutomotivoBrStoreview("payment/checkmo/specificcountry", "BR");
 
     //Configuring Automotivo Bank Transfer US
-    $this->setValueAutomotivoUS("payment/banktransfer/title", "Bank Transfer Payment");
-    $this->setValueAutomotivoUS("payment/banktransfer/specificcountry", "US");
-    $this->setValueAutomotivoUS("payment/banktransfer/instructions", "
+    $this->setValueAutomotivoUsStoreview("payment/banktransfer/title", "Bank Transfer Payment");
+    $this->setValueAutomotivoUsStoreview("payment/banktransfer/specificcountry", "US");
+    $this->setValueAutomotivoUsStoreview("payment/banktransfer/instructions", "
     Bank account name: WebjumpAutomotive
     Bank account number: 99999
     Bank name: Webjump
     Bank address: California - United States");
 
     //Configuring Automotivo Bank Transfer BR
-    $this->setValueAutomotivoBR("payment/banktransfer/title", "Pagamento por Transferência Bancária");
-    $this->setValueAutomotivoBR("payment/banktransfer/specificcountry", "BR");
-    $this->setValueAutomotivoBR("payment/banktransfer/instructions", "
+    $this->setValueAutomotivoBrStoreview("payment/banktransfer/title", "Pagamento por Transferência Bancária");
+    $this->setValueAutomotivoBrStoreview("payment/banktransfer/specificcountry", "BR");
+    $this->setValueAutomotivoBrStoreview("payment/banktransfer/instructions", "
     Nome da conta do banco: AutomotivoWebjump
     Número da conta do banco: 99999
     Nome do banco: Webjump
     Endereço do banco: São Paulo - SP");
 
     //Configuring Festas Money Payment US
-    $this->setValueFestasUS("payment/checkmo/title", "Money Payment");
-    $this->setValueFestasUS("payment/checkmo/specificcountry", "US");
+    $this->setValueFestasUsStoreview("payment/checkmo/title", "Money Payment");
+    $this->setValueFestasUsStoreview("payment/checkmo/specificcountry", "US");
 
     //Configuring Festas Money Payment BR
-    $this->setValueFestasBR("payment/checkmo/title", "Pagamento por Dinheiro");
-    $this->setValueFestasBR("payment/checkmo/specificcountry", "BR");
+    $this->setValueFestasBrStoreview("payment/checkmo/title", "Pagamento por Dinheiro");
+    $this->setValueFestasBrStoreview("payment/checkmo/specificcountry", "BR");
 
     //Configuring Festas Bank Transfer US
-    $this->setValueFestasUS("payment/banktransfer/title", "Bank Transfer Payment");
-    $this->setValueFestasUS("payment/banktransfer/specificcountry", "US");
-    $this->setValueFestasUS("payment/banktransfer/instructions", "
+    $this->setValueFestasUsStoreview("payment/banktransfer/title", "Bank Transfer Payment");
+    $this->setValueFestasUsStoreview("payment/banktransfer/specificcountry", "US");
+    $this->setValueFestasUsStoreview("payment/banktransfer/instructions", "
     Bank account name: WebjumpParty
     Bank account number: 99999
     Bank name: Webjump
     Bank address: California - United States");
 
     //Configuring Festas Bank Transfer BR
-    $this->setValueFestasBR("payment/banktransfer/title", "Pagamento por Transferência Bancária");
-    $this->setValueFestasBR("payment/banktransfer/specificcountry", "BR");
-    $this->setValueFestasBR("payment/banktransfer/instructions", "
+    $this->setValueFestasBrStoreview("payment/banktransfer/title", "Pagamento por Transferência Bancária");
+    $this->setValueFestasBrStoreview("payment/banktransfer/specificcountry", "BR");
+    $this->setValueFestasBrStoreview("payment/banktransfer/instructions", "
     Nome da conta do banco: FestasWebjump
     Número da conta do banco: 99999
     Nome do banco: Webjump
