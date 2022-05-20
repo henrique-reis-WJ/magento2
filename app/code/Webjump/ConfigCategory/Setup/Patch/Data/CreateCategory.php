@@ -22,13 +22,6 @@ class CreateCategory implements DataPatchInterface
         $this->categoryRepository = $categoryRepository;
     }
 
-    /**
-     * Method for create all categories and subcategories
-     * @param array $categories
-     * @return void
-     * @throws \Magento\Framework\Exception\CouldNotSaveException
-     */
-
     public function createCategories(array $categories): void
     {
         foreach ($categories as $item) {
@@ -39,11 +32,6 @@ class CreateCategory implements DataPatchInterface
             $this->categoryRepository->save($category);
         }
     }
-
-    /**
-     * Method for create Root category
-     * @return array
-     */
 
     public function categoryRoot(string $name, string $urlKey): array
     {
@@ -60,11 +48,6 @@ class CreateCategory implements DataPatchInterface
 
         return $categories;
     }
-
-    /**
-     * Method for create subcategorie for Moda
-     * @return array
-     */
 
     public function subCategories(string $name, string $urlKey, string $rootKey): array
     {
