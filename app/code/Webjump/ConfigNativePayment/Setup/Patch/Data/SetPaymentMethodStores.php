@@ -39,8 +39,8 @@ class SetPaymentMethodStores implements DataPatchInterface
     {
         $this->moduleDataSetup->getConnection()->startSetup();
 
-        $this->storePaymentSet->setGlobalSettings("automotivo_store");
-        $this->storePaymentSet->setGlobalSettings("festas_store");
+        $this->storePaymentSet->setGlobalSettings("automotivo");
+        $this->storePaymentSet->setGlobalSettings("festas");
 
         $this->storePaymentSet->setPaymentMoney("automotivo_store_view_pt", "br");
         $this->storePaymentSet->setPaymentBankTransfer("automotivo_store_view_pt", "br");
