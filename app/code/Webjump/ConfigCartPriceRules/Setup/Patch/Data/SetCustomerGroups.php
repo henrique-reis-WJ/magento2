@@ -47,7 +47,7 @@ class SetCustomerGroups implements DataPatchInterface
             "is_advanced" => "1",
             "product_ids" => null,
             "sort_order" => "0",
-            "simple_action" => "cart_fixed",
+            "simple_action" => "by_percent",
             "discount_amount" => $discount,
             "discount_qty" => null,
             "discount_step" => "0",
