@@ -7,6 +7,29 @@
 .page-header {
     .panel.wrapper {
         background-color: @header-panel-background-color;
+
+        span {
+            height: 22px;
+            color: @header-text-color;
+            font-family: 'Poppins-Regular';
+            font-size: 16px;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: normal;
+            line-height: normal;
+            text-align: left;
+        }
+
+        .switcher {
+            .options {
+
+                .action.toggle:after,
+                .action.toggle:hover,
+                .action.toggle.active:hover:after {
+                    color: @header-text-color
+                }
+            }
+        }
     }
 }
 
@@ -18,7 +41,8 @@
             color: @header-text-color;
             font-family: 'Poppins-Regular';
 
-            a {
+            a,
+            a:visited {
                 height: 22px;
                 color: @header-text-color;
                 font-family: 'Poppins-Regular';
@@ -39,11 +63,10 @@
 
 .block-search {
     width: 400px;
-    height: 40px;
+    margin-top: 20px;
 
     input {
         border: 1px solid #000000;
-        color: @search-input-text-color;
         font-family: 'Poppins-Regular';
 
     }
@@ -51,20 +74,15 @@
 
 .minicart-wrapper {
     .action.showcart {
-        &::before {
-            content: '';
-            width: 23px;
-            height: 26px;
-            background: url('@{baseDir}images/bag.png');
-        }
-
         .counter.qty {
             background: @menu-button-color;
 
         }
     }
 
+    .action.showcart::before,
     .action.showcart.active::before {
+        margin-top: 20px;
         content: '';
         width: 23px;
         height: 26px;
@@ -75,37 +93,38 @@
 
 @media (max-width: 780px) {
 
-    .logo {}
+    .logo {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        width: 140px;
+        height: 52px;
 
-
-    .nav-toggle:before {
-        color: @menu-button-color;
-        font-weight: bold;
-        padding-top: 20px;
     }
 
+    .nav-toggle:hover:before,
+    .nav-toggle:before,
     .nav-toggle:after {
         color: @menu-button-color;
         font-weight: bold;
         padding-top: 20px;
     }
 
-    .action.showcart {
-        padding-top: 20px;
 
+    .minicart-wrapper {
+
+        .action.showcart::before,
+        .action.showcart.active::before {
+            margin-top: 10px;
+        }
     }
 
     .field.search {
         padding-top: 20px;
-
     }
 
     .block-search {
-        width: 350px;
-
-        .control {
-            margin: 0 60px;
-        }
+        width: auto;
+        margin-top: auto;
     }
 
     .header.content {
@@ -117,10 +136,4 @@
         margin-bottom: none;
     }
 
-}
-
-@media (max-width: 280px) {
-    .block-search {
-        width: 250px;
-    }
 }

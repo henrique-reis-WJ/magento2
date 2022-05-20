@@ -4,9 +4,6 @@
 .section-item-content .navigation {
   background-color: #de6100;
 }
-.section-item-content .navigation ul {
-  height: 50px;
-}
 .section-item-content .navigation ul li a {
   background-color: #de6100;
 }
@@ -32,9 +29,6 @@
   }
   .section-item-content .navigation {
     background-color: white;
-  }
-  .section-item-content .navigation ul {
-    height: 50px;
   }
   .section-item-content .navigation ul li a {
     background-color: white;
