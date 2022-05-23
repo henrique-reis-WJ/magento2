@@ -120,6 +120,14 @@ class SetNativeShipping implements DataPatchInterface
                 "stores",
                 $StoreViewGetId
             );
+
+            $this->writer->save (
+                "carriers/tablerate/specificerrmsg",
+                "Este método de envio não está disponível. Para usar este método de envio, entre em contato conosco.",
+                "stores",
+                $StoreViewGetId
+            );
+
         } else if ($language == "en") {
 
             $this->writer->save (
