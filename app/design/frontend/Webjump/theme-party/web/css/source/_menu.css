@@ -20,10 +20,13 @@
   line-height: normal;
   text-transform: uppercase;
 }
+.section-item-content .navigation .level0 .submenu a:hover {
+  background-color: #531707;
+}
 .navigation .level0.parent > .level-top > .ui-menu-icon:after {
   display: none;
 }
-@media (max-width: 780px) {
+@media (max-width: 767px) {
   .section-item-content {
     background-color: white;
   }
@@ -67,5 +70,16 @@
   }
   .nav-sections-item-switch {
     color: #6215e1;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 819px) {
+  .section-item-content {
+    background-color: #de6100;
+  }
+  .section-item-content .navigation {
+    background-color: #de6100;
+  }
+  .section-item-content .navigation ul li a {
+    padding: 0 3px !important;
   }
 }
