@@ -111,3 +111,8 @@
     margin-bottom: -100px;
   }
 }
+.pagebuilder-column-group {
+  display: flex;
+  max-width: 1240px;
+  margin: 0 auto;
+}
