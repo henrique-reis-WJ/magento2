@@ -41,6 +41,13 @@ class SetNativeShipping implements DataPatchInterface
     ->getWebsite($websiteCode)
     ->getId();
 
+    $this->writer->save (
+        "general/country/allow",
+        "BR,US",
+        "websites",
+        $websiteGetId
+    );
+
      $this->writer->save (
         "carriers/tablerate/active",
         "1",
