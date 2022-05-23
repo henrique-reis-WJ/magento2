@@ -4,19 +4,23 @@ namespace Webjump\ConfigNativeShipping\Setup\Patch\Data;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\App\Config\Storage\WriterInterface;
+use Magento\Store\Model\StoreManagerInterface;
 
 class SetNativeShipping implements DataPatchInterface
 {
     private ModuleDataSetupInterface $moduleDataSetup;
     private WriterInterface $writer;
+    private StoreManagerInterface $storeManager;
 
     public function __construct(
         ModuleDataSetupInterface $moduleDataSetup,
-        WriterInterface $writer
+        WriterInterface $writer,
+        StoreManagerInterface $storeManager
         )
     {
         $this->moduleDataSetup = $moduleDataSetup;
         $this->writer = $writer;
+        $this->storeManager = $storeManager;
     }
 
     public function getAliases()
@@ -31,84 +35,121 @@ class SetNativeShipping implements DataPatchInterface
         ];
     }
 
-    public function setShippingSettings(string $websiteId) {
+    public function setShippingSettingsWebsite(string $websiteCode) {
        
+    $websiteGetId = $this->storeManager
+    ->getWebsite($websiteCode)
+    ->getId();
+
      $this->writer->save (
         "carriers/tablerate/active",
         "1",
         "websites",
-        $websiteId
-    );
-
-    $this->writer->save (
-        "carriers/tablerate/title",
-        "Amazon",
-        "websites",
-        $websiteId
-    );
-
-    $this->writer->save (
-        "carriers/tablerate/name",
-        "Table Rate",
-        "websites",
-        $websiteId
+        $websiteGetId
     );
 
     $this->writer->save (
         "carriers/tablerate/condition_name",
         "package_weight",
         "websites",
-        $websiteId
+        $websiteGetId
     );
     
     $this->writer->save (
         "carriers/tablerate/include_virtual_price",
         "0",
         "websites",
-        $websiteId
+        $websiteGetId
     );
 
     $this->writer->save (
         "carriers/tablerate/handling_fee",
         null,
         "websites",
-        $websiteId
+        $websiteGetId
     );
 
     $this->writer->save (
         "carriers/tablerate/sallowspecific",
         "1",
         "websites",
-        $websiteId
+        $websiteGetId
     );
 
     $this->writer->save (
         "carriers/tablerate/specificcountry",
         "BR,US",
         "websites",
-        $websiteId
+        $websiteGetId
     );
 
     $this->writer->save (
         "carriers/tablerate/showmethod",
         "1",
         "websites",
-        $websiteId
+        $websiteGetId
     );
 
     $this->writer->save (
         "carriers/tablerate/sort_order",
         "0",
         "websites",
-        $websiteId
+        $websiteGetId
     );
 
     }
 
+    public function setShippingStore(string $storeViewCode, string $language) {
+        
+        $StoreViewGetId = $this->storeManager
+        ->getStore($storeViewCode)
+        ->getId();
+
+        if ($language == "br") {
+            
+            $this->writer->save (
+                "carriers/tablerate/title",
+                "Correios",
+                "stores",
+                $StoreViewGetId
+            );
+
+            $this->writer->save (
+                "carriers/tablerate/name",
+                "Taxa de Tabela",
+                "stores",
+                $StoreViewGetId
+            );
+        } else if ($language == "en") {
+
+            $this->writer->save (
+                "carriers/tablerate/title",
+                "Amazon",
+                "stores",
+                $StoreViewGetId
+            );
+
+            $this->writer->save (
+                "carriers/tablerate/name",
+                "Table Rate",
+                "stores",
+                $StoreViewGetId
+            );
+        }
+    }
+
     public function apply() {
         $this->moduleDataSetup->getConnection()->startSetup();
-        
-        $this->setShippingSettings(1);
+
+        // Setting Websites Default Config
+        $this->setShippingSettingsWebsite("automotivo");
+        $this->setShippingSettingsWebsite("festas");
+
+        //Setting StoreView Default Config
+        $this->setShippingStore("automotivo_store_view_pt", "br");
+        $this->setShippingStore("automotive_store_view_us", "en");
+        $this->setShippingStore("festas_store_view_pt", "br");
+        $this->setShippingStore("party_store_view_us", "en");
 
         $this->moduleDataSetup->getConnection()->endSetup();
     }
