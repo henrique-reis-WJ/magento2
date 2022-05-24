@@ -1,6 +1,7 @@
 @catalog-topnav-background-color: #de6100;
 @catalog-topnav-text-color: #ffffff;
 @menu-button-color: #6215e1;
+@submenu-color-hover: #531707;
 
 
 .section-item-content {
@@ -10,9 +11,7 @@
         background-color: @catalog-topnav-background-color;
 
         ul {
-
             li {
-
                 a {
                     background-color: @catalog-topnav-background-color;
 
@@ -35,6 +34,10 @@
                 }
             }
         }
+
+        .level0 .submenu a:hover {
+            background-color: @submenu-color-hover;
+        }
     }
 }
 
@@ -42,7 +45,7 @@
     display: none;
 }
 
-@media (max-width: 780px) {
+@media (max-width: 767px) {
 
     .section-item-content {
         background-color: white;
@@ -111,5 +114,27 @@
 
     .nav-sections-item-switch {
         color: @menu-button-color;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 819px) {
+    .section-item-content {
+        background-color: @catalog-topnav-background-color;
+
+        .navigation {
+
+            background-color: @catalog-topnav-background-color;
+
+            ul {
+
+
+                li {
+
+                    a {
+                        padding: 0 3px !important;
+                    }
+                }
+            }
+        }
     }
 }
