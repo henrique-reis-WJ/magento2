@@ -2,6 +2,7 @@
 
 .page-header {
     background-color: @white;
+    margin: 0;
 
     .header {
         font-family: "Montserrat-Regular";
@@ -45,6 +46,10 @@
                     &::before {
                         color: @black;
                     }
+                }
+
+                .control {
+                    border: none;
                 }
             }
         }
@@ -105,6 +110,14 @@
             .action.showcart::before,
             .action.showcart.active::before {
                 content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='31' height='27' viewBox='0 0 31 27'%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath d='M10 25a2 2 0 1 1 4 0 2 2 0 0 1-4 0z'/%3E%3C/g%3E%3Cg%3E%3Cpath d='M23 25a2 2 0 1 1 4 0 2 2 0 0 1-4 0z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='20' stroke-width='2' d='M1 1v0h5.273v0l3.532 17.853a2.643 2.643 0 0 0 2.637 2.146h12.813a2.643 2.643 0 0 0 2.636-2.146L30 7.666v0H7.59v0'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            }
+
+            .counter.qty {
+                background-color: @black;
+                border-radius: 50%;
+                position: absolute;
+                top: -13px;
+                right: -14px;
             }
         }
     }
@@ -178,7 +191,7 @@
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
     .page-header {
         .header {
             &.content {
@@ -198,6 +211,10 @@
             .block.block-search {
                 width: auto;
                 margin-top: 30px;
+
+                .form .input-text {
+                    margin-bottom: 5px;
+                }
 
                 .form .control {
                     border-top: none;
