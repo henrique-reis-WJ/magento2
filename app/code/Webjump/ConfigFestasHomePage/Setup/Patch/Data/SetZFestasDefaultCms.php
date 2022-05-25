@@ -6,7 +6,7 @@ use Magento\Framework\App\Config\Storage\WriterInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 
-class SetFestasHomepageBR implements DataPatchInterface
+class SetZFestasDefaultCms implements DataPatchInterface
 {
     private ModuleDataSetupInterface $moduleDataSetup;
     private StoreManagerInterface $storeManager;
