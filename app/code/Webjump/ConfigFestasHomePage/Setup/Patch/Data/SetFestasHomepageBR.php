@@ -35,6 +35,10 @@ public static function getDependencies()
 
 public function apply()
 {
+    $StoreViewGetId = $this->storeManager
+    ->getStore()
+    ->getId();
+
     $pageData = [
         'title' => 'Festas BR', // cms page title
         'page_layout' => '1column', // cms page layout
