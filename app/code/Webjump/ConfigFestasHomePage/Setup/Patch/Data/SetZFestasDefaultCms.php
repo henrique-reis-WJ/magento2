@@ -53,7 +53,8 @@ public function apply()
 {
     $this->moduleDataSetup->startSetup();
 
-    $this->setDefaultCmsPage();
+    $this->setDefaultCmsPage("festas_store_view_pt", "festasbr");
+    $this->setDefaultCmsPage("party_store_view_us", "festasus");
 
     $this->moduleDataSetup->endSetup();
 }
