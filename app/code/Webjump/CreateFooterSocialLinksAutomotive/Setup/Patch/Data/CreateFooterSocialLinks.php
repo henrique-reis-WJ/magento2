@@ -18,7 +18,7 @@ class CreateFooterSocialLinks implements DataPatchInterface, PatchRevertableInte
      * @var BlockFactory
      */
     private $blockFactory;
-    const IDENTIFIER_BLOCK = 'footer-links-automotive';
+    const IDENTIFIER_BLOCK = 'footer-social-links-automotive';
     /**
      * CreateFooterSocialLinks constructor.
      * @param ModuleDataSetupInterface $moduleDataSetup
