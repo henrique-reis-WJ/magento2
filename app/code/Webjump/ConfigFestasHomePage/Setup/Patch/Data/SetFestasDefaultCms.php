@@ -34,13 +34,25 @@ public static function getDependencies()
     ];
 }
 
-public function apply()
-{
+public function setDefaultCmsPage (string $storeViewCode, string $contentUrlKey) {
+
     $StoreViewGetId = $this->storeManager
-    ->getStore("festas_store_view_pt")
+    ->getStore($storeViewCode)
     ->getId();
 
+    $this->writer->save (
+        "web/default/cms_home_page",
+        $contentUrlKey, // Here we put the value that is set in contentUrlKey
+        "stores",
+        $StoreViewGetId // Here we put the StoreId
+    );
+
+}
+
+public function apply()
+{
     $this->moduleDataSetup->startSetup();
+
     $this->moduleDataSetup->endSetup();
 }
 }
