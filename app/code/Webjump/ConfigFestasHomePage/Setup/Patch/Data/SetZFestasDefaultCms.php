@@ -53,6 +53,8 @@ public function apply()
 {
     $this->moduleDataSetup->startSetup();
 
+    $this->setDefaultCmsPage();
+
     $this->moduleDataSetup->endSetup();
 }
 }
