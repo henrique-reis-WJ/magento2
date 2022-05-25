@@ -36,7 +36,7 @@ public static function getDependencies()
 public function apply()
 {
     $StoreViewGetId = $this->storeManager
-    ->getStore("festas_store_view_pt")
+    ->getStore("party_store_view_us")
     ->getId();
 
     $pageData = [
