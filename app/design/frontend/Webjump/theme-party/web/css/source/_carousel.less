@@ -38,6 +38,12 @@
                 text-align: center;
 
                 .product-item-name {
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 1;
+                    width: 190px;
+                    overflow: hidden;
+                    height: 20px;
                     a {
                         text-transform: uppercase;
                         color: @dark-gray;
@@ -64,7 +70,7 @@
                             color: @purple;
                         }
                     }
-                    
+
                     .price-container {
                         .price-label {
                             color: @purple;
