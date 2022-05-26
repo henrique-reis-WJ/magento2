@@ -2,3 +2,4 @@
 "Sign In","Entre",module,Magento_Customer
 "Search entire store here...","Pesquisar em todo o site...",module,Magento_Search
 "Enter your email address","Fique informado sobre o Volt"
+"Installment in up to 10 installments with a minimum installment of $100.00.","Parcelamento em até 10 vezes com parcela mínima de R$ 500,00.",module,Magento_Catalog
