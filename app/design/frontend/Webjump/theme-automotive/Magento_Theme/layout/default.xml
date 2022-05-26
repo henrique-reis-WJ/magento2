@@ -22,7 +22,7 @@
             </container>
 
             <container name='footer.newsletter.social' htmlTag='div' htmlClass='footer__newsletter-social'>
-                <block class="Magento\Cms\Block\Block" as='footer_social_links' after='-'>
+                <block class="Magento\Cms\Block\Block" as='footer_social_links' after='form.subscribe'>
                     <arguments>
                         <argument name='block_id' xsi:type='string'>footer-social-links-automotive</argument>
                     </arguments>
@@ -31,6 +31,7 @@
         </referenceContainer>
 
         <move element="form.subscribe" destination="footer.newsletter.social" before="-"/>
+        <move element="store_language" destination='footer.newsletter.social' after='-'/>
 
         <referenceBlock name='footer_links' remove='true'/>
         <referenceBlock name='copyright' remove='true'/>
