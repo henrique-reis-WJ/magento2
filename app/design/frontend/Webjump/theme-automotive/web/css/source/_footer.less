@@ -55,6 +55,8 @@
         .footer__newsletter-social {
             .footer__social-links {
                 display: flex;
+                margin-bottom: 20px;
+
                 h2 {
                     margin: 0;
                     margin-top: 2px;
@@ -72,12 +74,19 @@
                     gap: 26px;
                 }
             }
+
+            .switcher.language.switcher-language {
+                .action.toggle.switcher-trigger > *,
+                .action.toggle.switcher-trigger::after{
+                    color: @white;
+                }
+            }
         }
 
         .block.newsletter {
             float: none;
             margin: 0;
-            margin-bottom: 70px;
+            margin-bottom: 50px;
             max-width: none;
 
             .title {
