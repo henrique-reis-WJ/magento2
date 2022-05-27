@@ -19,12 +19,23 @@
                         <argument name='block_id' xsi:type='string'>footer-links-automotive</argument>
                     </arguments>
                 </block>
+
+                <block class="Magento\Cms\Block\Block" as='footer_links_us' before='-'>
+                    <arguments>
+                        <argument name='block_id' xsi:type='string'>footer-links-automotive-us</argument>
+                    </arguments>
+                </block>
             </container>
 
             <container name='footer.newsletter.social' htmlTag='div' htmlClass='footer__newsletter-social'>
                 <block class="Magento\Cms\Block\Block" as='footer_social_links' after='form.subscribe'>
                     <arguments>
                         <argument name='block_id' xsi:type='string'>footer-social-links-automotive</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" as='footer_social_links_us' after='form.subscribe'>
+                    <arguments>
+                        <argument name='block_id' xsi:type='string'>footer-social-links-automotive-us</argument>
                     </arguments>
                 </block>
             </container>
