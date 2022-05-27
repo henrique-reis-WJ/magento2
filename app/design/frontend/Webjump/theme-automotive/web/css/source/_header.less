@@ -116,7 +116,7 @@
                     }
                 }
 
-                .customer-name.active{
+                .customer-name.active {
                     position: absolute;
                     right: 0;
                     top: 0;
@@ -163,6 +163,13 @@
             .action.showcart::before,
             .action.showcart.active::before {
                 content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='31' height='27' viewBox='0 0 31 27'%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cpath d='M10 25a2 2 0 1 1 4 0 2 2 0 0 1-4 0z'/%3E%3C/g%3E%3Cg%3E%3Cpath d='M23 25a2 2 0 1 1 4 0 2 2 0 0 1-4 0z'/%3E%3C/g%3E%3Cg%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='20' stroke-width='2' d='M1 1v0h5.273v0l3.532 17.853a2.643 2.643 0 0 0 2.637 2.146h12.813a2.643 2.643 0 0 0 2.636-2.146L30 7.666v0H7.59v0'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            }
+
+            &:hover {
+                .action.showcart::before,
+                .action.showcart.active::before {
+                    transform: scale(1.05);
+                }
             }
 
             .counter.qty {
@@ -281,6 +288,11 @@
 
             &.links {
                 margin-left: 50px;
+
+                li.customer-welcome,
+                li.customer-welcome.active {
+                    display: none;
+                }
             }
         }
     }

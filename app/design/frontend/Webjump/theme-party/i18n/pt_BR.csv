@@ -1,4 +1,5 @@
 Create an Account,"Cadastre-se",module,Magento_Customer
 "Sign In",Entre,module,Magento_Checkout
 "Search entire store here...","Qual artigo de festa você está procurando?",module,Magento_Search
-"Installment in up to 10 installments with a minimum installment of $10.00","Parcelamento em até 10 vezes com parcela mínima de R$ 50,00",module,Magento_Catalog
+"Installment up to 10 times with minimum installment of $10.00","Parcelamento em até 10 vezes com parcela mínima de R$ 50,00",module,Magento_Catalog
+"Enter your email address","Insira seu e-mail aqui"

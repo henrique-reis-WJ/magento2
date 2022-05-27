@@ -1,0 +1,37 @@
+@import '_colors.less';
+
+    .action.primary, 
+    .action.tocart.primary,
+    .action.primary.checkout,
+    .button.action.continue.primary{
+        background: @smoke;
+        border-color: @black;
+
+        &:hover{
+            background: @black;
+            border-color: @black;
+            transform: scale(1.03);
+        }
+
+        &:active{
+            background: @smoke;
+            border-color: @black;
+        }
+        &:focus{
+            background: @smoke;
+            border-color: @black;
+        }
+    }
+
+    .modal-footer{
+        .action-primary.action-accept{
+            background: @smoke;
+            border-color: @black;
+        }
+    }
+    
+    .product-info-main{
+        .custom-product-page{
+            margin-bottom: 20px;
+        }
+    }

@@ -120,7 +120,7 @@ class CreateCategory implements DataPatchInterface
         //Categoria DATAS COMEMORATIVAS
         
         $this->createCategories($this->subCategories('DATAS COMEMORATIVAS', 'datasComemorativas', 'festas')); // Categoria, URLKey, ParentCategory
-        $this->createCategories($this->subCategories('Pascoa', 'pascoa', 'datasComemorativas'));
+        $this->createCategories($this->subCategories('Páscoa', 'pascoa', 'datasComemorativas'));
         $this->createCategories($this->subCategories('Natal', 'natal', 'datasComemorativas'));
 
         //Categoria Festa Temática
