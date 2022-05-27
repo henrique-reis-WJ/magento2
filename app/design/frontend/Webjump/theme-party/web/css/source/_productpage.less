@@ -1,26 +1,35 @@
 @menu-button-color: #6215e1;
 @hover-button-color: #4c0fbf;
+@catalog-topnav-text-color: #ffffff;
 
     .action.primary, 
     .action.tocart.primary,
     .action.primary.checkout,
-    .button.action.continue.primary{
+    .button.action.continue.primary,
+    .review-form .action.submit.primary,
+    .action.update,
+    .action.share,
+    .action.tocart{
         background: @menu-button-color;
         border-color: @menu-button-color;
+        color: @catalog-topnav-text-color;
 
         &:hover{
             background: @hover-button-color;
             border-color: @hover-button-color;
             transform: scale(1.03);
+            color: @catalog-topnav-text-color;
         }
 
         &:active{
             background: @menu-button-color;
             border-color: @menu-button-color;
+            color: @catalog-topnav-text-color;
         }
         &:focus{
             background: @menu-button-color;
             border-color: @menu-button-color;
+            color: @catalog-topnav-text-color;
         }
     }
 
