@@ -55,9 +55,9 @@ class CreateFooterSocialLinks implements DataPatchInterface, PatchRevertableInte
             'content' => '<div data-content-type="html" data-appearance="default" data-element="main">&lt;div class="footer__social-links"&gt;
             &lt;h2&gt;Siga-nos&lt;/h2&gt;
             &lt;ul&gt;
-              &lt;li&gt;&lt;a href="#"&gt;&lt;img src="{{media url=wysiwyg/instagram.png}}" alt="instagram" /&gt;&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href="#"&gt;&lt;img src="{{media url=wysiwyg/facebook.png}}" alt="facebook" /&gt;&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href="#"&gt;&lt;img src="{{media url=wysiwyg/twitter.png}}" alt="twitter" /&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;&lt;img src="{{media url=wysiwyg/instagramauto.png}}" alt="instagram" /&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;&lt;img src="{{media url=wysiwyg/facebookauto.png}}" alt="facebook" /&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;&lt;img src="{{media url=wysiwyg/twitterauto.png}}" alt="twitter" /&gt;&lt;/a&gt;&lt;/li&gt;
             &lt;/ul&gt;
           &lt;/div&gt;</div>'
         ];
