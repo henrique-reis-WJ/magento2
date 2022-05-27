@@ -65,7 +65,9 @@ class AddColorAttributeToSets implements DataPatchInterface
                 'Red',
                 'Blue',
                 'Yellow',
-                'Green'
+                'Green',
+                'Orange',
+                'Pink'
                 ]
         ];
 
