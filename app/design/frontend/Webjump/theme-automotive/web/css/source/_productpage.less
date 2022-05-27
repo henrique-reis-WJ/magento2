@@ -8,8 +8,9 @@
         border-color: @black;
 
         &:hover{
-            background: @smoke;
+            background: @black;
             border-color: @black;
+            transform: scale(1.03);
         }
 
         &:active{
@@ -17,6 +18,13 @@
             border-color: @black;
         }
         &:focus{
+            background: @smoke;
+            border-color: @black;
+        }
+    }
+
+    .modal-footer{
+        .action-primary.action-accept{
             background: @smoke;
             border-color: @black;
         }
