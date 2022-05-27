@@ -53,28 +53,28 @@ class CreateFooterLinks implements DataPatchInterface, PatchRevertableInterface
             'identifier' => self::IDENTIFIER_BLOCK,
             'stores' => [5],
             'content' => '<div data-content-type="html" data-appearance="default" data-element="main">&lt;div class="footer__links-container links-institutional"&gt;
-            &lt;h2&gt;Institucional&lt;/h2&gt;
+            &lt;h2&gt;Institutional&lt;/h2&gt;
             &lt;ul&gt;
-              &lt;li&gt;&lt;a href="#"&gt;Sobre nós&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href="#"&gt;Central de dúvidas&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href="#"&gt;Nossas vantagens&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href="#"&gt;Lojas físicas&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href="#"&gt;Trocas e devoluções&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href="#"&gt;Comprar no atacado &lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;About Us&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Call Center&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Our Advantages&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Physical Stores&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Exchanges and returns&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Buy Wholesale&lt;/a&gt;&lt;/li&gt;
             &lt;/ul&gt;
             &lt;/div&gt;          
             &lt;div class="footer__links-container links-account"&gt;
-            &lt;h2&gt;Conta&lt;/h2&gt;
+            &lt;h2&gt;Account&lt;/h2&gt;
             &lt;ul&gt;
-              &lt;li&gt;&lt;a href="#"&gt;Minha conta&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href="#"&gt;Pedidos&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;My account&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Orders&lt;/a&gt;&lt;/li&gt;
             &lt;/ul&gt;    &lt;/div&gt;
 &lt;div class="footer__links-container links-suport"&gt;        
-            &lt;h2&gt;Suporte&lt;/h2&gt;
+            &lt;h2&gt;Support&lt;/h2&gt;
             &lt;ul&gt;
-              &lt;li&gt;&lt;a href="#"&gt;Política de frete&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href="#"&gt;Política de privacidade&lt;/a&gt;&lt;/li&gt;
-              &lt;li&gt;&lt;a href="#"&gt;Termos e condições&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Shipping Policy&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#"&gt;Terms and conditions&lt;/a&gt;&lt;/li&gt;
             &lt;/ul&gt;
             &lt;/div&gt;</div>'
         ];

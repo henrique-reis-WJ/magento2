@@ -20,12 +20,16 @@
 
         <referenceContainer name="footer">
 
-
-
             <container name='footer.links.wrapper' htmlTag='div' htmlClass='footer__links-wrapper'>
                 <block class="Magento\Cms\Block\Block" as='footer_links' before='-'>
                     <arguments>
                         <argument name='block_id' xsi:type='string'>footer-links-party</argument>
+                    </arguments>
+                </block>
+
+                <block class="Magento\Cms\Block\Block" as='footer_links_us' before='-'>
+                    <arguments>
+                        <argument name='block_id' xsi:type='string'>footer-links-party-us</argument>
                     </arguments>
                 </block>
             </container>
@@ -40,6 +44,12 @@
                 <block class="Magento\Cms\Block\Block" as='footer_test' before='-'>
                     <arguments>
                         <argument name='block_id' xsi:type='string'>footer-social-links-party</argument>
+                    </arguments>
+                </block>
+
+                <block class="Magento\Cms\Block\Block" as='footer_test_us' before='-'>
+                    <arguments>
+                        <argument name='block_id' xsi:type='string'>footer-social-links-party-us</argument>
                     </arguments>
                 </block>
             </container>
