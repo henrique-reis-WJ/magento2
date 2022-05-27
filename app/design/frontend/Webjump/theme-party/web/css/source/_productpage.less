@@ -1,0 +1,38 @@
+@menu-button-color: #6215e1;
+@hover-button-color: #4c0fbf;
+
+    .action.primary, 
+    .action.tocart.primary,
+    .action.primary.checkout,
+    .button.action.continue.primary{
+        background: @menu-button-color;
+        border-color: @menu-button-color;
+
+        &:hover{
+            background: @hover-button-color;
+            border-color: @hover-button-color;
+            transform: scale(1.03);
+        }
+
+        &:active{
+            background: @menu-button-color;
+            border-color: @menu-button-color;
+        }
+        &:focus{
+            background: @menu-button-color;
+            border-color: @menu-button-color;
+        }
+    }
+
+    .modal-footer{
+        .action-primary.action-accept{
+            background: @menu-button-color;
+            border-color: @menu-button-color;
+        }
+    }
+    
+    .product-info-main{
+        .custom-product-page{
+            margin-bottom: 20px;
+        }
+    }
