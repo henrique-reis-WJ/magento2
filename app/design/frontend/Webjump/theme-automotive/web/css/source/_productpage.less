@@ -1,4 +1,5 @@
 @import '_colors.less';
+
 body{
     font-family: 'Montserrat-Regular' !important;
 }
@@ -19,7 +20,10 @@ body{
 .action.tocart,
 .action.action-update,
 .action.action-login.secondary,
-.action.reload.captcha-reload {
+.action.reload.captcha-reload,
+.action.action-show-popup,
+.action.action-edit-address,
+.action.action-select-shipping-item {
     background: @smoke;
     border-color: @black;
     color: @white;
@@ -78,6 +82,14 @@ body{
         &::after{
             border-color: @smoke;
         }
+    }
+}
+
+.opc-wrapper .shipping-address-item.selected-item{
+    border-color: @smoke;
+
+    &::after{
+        background: @smoke;
     }
 }
 
