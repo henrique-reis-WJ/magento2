@@ -1,45 +1,63 @@
 @import '_colors.less';
 
-    .action.primary, 
-    .action.tocart.primary,
-    .action.primary.checkout,
-    .button.action.continue.primary,
-    .review-form .action.submit.primary,
-    .action.update,
-    .action.share,
-    .action.tocart {
+body{
+    font-family: 'Montserrat-Regular' !important;
+}
+
+.action.showcart{
+    .counter.qty{
+        background: @black !important;
+    }
+}
+
+.action.primary, 
+.action.tocart.primary,
+.action.primary.checkout,
+.button.action.continue.primary,
+.review-form .action.submit.primary,
+.action.update,
+.action.share,
+.action.tocart,
+.action.action-update {
+    background: @smoke;
+    border-color: @black;
+    color: @white;
+    font-family: 'Montserrat-Regular' !important;
+
+    &:hover{
+        background: @black;
+        border-color: @black;
+        color: @white;
+        transform: scale(1.03);
+    }
+
+    &:active{
         background: @smoke;
         border-color: @black;
         color: @white;
-
-        &:hover{
-            background: @black;
-            border-color: @black;
-            color: @white;
-            transform: scale(1.03);
-        }
-
-        &:active{
-            background: @smoke;
-            border-color: @black;
-            color: @white;
-        }
-        &:focus{
-            background: @smoke;
-            border-color: @black;
-            color: @white;
-        }
     }
+    &:focus{
+        background: @smoke;
+        border-color: @black;
+        color: @white;
+    }
+}
 
-    .modal-footer{
-        .action-primary.action-accept{
-            background: @smoke;
-            border-color: @black;
-        }
+.action.action-apply{
+    background: @smoke !important;
+    color: @white !important;
+    box-shadow: unset !important;
+}
+
+.modal-footer{
+    .action-primary.action-accept{
+        background: @smoke;
+        border-color: @black;
     }
-    
-    .product-info-main{
-        .custom-product-page{
-            margin-bottom: 20px;
-        }
+}
+
+.product-info-main{
+    .custom-product-page{
+        margin-bottom: 20px;
     }
+}
