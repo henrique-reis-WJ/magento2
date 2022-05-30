@@ -1,0 +1,96 @@
+body {
+  font-family: 'Poppins-Regular' !important;
+}
+.action.primary,
+.action.tocart.primary,
+.action.primary.checkout,
+.button.action.continue.primary,
+.review-form .action.submit.primary,
+.action.update,
+.action.share,
+.action.tocart,
+.action.action-update,
+.action.action-login.secondary,
+.action.reload.captcha-reload {
+  background: #6215e1;
+  border-color: #6215e1;
+  color: #ffffff;
+  font-family: 'Poppins-Regular' !important;
+  border-radius: 10px;
+}
+.action.primary:hover,
+.action.tocart.primary:hover,
+.action.primary.checkout:hover,
+.button.action.continue.primary:hover,
+.review-form .action.submit.primary:hover,
+.action.update:hover,
+.action.share:hover,
+.action.tocart:hover,
+.action.action-update:hover,
+.action.action-login.secondary:hover,
+.action.reload.captcha-reload:hover {
+  background: #4c0fbf;
+  border-color: #4c0fbf;
+  transform: scale(1.03);
+  color: #ffffff;
+}
+.action.primary:active,
+.action.tocart.primary:active,
+.action.primary.checkout:active,
+.button.action.continue.primary:active,
+.review-form .action.submit.primary:active,
+.action.update:active,
+.action.share:active,
+.action.tocart:active,
+.action.action-update:active,
+.action.action-login.secondary:active,
+.action.reload.captcha-reload:active {
+  background: #6215e1;
+  border-color: #6215e1;
+  color: #ffffff;
+}
+.action.primary:focus,
+.action.tocart.primary:focus,
+.action.primary.checkout:focus,
+.button.action.continue.primary:focus,
+.review-form .action.submit.primary:focus,
+.action.update:focus,
+.action.share:focus,
+.action.tocart:focus,
+.action.action-update:focus,
+.action.action-login.secondary:focus,
+.action.reload.captcha-reload:focus {
+  background: #6215e1;
+  border-color: #6215e1;
+  color: #ffffff;
+}
+.action.subscribe.primary {
+  border-radius: unset;
+}
+.action.action-apply,
+.action.apply.primary {
+  background: #6215e1 !important;
+  color: #ffffff !important;
+  box-shadow: unset !important;
+  border-radius: 0 5px 5px 0 !important;
+}
+.action.action-apply:hover,
+.action.apply.primary:hover {
+  background: #4c0fbf !important;
+  transform: scale(1.03) !important;
+}
+.action.create.primary,
+.action.login.primary,
+.action.update,
+.action.action-login.secondary,
+.action.reload.captcha-reload,
+.action.submit.primary {
+  border-radius: 5px !important;
+}
+.modal-footer .action-primary.action-accept {
+  background: #6215e1;
+  border-color: #6215e1;
+}
+.product-info-main .custom-product-page {
+  margin-bottom: 20px;
+}

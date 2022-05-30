@@ -1,8 +1,16 @@
+.sections.nav-sections {
+  margin-bottom: 0;
+}
 .section-item-content {
   background-color: #de6100;
 }
 .section-item-content .navigation {
   background-color: #de6100;
+}
+.section-item-content .navigation .level0.parent > .level-top > .ui-menu-icon {
+  margin: 0;
+  padding: 0;
+  top: 8px;
 }
 .section-item-content .navigation ul li a {
   background-color: #de6100;
@@ -22,9 +30,6 @@
 }
 .section-item-content .navigation .level0 .submenu a:hover {
   background-color: #531707;
-}
-.navigation .level0.parent > .level-top > .ui-menu-icon:after {
-  display: none;
 }
 @media (max-width: 767px) {
   .section-item-content {

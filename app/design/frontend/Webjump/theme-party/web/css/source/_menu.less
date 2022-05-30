@@ -14,9 +14,9 @@
         background-color: @catalog-topnav-background-color;
 
         .level0.parent>.level-top>.ui-menu-icon{
-            margin: 0;
-            padding: 0;
-            top: 8px;
+            &::after{
+                content: '';
+            }
         }
 
         ul {
