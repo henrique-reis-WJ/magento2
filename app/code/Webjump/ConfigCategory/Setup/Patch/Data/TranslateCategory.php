@@ -30,8 +30,16 @@ class TranslateCategory implements DataPatchInterface
         ];
     }
 
+    public function getCategoryId(string $urlKey) {
+        $categoryFactory = $this->categoryFactory->create();
+        $category = $categoryFactory->loadByAttribute('url_key', $urlKey);
+        $categoryId = $category->getId();
+
+        return $categoryId;
+    }
+
     public function apply()
     {
-        
+
     }
 }
