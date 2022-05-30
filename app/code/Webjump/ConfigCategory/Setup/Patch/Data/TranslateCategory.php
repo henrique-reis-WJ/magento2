@@ -73,6 +73,7 @@ class TranslateCategory implements DataPatchInterface
         ->getStore("automotive_store_view_us")
         ->getId();
 
+        // Automotivo
         $this->translate("Monte O Seu VOLT3", "Customize your VOLT3", $automotiveStoreId);
         $this->translate("Especificações técnicas do VOLT3", "VOLT3 Technical specifications", $automotiveStoreId);
         $this->translate("Monte O Seu VOLTSX", "Customize your VOLTSX", $automotiveStoreId);
@@ -83,6 +84,14 @@ class TranslateCategory implements DataPatchInterface
         $this->translate("Calha de Chuva", "Rain Gutter", $automotiveStoreId);
         $this->translate("Central Multimídia", "multimedia center", $automotiveStoreId);
         $this->translate("SUPORTE", "SUPPORT", $automotiveStoreId);
+
+        // Festas
+        $this->translate("DATAS COMEMORATIVAS", "COMMEMORATIVE DATES", $partyStoreId);
+        $this->translate("Páscoa", "Easter", $partyStoreId);
+        $this->translate("FESTA TEMÁTICA", "THEME PARTY", $partyStoreId);
+        $this->translate("Carnaval", "Carnival", $partyStoreId);
+        $this->translate("BALÕES E BEXIGAS", "BALLOONS AND BLADDERS", $partyStoreId);
+        $this->translate("DECORAÇÃO", "DECORATION", $partyStoreId);
 
         $this->moduleDataSetup->getConnection()->endSetup();
     }
