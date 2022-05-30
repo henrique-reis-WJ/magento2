@@ -47,7 +47,7 @@
                 height: 22px;
                 color: @header-text-color;
                 font-family: 'Poppins-Regular';
-                font-size: 13px;
+                font-size: 16px;
                 font-weight: 400;
                 font-style: normal;
                 letter-spacing: normal;
@@ -63,8 +63,19 @@
     }
 }
 
-.customer-welcome {
+.customer-menu {
+    .header.links {
+        li {
 
+            a,
+            a:visited {
+                font-size: 13px !important;
+            }
+        }
+    }
+}
+
+.customer-welcome {
     .action.switch {
         height: 22px;
         color: @header-text-color;
