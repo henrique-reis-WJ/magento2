@@ -85,7 +85,7 @@ class TranslateCategory implements DataPatchInterface
         $this->translate("Especificações técnicas do ROADMASTER", "ROADMASTER Technical specifications", $automotiveStoreId);
         $this->translate("ACESSÓRIOS", "ACCESSORIES", $automotiveStoreId);
         $this->translate("Calha de Chuva", "Rain Gutter", $automotiveStoreId);
-        $this->translate("Central Multimídia", "multimedia center", $automotiveStoreId);
+        $this->translate("Central Multimídia", "Multimedia Center", $automotiveStoreId);
         $this->translate("SUPORTE", "SUPPORT", $automotiveStoreId);
 
         // Festas
