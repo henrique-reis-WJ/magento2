@@ -64,6 +64,24 @@ body{
     }
 }
 
+.opc-progress-bar-item._active{
+    &::before{
+        background: @smoke;
+        border-color: @smoke;
+    }
+
+    span{
+        &::before{
+            background: @smoke;
+            border-color: @smoke;
+        }
+
+        &::after{
+            border-color: @smoke;
+        }
+    }
+}
+
 .product-info-main{
     .custom-product-page{
         margin-bottom: 20px;
