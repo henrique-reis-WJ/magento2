@@ -1,37 +1,88 @@
 @import '_colors.less';
+body{
+    font-family: 'Montserrat-Regular' !important;
+}
 
-    .action.primary, 
-    .action.tocart.primary,
-    .action.primary.checkout,
-    .button.action.continue.primary{
+.action.showcart{
+    .counter.qty{
+        background: @black !important;
+    }
+}
+
+.action.primary, 
+.action.tocart.primary,
+.action.primary.checkout,
+.button.action.continue.primary,
+.review-form .action.submit.primary,
+.action.update,
+.action.share,
+.action.tocart,
+.action.action-update,
+.action.action-login.secondary,
+.action.reload.captcha-reload {
+    background: @smoke;
+    border-color: @black;
+    color: @white;
+    font-family: 'Montserrat-Regular' !important;
+
+    &:hover{
+        background: @black;
+        border-color: @black;
+        color: @white;
+        transform: scale(1.03);
+    }
+
+    &:active{
         background: @smoke;
         border-color: @black;
+        color: @white;
+    }
+    &:focus{
+        background: @smoke;
+        border-color: @black;
+        color: @white;
+    }
+}
 
-        &:hover{
-            background: @black;
-            border-color: @black;
-            transform: scale(1.03);
-        }
+.action.action-apply,
+.action.apply.primary{
+    background: @smoke !important;
+    color: @white !important;
+    box-shadow: unset !important;
 
-        &:active{
-            background: @smoke;
-            border-color: @black;
-        }
-        &:focus{
-            background: @smoke;
-            border-color: @black;
-        }
+    &:hover{
+        background: @black !important;
+        transform: scale(1.03) !important;
+    }
+}
+
+.modal-footer{
+    .action-primary.action-accept{
+        background: @smoke;
+        border-color: @black;
+    }
+}
+
+.opc-progress-bar-item._active{
+    &::before{
+        background: @smoke;
+        border-color: @smoke;
     }
 
-    .modal-footer{
-        .action-primary.action-accept{
+    span{
+        &::before{
             background: @smoke;
-            border-color: @black;
+            border-color: @smoke;
+        }
+
+        &::after{
+            border-color: @smoke;
         }
     }
-    
-    .product-info-main{
-        .custom-product-page{
-            margin-bottom: 20px;
-        }
+}
+
+.product-info-main{
+    .custom-product-page{
+        margin-bottom: 20px;
     }
+}

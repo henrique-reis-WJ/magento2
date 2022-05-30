@@ -1,0 +1,70 @@
+.pagebuilder__carousel-products .product-items .slick-prev,
+.pagebuilder__carousel-products .product-items .slick-next {
+  background: transparent !important;
+}
+.pagebuilder__carousel-products .product-items .slick-prev::before,
+.pagebuilder__carousel-products .product-items .slick-next::before {
+  color: #ffffff !important;
+}
+.pagebuilder__carousel-products .slick-track .slick-slide {
+  text-align: center !important;
+}
+.pagebuilder__carousel-products .slick-track .product-item {
+  text-align: center !important;
+}
+.pagebuilder__carousel-products .slick-track .product-item .product-item-details {
+  text-align: center;
+}
+.pagebuilder__carousel-products .slick-track .product-item .product-item-details .product-item-name .product-item-link {
+  font-family: 'Montserrat-Regular';
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 1.5px;
+  line-height: normal;
+  text-align: center;
+  text-transform: uppercase;
+}
+.pagebuilder__carousel-products .slick-track .product-item .product-item-details .price-box .price-container .price-label {
+  font-family: 'Montserrat-Regular';
+  color: #ffffff;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px;
+  text-align: center;
+  line-height: normal;
+  letter-spacing: 0.9px;
+}
+.pagebuilder__carousel-products .slick-track .product-item .product-item-details .price-box .price-container .price-wrapper .price {
+  font-family: 'Montserrat-Regular';
+  color: #ffffff;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px;
+  text-align: center;
+  line-height: normal;
+  letter-spacing: 0.9px;
+}
+.pagebuilder__carousel-products .slick-track .product-item .product-item-details .product-item-inner .product-item-actions .actions-primary {
+  width: 100%;
+}
+.pagebuilder__carousel-products .slick-track .product-item .product-item-details .product-item-inner .product-item-actions .actions-primary .action.tocart.primary {
+  border-radius: 90px;
+  border: 2px solid #ffffff;
+  height: 45px;
+  background: transparent;
+}
+.pagebuilder__carousel-products .slick-track .product-item .product-item-details .product-item-inner .product-item-actions .actions-primary .action.tocart.primary span {
+  font-family: 'Montserrat-Regular';
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: -0.16px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.pagebuilder__carousel-products .slick-track .product-item .product-item-details .product-item-inner .product-item-actions .actions-secondary {
+  display: none;
+}
