@@ -15,8 +15,6 @@
                 <argument name='logo_file' xsi:type='string'>images/logo.png</argument>
             </arguments>
         </referenceBlock>
-        <referenceBlock name="header" remove="true"/>
-
 
         <referenceContainer name="footer">
 
