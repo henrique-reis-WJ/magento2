@@ -14,11 +14,14 @@ body{
 .action.update,
 .action.share,
 .action.tocart,
-.action.action-update {
+.action.action-update,
+.action.action-login.secondary,
+.action.reload.captcha-reload {
     background: @menu-button-color;
     border-color: @menu-button-color;
     color: @catalog-topnav-text-color;
     font-family: 'Poppins-Regular' !important;
+    border-radius: 10px;
 
     &:hover{
         background: @hover-button-color;
@@ -39,10 +42,21 @@ body{
     }
 }
 
-.action.action-apply{
+.action.subscribe.primary{
+    border-radius:unset;
+}
+
+.action.action-apply,
+.action.apply.primary {
     background: @menu-button-color !important;
     color: @catalog-topnav-text-color !important;
     box-shadow: unset !important;
+    border-radius: 0 5px 5px 0 !important;
+
+    &:hover{
+        background: @hover-button-color !important;
+        transform: scale(1.03) !important;
+    }
 }
 
 .modal-footer{
