@@ -87,20 +87,20 @@ class CreateCategory implements DataPatchInterface
         //Categoria VOLT3
         
         $this->createCategories($this->subCategories('VOLT3', 'volt3', 'automotivo')); // Categoria, URLKey, ParentCategory
-        $this->createCategories($this->subCategories('Monte O Seu', 'monte-o-seu3', 'volt3'));
-        $this->createCategories($this->subCategories('Especificações técnicas', 'especificacoes-tecnicas3', 'volt3'));
+        $this->createCategories($this->subCategories('Monte O Seu VOLT3', 'monte-o-seu3', 'volt3'));
+        $this->createCategories($this->subCategories('Especificações técnicas do VOLT3', 'especificacoes-tecnicas3', 'volt3'));
         
         //Categoria VOLT SX
 
         $this->createCategories($this->subCategories('VOLT SX', 'voltsx', 'automotivo')); // Categoria, URLKey, ParentCategory
-        $this->createCategories($this->subCategories('Monte O Seu', 'monte-o-seusx', 'voltsx'));
-        $this->createCategories($this->subCategories('Especificações técnicas', 'especificacoes-tecnicassx', 'voltsx'));
+        $this->createCategories($this->subCategories('Monte O Seu VOLTSX', 'monte-o-seusx', 'voltsx'));
+        $this->createCategories($this->subCategories('Especificações técnicas do VOLTSX', 'especificacoes-tecnicassx', 'voltsx'));
 
         //Categoria ROADMASTER
 
         $this->createCategories($this->subCategories('ROADMASTER', 'roadmaster', 'automotivo')); // Categoria, URLKey, ParentCategory
-        $this->createCategories($this->subCategories('Monte O Seu', 'monte-o-seuroad', 'roadmaster'));
-        $this->createCategories($this->subCategories('Especificações técnicas', 'especificacoes-tecnicasroad', 'roadmaster'));
+        $this->createCategories($this->subCategories('Monte O Seu ROADMASTER', 'monte-o-seuroad', 'roadmaster'));
+        $this->createCategories($this->subCategories('Especificações técnicas do ROADMASTER', 'especificacoes-tecnicasroad', 'roadmaster'));
 
 
         //Categoria ACCESSORIES
