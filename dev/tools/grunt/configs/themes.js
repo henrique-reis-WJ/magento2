@@ -50,5 +50,27 @@ module.exports = {
             'css/styles'
         ],
         dsl: 'less'
+    },
+
+    automotive: {
+        area: 'frontend',
+        name: 'Webjump/theme-automotive',
+        locale: 'en_US',
+        files: [
+            'css/styles-m',
+            'css/styles-l'
+        ],
+        dsl: 'less'
+    },
+    
+    party: {
+        area: 'frontend',
+        name: 'Webjump/theme-party',
+        locale: 'en_US',
+        files: [
+            'css/styles-m',
+            'css/styles-l'
+        ],
+        dsl: 'less'
     }
 };

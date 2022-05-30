@@ -1,0 +1,97 @@
+body {
+  font-family: 'Montserrat-Regular' !important;
+}
+.action.showcart .counter.qty {
+  background: #000000 !important;
+}
+.action.primary,
+.action.tocart.primary,
+.action.primary.checkout,
+.button.action.continue.primary,
+.review-form .action.submit.primary,
+.action.update,
+.action.share,
+.action.tocart,
+.action.action-update,
+.action.action-login.secondary,
+.action.reload.captcha-reload {
+  background: #191818;
+  border-color: #000000;
+  color: #ffffff;
+  font-family: 'Montserrat-Regular' !important;
+}
+.action.primary:hover,
+.action.tocart.primary:hover,
+.action.primary.checkout:hover,
+.button.action.continue.primary:hover,
+.review-form .action.submit.primary:hover,
+.action.update:hover,
+.action.share:hover,
+.action.tocart:hover,
+.action.action-update:hover,
+.action.action-login.secondary:hover,
+.action.reload.captcha-reload:hover {
+  background: #000000;
+  border-color: #000000;
+  color: #ffffff;
+  transform: scale(1.03);
+}
+.action.primary:active,
+.action.tocart.primary:active,
+.action.primary.checkout:active,
+.button.action.continue.primary:active,
+.review-form .action.submit.primary:active,
+.action.update:active,
+.action.share:active,
+.action.tocart:active,
+.action.action-update:active,
+.action.action-login.secondary:active,
+.action.reload.captcha-reload:active {
+  background: #191818;
+  border-color: #000000;
+  color: #ffffff;
+}
+.action.primary:focus,
+.action.tocart.primary:focus,
+.action.primary.checkout:focus,
+.button.action.continue.primary:focus,
+.review-form .action.submit.primary:focus,
+.action.update:focus,
+.action.share:focus,
+.action.tocart:focus,
+.action.action-update:focus,
+.action.action-login.secondary:focus,
+.action.reload.captcha-reload:focus {
+  background: #191818;
+  border-color: #000000;
+  color: #ffffff;
+}
+.action.action-apply,
+.action.apply.primary {
+  background: #191818 !important;
+  color: #ffffff !important;
+  box-shadow: unset !important;
+}
+.action.action-apply:hover,
+.action.apply.primary:hover {
+  background: #000000 !important;
+  transform: scale(1.03) !important;
+}
+.modal-footer .action-primary.action-accept {
+  background: #191818;
+  border-color: #000000;
+}
+.opc-progress-bar-item._active::before {
+  background: #191818;
+  border-color: #191818;
+}
+.opc-progress-bar-item._active span::before {
+  background: #191818;
+  border-color: #191818;
+}
+.opc-progress-bar-item._active span::after {
+  border-color: #191818;
+}
+.product-info-main .custom-product-page {
+  margin-bottom: 20px;
+}
