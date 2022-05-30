@@ -150,8 +150,14 @@
                 }
             }
 
-            .greet.welcome {
-                display: none;
+            .greet.welcome[data-bind="scope: 'customer'"] {
+                display: block;
+                margin-top: 2px;
+                margin-right: 10px;
+
+                .not-logged-in {
+                    display: none;
+                }
             }
         }
 
@@ -178,6 +184,22 @@
                 position: absolute;
                 top: -13px;
                 right: -14px;
+            }
+        }
+    }
+}
+
+.page-main {
+    .columns {
+        .checkout-container {
+            .authentication-wrapper {
+                margin-top: -80px;
+                button {
+                    font-family: "Montserrat-Regular";
+                    font-size: 16px;
+                    color: @black;
+                    font-weight: 700;
+                }
             }
         }
     }
