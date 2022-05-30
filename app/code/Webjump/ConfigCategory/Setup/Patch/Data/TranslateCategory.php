@@ -74,7 +74,15 @@ class TranslateCategory implements DataPatchInterface
         ->getId();
 
         $this->translate("Monte O Seu VOLT3", "Customize your VOLT3", $automotiveStoreId);
-        $this->translate("Especificações técnicas do VOLT3", "Rain Gutter", $automotiveStoreId);
+        $this->translate("Especificações técnicas do VOLT3", "VOLT3 Technical specifications", $automotiveStoreId);
+        $this->translate("Monte O Seu VOLTSX", "Customize your VOLTSX", $automotiveStoreId);
+        $this->translate("Especificações técnicas do VOLTSX", "VOLTSX Technical specifications", $automotiveStoreId);
+        $this->translate("Monte O Seu ROADMASTER", "Customize your ROADMASTER", $automotiveStoreId);
+        $this->translate("Especificações técnicas do ROADMASTER", "ROADMASTER Technical specifications", $automotiveStoreId);
+        $this->translate("ACESSÓRIOS", "ACCESSORIES", $automotiveStoreId);
+        $this->translate("Calha de Chuva", "Rain Gutter", $automotiveStoreId);
+        $this->translate("Central Multimídia", "multimedia center", $automotiveStoreId);
+        $this->translate("SUPORTE", "SUPPORT", $automotiveStoreId);
 
         $this->moduleDataSetup->getConnection()->endSetup();
     }
