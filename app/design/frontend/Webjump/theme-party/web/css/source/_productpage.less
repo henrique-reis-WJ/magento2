@@ -2,46 +2,58 @@
 @hover-button-color: #4c0fbf;
 @catalog-topnav-text-color: #ffffff;
 
-    .action.primary, 
-    .action.tocart.primary,
-    .action.primary.checkout,
-    .button.action.continue.primary,
-    .review-form .action.submit.primary,
-    .action.update,
-    .action.share,
-    .action.tocart{
+body{
+    font-family: 'Poppins-Regular' !important;
+}
+
+.action.primary, 
+.action.tocart.primary,
+.action.primary.checkout,
+.button.action.continue.primary,
+.review-form .action.submit.primary,
+.action.update,
+.action.share,
+.action.tocart,
+.action.action-update {
+    background: @menu-button-color;
+    border-color: @menu-button-color;
+    color: @catalog-topnav-text-color;
+    font-family: 'Poppins-Regular' !important;
+
+    &:hover{
+        background: @hover-button-color;
+        border-color: @hover-button-color;
+        transform: scale(1.03);
+        color: @catalog-topnav-text-color;
+    }
+
+    &:active{
         background: @menu-button-color;
         border-color: @menu-button-color;
         color: @catalog-topnav-text-color;
-
-        &:hover{
-            background: @hover-button-color;
-            border-color: @hover-button-color;
-            transform: scale(1.03);
-            color: @catalog-topnav-text-color;
-        }
-
-        &:active{
-            background: @menu-button-color;
-            border-color: @menu-button-color;
-            color: @catalog-topnav-text-color;
-        }
-        &:focus{
-            background: @menu-button-color;
-            border-color: @menu-button-color;
-            color: @catalog-topnav-text-color;
-        }
     }
+    &:focus{
+        background: @menu-button-color;
+        border-color: @menu-button-color;
+        color: @catalog-topnav-text-color;
+    }
+}
 
-    .modal-footer{
-        .action-primary.action-accept{
-            background: @menu-button-color;
-            border-color: @menu-button-color;
-        }
+.action.action-apply{
+    background: @menu-button-color !important;
+    color: @catalog-topnav-text-color !important;
+    box-shadow: unset !important;
+}
+
+.modal-footer{
+    .action-primary.action-accept{
+        background: @menu-button-color;
+        border-color: @menu-button-color;
     }
-    
-    .product-info-main{
-        .custom-product-page{
-            margin-bottom: 20px;
-        }
+}
+
+.product-info-main{
+    .custom-product-page{
+        margin-bottom: 20px;
     }
+}
