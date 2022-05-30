@@ -106,8 +106,8 @@ class CreateCategory implements DataPatchInterface
         //Categoria ACCESSORIES
 
         $this->createCategories($this->subCategories('ACESSÓRIOS', 'acessorios', 'automotivo')); // Categoria, URLKey, ParentCategory
-        $this->createCategories($this->subCategories('Calha de Chuva', 'calha', 'accessories'));
-        $this->createCategories($this->subCategories('Central Multimídia', 'central', 'accessories'));
+        $this->createCategories($this->subCategories('Calha de Chuva', 'calha', 'acessorios'));
+        $this->createCategories($this->subCategories('Central Multimídia', 'central', 'acessorios'));
         
         //Categoria SUPPORT
 

@@ -7,6 +7,7 @@ use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Api\SearchCriteriaBuilder;
 use Magento\Catalog\Api\CategoryListInterface;
 use Magento\Catalog\Model\CategoryFactory;
+use Magento\Store\Model\StoreManagerInterface;
 
 class TranslateCategory implements DataPatchInterface
 {
@@ -21,7 +22,8 @@ class TranslateCategory implements DataPatchInterface
         CategoryRepository $categoryRepository,
         SearchCriteriaBuilder $searchCriteriaBuilder,
         CategoryListInterface $categoryList,
-        CategoryFactory $categoryFactory
+        CategoryFactory $categoryFactory,
+        StoreManagerInterface $storeManager
 
     ) {
         $this->moduleDataSetup = $moduleDataSetup;
@@ -29,6 +31,7 @@ class TranslateCategory implements DataPatchInterface
         $this->searchCriteriaBuilder = $searchCriteriaBuilder;
         $this->categoryList = $categoryList;
         $this->categoryFactory = $categoryFactory;
+        $this->storeManager = $storeManager;
     }
 
     public function getAliases()
@@ -51,7 +54,7 @@ class TranslateCategory implements DataPatchInterface
         return $categoryId;
     }
 
-    public function translate(string $categoryName, string $newName, int $storeId)
+    public function translate(string $categoryName, string $newName, $storeId)
     {
 
   $category = $this->categoryFactory->create()->getCollection()
@@ -88,6 +91,7 @@ class TranslateCategory implements DataPatchInterface
         // Festas
         $this->translate("DATAS COMEMORATIVAS", "COMMEMORATIVE DATES", $partyStoreId);
         $this->translate("Páscoa", "Easter", $partyStoreId);
+        $this->translate("Natal", "Christmas", $partyStoreId);
         $this->translate("FESTA TEMÁTICA", "THEME PARTY", $partyStoreId);
         $this->translate("Carnaval", "Carnival", $partyStoreId);
         $this->translate("BALÕES E BEXIGAS", "BALLOONS AND BLADDERS", $partyStoreId);
