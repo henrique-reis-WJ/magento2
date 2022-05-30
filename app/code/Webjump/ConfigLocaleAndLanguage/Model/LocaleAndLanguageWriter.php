@@ -1,6 +1,6 @@
 <?php
 
-namespace Webjump\ConfigLocaleAndLanguage;
+namespace Webjump\ConfigLocaleAndLanguage\Model;
 
 use Magento\Framework\App\Config\Storage\WriterInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
@@ -40,7 +40,7 @@ class LocaleAndLanguageWriter
         $this->moduleDataSetup = $moduleDataSetup;
     }
 
-    public function setLocaleAndLanguageBr($storeId)
+    public function setLocaleAndLanguageBr(int $storeId)
     {
         $this->moduleDataSetup->getConnection()->startSetup();
 
@@ -96,7 +96,7 @@ class LocaleAndLanguageWriter
         $this->moduleDataSetup->getConnection()->endSetup();
     }
 
-    public function setLocaleAndLanguageUs($storeId)
+    public function setLocaleAndLanguageUs(int $storeId)
     {
         $this->moduleDataSetup->getConnection()->startSetup();
 
