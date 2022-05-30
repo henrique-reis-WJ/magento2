@@ -18,7 +18,9 @@ body{
 .action.update,
 .action.share,
 .action.tocart,
-.action.action-update {
+.action.action-update,
+.action.action-login.secondary,
+.action.reload.captcha-reload {
     background: @smoke;
     border-color: @black;
     color: @white;
@@ -43,10 +45,16 @@ body{
     }
 }
 
-.action.action-apply{
+.action.action-apply,
+.action.apply.primary{
     background: @smoke !important;
     color: @white !important;
     box-shadow: unset !important;
+
+    &:hover{
+        background: @black !important;
+        transform: scale(1.03) !important;
+    }
 }
 
 .modal-footer{
