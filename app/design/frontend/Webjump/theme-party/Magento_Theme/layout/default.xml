@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="3columns"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_width" xsi:type="number">226</argument>
+                <argument name="logo_height" xsi:type="number">84</argument>
+                <argument name='logo_file' xsi:type='string'>images/logo.png</argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceContainer name="footer">
+
+            <container name='footer.links.wrapper' htmlTag='div' htmlClass='footer__links-wrapper'>
+                <block class="Magento\Cms\Block\Block" as='footer_links' before='-'>
+                    <arguments>
+                        <argument name='block_id' xsi:type='string'>footer-links-party</argument>
+                    </arguments>
+                </block>
+
+                <block class="Magento\Cms\Block\Block" as='footer_links_us' before='-'>
+                    <arguments>
+                        <argument name='block_id' xsi:type='string'>footer-links-party-us</argument>
+                    </arguments>
+                </block>
+            </container>
+
+            <container name='footer.newsletter.social' htmlTag='div' htmlClass='footer__newsletter-social'>
+                <block class="Magento\Cms\Block\Block" as='footer_social_links' after='-'>
+
+                </block>
+            </container>
+
+            <container name='footer.test' htmlTag='div' htmlClass='footer__test'>
+                <block class="Magento\Cms\Block\Block" as='footer_test' before='-'>
+                    <arguments>
+                        <argument name='block_id' xsi:type='string'>footer-social-links-party</argument>
+                    </arguments>
+                </block>
+
+                <block class="Magento\Cms\Block\Block" as='footer_test_us' before='-'>
+                    <arguments>
+                        <argument name='block_id' xsi:type='string'>footer-social-links-party-us</argument>
+                    </arguments>
+                </block>
+            </container>
+
+        </referenceContainer>
+
+        <move element="form.subscribe" destination="footer.newsletter.social" before="-"/>
+
+        <referenceBlock name='footer_links' remove='true'/>
+        <referenceBlock name='copyright' remove='true'/>
+
+    </body>
+</page>    

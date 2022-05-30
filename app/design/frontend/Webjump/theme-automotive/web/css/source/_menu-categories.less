@@ -1,0 +1,254 @@
+@import '_colors.less';
+
+.sections.nav-sections{
+    margin-bottom: 0;
+}
+
+.section-items{
+    font-family: 'Montserrat-Regular';
+
+    .section-item-content{
+        display: block;
+    }
+
+    background-color: @smoke;
+
+    .navigation{
+        width: 100%;
+        height: 82px;
+        padding: 30px 0;
+        position: relative;
+        background-color: @smoke;
+    
+        .level0.active{
+    
+            .level-top {
+                border: none;
+            }
+    
+            a:not(.ui-state-active) {
+                border: none;
+            }
+        }
+
+        .level0.has-active {
+            .level-top{
+                border-color: @light-grey;
+                border-width: 0 0 2px;
+
+            }
+        }
+    
+        .level0.parent>.level-top>.ui-menu-icon{
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul{
+            display: flex;
+            justify-content: space-between;
+    
+            li.level0{
+                position: relative;
+    
+                a.level-top.ui-menu-item-wrapper{
+                    color: @white;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    font-size: 18px;
+                    font-weight:700;
+                    line-height: normal;
+                    text-align: center;
+                    font-style:normal;
+                    letter-spacing: normal;
+                    font-family: 'Montserrat-Bold';
+                    
+                    span{
+                        padding: 30px 0;
+                    }
+    
+                    &:hover{
+                        cursor: pointer;
+                        color: @light-blue;
+                        transition: 0.3s;
+                    }
+                    &:active{
+                        color: @blue;
+                        transition: 0.5s;
+                    }
+                }
+            }
+        }
+    
+        .level0 .submenu .active > a{
+            border-color: @light-grey;
+            border-width: 0 0 0 2px;
+        }
+
+        .level0.submenu{
+            background: @light-grey;
+    
+            li{
+                border-bottom: solid 1px @grey;
+    
+                &:last-child{
+                    border-bottom: none;
+                }
+    
+                a{
+                    color: @smoke;
+                    text-decoration: none;
+                    font-size: 16px;
+                    font-weight:400;
+                    line-height: normal;
+                    text-align: left;
+                    font-style:normal;
+                    letter-spacing: normal;
+    
+                    &:hover{
+                        background: @white;
+                        color: @black;
+                        transition: 0.3s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    .sections.nav-sections{
+        background-color: @smoke;
+
+        .section-items{
+            .nav-sections-item-title{
+                border-color: @light-grey;
+                border-left-width: 1px;
+                background: @grey;
+                font-size: 1.22rem;
+
+                &:first-child{
+                    border-left-width: 0;
+                }
+    
+                a.nav-sections-item-switch {
+                    color: @white;
+                }
+            }
+
+            .nav-sections-item-title.active{
+                background: transparent;
+            }
+
+            .section-item-content{
+                
+                .navigation{
+                    padding: 0;
+                    height: auto;
+                    background: transparent;
+
+                    .level0 {
+                        border-top: none;
+                        border-bottom: none;
+                    }
+
+                    .level0.has-active {
+                        .level-top{
+                            border: none;
+                        }
+                    }
+
+                    ul{
+                        flex-direction: column;
+                            
+                        a.level-top.ui-menu-item-wrapper{
+                            font-size: 1.7rem;
+                            text-align: center;
+                            padding-right: 0;
+                            padding-left: 0;
+                        }
+                    }
+
+                    .level0.submenu{
+                        display: flex;
+                        flex-direction: column;
+                        background: transparent;
+
+                        li{
+                            border-bottom: none;
+
+                            a{
+                                font-size: 1.6rem;
+                                color:@white;
+                                text-align: center;
+                                padding-right: 0;
+                                padding-left: 0;
+                            }
+                        }
+                    }
+                }
+
+                ul.header.links {
+                    border-bottom: none;
+
+                    li.greet.welcome {
+                        display: none;
+                    }
+
+                    li{
+                        a {
+                            border-top: none;
+                            color:@white;
+                            font-size: 1.7rem;
+                        }
+                    }
+                }
+
+                .switcher-language{
+                    border-top: none;
+                    border-bottom: none;
+
+                    span{
+                        color:@white;
+                        font-size: 1.7rem;
+                    }
+
+                    .action.toggle.switcher-trigger{
+                        .view-automotive_store_view_us{
+
+                            span{
+                                font-weight: 400;
+                            }
+    
+                            &::after{
+                                color: @white;
+                                position: relative;
+                            }
+                        }
+                    }
+
+                    .view-automotivo_store_view_pt{
+
+                        span{
+                            font-weight: 400;
+                        }
+
+                        &::after{
+                            color: @white;
+                            position: relative;
+                        }
+                    }
+
+                    .switcher-dropdown{
+                        a{
+                            color: @light-blue;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,146 @@
+@catalog-topnav-background-color: #de6100;
+@catalog-topnav-text-color: #ffffff;
+@menu-button-color: #6215e1;
+@submenu-color-hover: #531707;
+
+.sections.nav-sections{
+    margin-bottom: 0;
+}
+
+.section-item-content {
+    background-color: @catalog-topnav-background-color;
+
+    .navigation {
+        background-color: @catalog-topnav-background-color;
+
+        .level0.parent>.level-top>.ui-menu-icon{
+            margin: 0;
+            padding: 0;
+            top: 8px;
+        }
+
+        ul {
+            li {
+                a {
+                    background-color: @catalog-topnav-background-color;
+
+                    span {
+                        height: 25px;
+                        color: @catalog-topnav-text-color;
+                        font-family: 'Poppins-Bold';
+                        font-size: 18px;
+                        font-weight: 700;
+                        font-style: normal;
+                        letter-spacing: normal;
+                        line-height: normal;
+                        text-align: left;
+                        /* Text style for "Datas come" */
+                        font-style: normal;
+                        letter-spacing: normal;
+                        line-height: normal;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+
+        .level0 .submenu a:hover {
+            background-color: @submenu-color-hover;
+        }
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    .section-item-content {
+        background-color: white;
+
+        .navigation {
+            background-color: white;
+
+            ul {
+
+                li {
+
+                    a {
+                        background-color: white;
+
+                        span {
+                            margin: 0;
+                            height: 22xp;
+                            color: black;
+                            font-family: 'Poppins-Regular';
+                            font-size: 16px;
+                            font-weight: 400;
+                            font-style: normal;
+                            letter-spacing: normal;
+                            line-height: normal;
+                            text-align: left;
+                            /* Text style for "Datas come" */
+                            font-style: normal;
+                            letter-spacing: normal;
+                            line-height: normal;
+                            text-transform: uppercase;
+
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    .navigation .parent .level-top:after {
+        display: none;
+
+    }
+
+    .nav-sections {
+        background-color: white;
+
+    }
+
+    .nav-sections-item-title {
+        background-color: white;
+
+    }
+
+    .navigation .level0 {
+        border-top: none;
+    }
+
+    .navigation li.level0:last-child {
+        border-bottom: none;
+    }
+
+    .nav-sections .header.links li>a {
+        border-top: none;
+    }
+
+    .nav-sections-item-switch {
+        color: @menu-button-color;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 819px) {
+    .section-item-content {
+        background-color: @catalog-topnav-background-color;
+
+        .navigation {
+
+            background-color: @catalog-topnav-background-color;
+
+            ul {
+
+
+                li {
+
+                    a {
+                        padding: 0 3px !important;
+                    }
+                }
+            }
+        }
+    }
+}

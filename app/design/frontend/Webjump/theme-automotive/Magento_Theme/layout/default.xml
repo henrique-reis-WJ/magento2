@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/logo_volk.png</argument>
+                <argument name="logo_alt" xsi:type="string">Logo automotivo</argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceContainer name="header.panel" remove="true" />
+        <move element="header.links" destination="header-wrapper" before="top.search"/>
+
+        <referenceContainer name="footer">
+            <container name='footer.links.wrapper' htmlTag='div' htmlClass='footer__links-wrapper'>
+                <block class="Magento\Cms\Block\Block" as='footer_links' before='-'>
+                    <arguments>
+                        <argument name='block_id' xsi:type='string'>footer-links-automotive</argument>
+                    </arguments>
+                </block>
+
+                <block class="Magento\Cms\Block\Block" as='footer_links_us' before='-'>
+                    <arguments>
+                        <argument name='block_id' xsi:type='string'>footer-links-automotive-us</argument>
+                    </arguments>
+                </block>
+            </container>
+
+            <container name='footer.newsletter.social' htmlTag='div' htmlClass='footer__newsletter-social'>
+                <block class="Magento\Cms\Block\Block" as='footer_social_links' after='form.subscribe'>
+                    <arguments>
+                        <argument name='block_id' xsi:type='string'>footer-social-links-automotive</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Cms\Block\Block" as='footer_social_links_us' after='form.subscribe'>
+                    <arguments>
+                        <argument name='block_id' xsi:type='string'>footer-social-links-automotive-us</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+
+        <move element="form.subscribe" destination="footer.newsletter.social" before="-"/>
+        <move element="store_language" destination='footer.newsletter.social' after='-'/>
+
+        <referenceBlock name='footer_links' remove='true'/>
+        <referenceBlock name='copyright' remove='true'/>
+    </body>
+</page>
