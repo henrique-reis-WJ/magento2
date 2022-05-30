@@ -1,5 +1,9 @@
 @import '_colors.less';
 
+.sections.nav-sections{
+    margin-bottom: 0;
+}
+
 .section-items{
     font-family: 'Montserrat-Regular';
 
@@ -131,7 +135,7 @@
     
                 a.nav-sections-item-switch {
                     color: @white;
-                  }
+                }
             }
 
             .nav-sections-item-title.active{
@@ -143,10 +147,9 @@
                 .navigation{
                     padding: 0;
                     height: auto;
-                    background-color: transparent;
+                    background: transparent;
 
                     .level0 {
-                        align-self: flex-start;
                         border-top: none;
                         border-bottom: none;
                     }
@@ -160,14 +163,12 @@
                     ul{
                         flex-direction: column;
                             
-                            a.level-top.ui-menu-item-wrapper{
-                                font-size: 1.7rem;
-                                text-align: left;
-
-                                span{
-                                    padding: 0;
-                                }
-                            }
+                        a.level-top.ui-menu-item-wrapper{
+                            font-size: 1.7rem;
+                            text-align: center;
+                            padding-right: 0;
+                            padding-left: 0;
+                        }
                     }
 
                     .level0.submenu{
@@ -181,6 +182,9 @@
                             a{
                                 font-size: 1.6rem;
                                 color:@white;
+                                text-align: center;
+                                padding-right: 0;
+                                padding-left: 0;
                             }
                         }
                     }
@@ -209,6 +213,20 @@
                     span{
                         color:@white;
                         font-size: 1.7rem;
+                    }
+
+                    .action.toggle.switcher-trigger{
+                        .view-automotive_store_view_us{
+
+                            span{
+                                font-weight: 400;
+                            }
+    
+                            &::after{
+                                color: @white;
+                                position: relative;
+                            }
+                        }
                     }
 
                     .view-automotivo_store_view_pt{
