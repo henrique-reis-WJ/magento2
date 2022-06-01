@@ -1,12 +1,12 @@
 <?php
 
-namespace Webjump\ConfigNativePayment;
+namespace Webjump\ConfigNativePayment\Test\Unit\Model;
 
 use Magento\Framework\App\Config\Storage\WriterInterface;
 use Magento\Store\Model\StoreManagerInterface;
+use PHPUnit\Framework\TestCase;
 
-
-Class SetPaymentGlobal {
+Class SetPaymentGlobalTest extends TestCase {
 
     public function __construct(
         WriterInterface $writer,

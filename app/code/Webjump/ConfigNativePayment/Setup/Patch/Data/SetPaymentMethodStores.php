@@ -4,7 +4,7 @@ namespace Webjump\ConfigNativePayment\Setup\Patch\Data;
 
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
-use Webjump\ConfigNativePayment\SetPaymentGlobal;
+use Webjump\ConfigNativePayment\Model\SetPaymentGlobal;
 
 class SetPaymentMethodStores implements DataPatchInterface
 {
