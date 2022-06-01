@@ -1,5 +1,11 @@
 @import "_colors.less";
 
+input:not([disabled]):focus, 
+select:not([disabled]):focus, 
+textarea:not([disabled]):focus {
+    box-shadow: 0 0 3px 1px @smoke;
+}
+
 .page-header {
     background-color: @white;
     margin: 0;
