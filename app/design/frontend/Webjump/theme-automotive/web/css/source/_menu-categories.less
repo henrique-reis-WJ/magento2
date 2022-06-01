@@ -1,7 +1,18 @@
 @import '_colors.less';
 
-.sections.nav-sections{
+.sections.nav-sections {
     margin-bottom: 0;
+    .section-items{
+        .section-item-title[aria-controls="store.menu"]{
+            width: 25%;
+        }
+        .section-item-title[aria-controls="store.links"]{
+            width: 30%;
+        }
+        .section-item-title[aria-controls="store.settings"]{
+            width: 45%;
+        }
+    }
 }
 
 .section-items{
