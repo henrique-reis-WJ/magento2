@@ -21,7 +21,7 @@ use Magento\Framework\App\Action\Action;
     $showCart = true;
     $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
     ?>
-    <ol class="product-items <?= /* @noEscape */ $type ?>">
+    <ol class="product-items <?= /* @noEscape */ $type ?>" data-mage-init='{"resizeProductCardGrid":{}}'>
         <?php $iterator = 1; ?>
         <?php foreach ($items as $_item) : ?>
             <?= /* @noEscape */ ($iterator++ == 1) ? '<li class="product-item">' : '</li><li class="product-item">' ?>
