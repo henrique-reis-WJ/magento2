@@ -3,7 +3,7 @@
 @menu-button-color: #6215e1;
 @submenu-color-hover: #531707;
 
-.sections.nav-sections{
+.sections.nav-sections {
     margin-bottom: 0;
 }
 
@@ -13,10 +13,9 @@
     .navigation {
         background-color: @catalog-topnav-background-color;
 
-        .level0.parent>.level-top>.ui-menu-icon{
-            &::after{
-                content: '';
-            }
+        .level0.parent > .level-top > .ui-menu-icon {
+            right: 3px;
+            top: 8px;
         }
 
         ul {
@@ -27,7 +26,7 @@
                     span {
                         height: 25px;
                         color: @catalog-topnav-text-color;
-                        font-family: 'Poppins-Bold';
+                        font-family: "Poppins-Bold";
                         font-size: 18px;
                         font-weight: 700;
                         font-style: normal;
@@ -50,9 +49,7 @@
     }
 }
 
-
 @media (max-width: 767px) {
-
     .section-item-content {
         background-color: white;
 
@@ -60,9 +57,7 @@
             background-color: white;
 
             ul {
-
                 li {
-
                     a {
                         background-color: white;
 
@@ -70,7 +65,7 @@
                             margin: 0;
                             height: 22xp;
                             color: black;
-                            font-family: 'Poppins-Regular';
+                            font-family: "Poppins-Regular";
                             font-size: 16px;
                             font-weight: 400;
                             font-style: normal;
@@ -82,10 +77,8 @@
                             letter-spacing: normal;
                             line-height: normal;
                             text-transform: uppercase;
-
                         }
                     }
-
                 }
             }
         }
@@ -93,17 +86,14 @@
 
     .navigation .parent .level-top:after {
         display: none;
-
     }
 
     .nav-sections {
         background-color: white;
-
     }
 
     .nav-sections-item-title {
         background-color: white;
-
     }
 
     .navigation .level0 {
@@ -114,7 +104,7 @@
         border-bottom: none;
     }
 
-    .nav-sections .header.links li>a {
+    .nav-sections .header.links li > a {
         border-top: none;
     }
 
@@ -128,16 +118,15 @@
         background-color: @catalog-topnav-background-color;
 
         .navigation {
-
             background-color: @catalog-topnav-background-color;
 
             ul {
-
-
                 li {
-
                     a {
-                        padding: 0 3px !important;
+                        padding-left: 3px !important;
+                        span:not(.ui-menu-icon){
+                            font-size: 17px;
+                        }
                     }
                 }
             }
