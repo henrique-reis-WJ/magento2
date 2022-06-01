@@ -3,6 +3,11 @@
 @search-input-text-color: #666666;
 @menu-button-color: #6215e1;
 
+input:not([disabled]):focus, 
+select:not([disabled]):focus, 
+textarea:not([disabled]):focus {
+    box-shadow: 0 0 3px 1px @menu-button-color;
+}
 
 .page-header {
     .panel.wrapper {
