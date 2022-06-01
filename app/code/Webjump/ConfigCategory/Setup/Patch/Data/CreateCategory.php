@@ -35,9 +35,7 @@ class CreateCategory implements DataPatchInterface
 
     public function categoryRoot(string $name, string $urlKey): array
     {
-        $categories = [];
-
-        $categories[] = [
+        return [
             'name' => $name,
             'url_key' => $urlKey,
             'is_active' => true,
@@ -45,17 +43,14 @@ class CreateCategory implements DataPatchInterface
             'include_in_menu' => true,
             'parent_id' => '1'
         ];
-
-        return $categories;
     }
 
     public function subCategories(string $name, string $urlKey, string $rootKey): array
     {
         $category = $this->categoryFactory->create();
         $parentCategory = $category->loadByAttribute('url_key', $rootKey);
-        $categories = [];
 
-        $categories [] = [
+        return [
             'name' => $name,
             'url_key' => $urlKey,
             'is_active' => true,
@@ -64,7 +59,6 @@ class CreateCategory implements DataPatchInterface
             'display_mode' => 'PRODUCTS_AND_PAGE',
             'parent_id' => $parentCategory->getId()
         ];
-        return $categories;
     }
 
     public function getAliases()
@@ -87,8 +81,8 @@ class CreateCategory implements DataPatchInterface
         //Categoria VOLT3
         
         $this->createCategories($this->subCategories('VOLT3', 'volt3', 'automotivo')); // Categoria, URLKey, ParentCategory
-        $this->createCategories($this->subCategories('Monte O Seu VOLT3', 'monte-o-seu3', 'volt3'));
-        $this->createCategories($this->subCategories('Especificações técnicas do VOLT3', 'especificacoes-tecnicas3', 'volt3'));
+    //    $this->createCategories($this->subCategories('Monte O Seu VOLT3', 'monte-o-seu3', 'volt3'));
+        /*   $this->createCategories($this->subCategories('Especificações técnicas do VOLT3', 'especificacoes-tecnicas3', 'volt3'));
         
         //Categoria VOLT SX
 
@@ -135,7 +129,7 @@ class CreateCategory implements DataPatchInterface
 
         // Categoria DECORAÇÃO
 
-        $this->createCategories($this->subCategories('DECORAÇÃO', 'decoracao', 'festas')); // Categoria, URLKey, ParentCategory
+        $this->createCategories($this->subCategories('DECORAÇÃO', 'decoracao', 'festas')); // Categoria, URLKey, ParentCategory */
 
         $this->moduleDataSetup->getConnection()->endSetup();
     }
