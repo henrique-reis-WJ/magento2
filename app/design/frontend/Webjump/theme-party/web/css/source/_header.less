@@ -6,7 +6,7 @@
 input:not([disabled]):focus, 
 select:not([disabled]):focus, 
 textarea:not([disabled]):focus {
-    box-shadow: 0 0 3px 1px @menu-button-color;
+    box-shadow: 0 0 3px 1px;
 }
 
 .page-header {
@@ -74,11 +74,19 @@ textarea:not([disabled]):focus {
 
 .customer-menu {
     .header.links {
-        li {
+        min-width: 270px;
 
+        li {
             a,
             a:visited {
-                font-size: 13px !important;
+                font-size: 16px !important;
+            }
+        }
+
+        .link.wishlist{
+            .counter.qty{
+                font-size: 14px;
+                color: lighten(@header-text-color, 40%);
             }
         }
     }
