@@ -3,7 +3,7 @@
 @catalog-topnav-text-color: #ffffff;
 
 body{
-    font-family: 'Poppins-Regular' !important;
+    font-family: 'Poppins-Regular' !important;   
 }
 
 .action.primary, 
@@ -22,7 +22,7 @@ body{
 .action.action-select-shipping-item {
     background: @menu-button-color;
     border-color: @menu-button-color;
-    color: @catalog-topnav-text-color;
+    color: @catalog-topnav-text-color !important;
     font-family: 'Poppins-Regular' !important;
     border-radius: 10px;
 
@@ -91,3 +91,20 @@ body{
         font-size: 1.8rem;
     }
 }
+
+.box-tocart{
+    .fieldset{
+        .product-item-actions{
+            .actions-primary{
+                .action.tocart.primary{
+                    margin-left: -4.6em;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
