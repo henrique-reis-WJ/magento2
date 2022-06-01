@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="/var/www/html/magento2/app/code/Webjump/ConfigLocaleAndLanguage" tests="2" assertions="6" errors="0" warnings="0" failures="0" skipped="0" time="0.005032">
+    <testsuite name="Webjump\ConfigLocaleAndLanguage\Test\Unit\Model\LocaleAndLanguageWriterTest" file="/var/www/html/magento2/app/code/Webjump/ConfigLocaleAndLanguage/Test/Unit/Model/LocaleAndLanguageWriterTest.php" tests="2" assertions="6" errors="0" warnings="0" failures="0" skipped="0" time="0.005032">
+      <testcase name="testSetLocaleAndLanguageBr" class="Webjump\ConfigLocaleAndLanguage\Test\Unit\Model\LocaleAndLanguageWriterTest" classname="Webjump.ConfigLocaleAndLanguage.Test.Unit.Model.LocaleAndLanguageWriterTest" file="/var/www/html/magento2/app/code/Webjump/ConfigLocaleAndLanguage/Test/Unit/Model/LocaleAndLanguageWriterTest.php" line="25" assertions="3" time="0.004771"/>
+      <testcase name="testSetLocaleAndLanguageUs" class="Webjump\ConfigLocaleAndLanguage\Test\Unit\Model\LocaleAndLanguageWriterTest" classname="Webjump.ConfigLocaleAndLanguage.Test.Unit.Model.LocaleAndLanguageWriterTest" file="/var/www/html/magento2/app/code/Webjump/ConfigLocaleAndLanguage/Test/Unit/Model/LocaleAndLanguageWriterTest.php" line="93" assertions="3" time="0.000261"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

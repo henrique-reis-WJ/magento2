@@ -42,10 +42,7 @@ class LocaleAndLanguageWriter
 
     public function setLocaleAndLanguageBr(int $storeId)
     {
-        $connection = $this->moduleDataSetup->getConnection();
-
-        $connection->startSetup();
-
+        $this->moduleDataSetup->getConnection()->startSetup();
 
         $this->writer->save(
             self::CURRENCY_ALLOW_PATH,
@@ -96,7 +93,7 @@ class LocaleAndLanguageWriter
             $storeId
         );
 
-        $connection->endSetup();
+        $this->moduleDataSetup->getConnection()->endSetup();
     }
 
     public function setLocaleAndLanguageUs(int $storeId)
