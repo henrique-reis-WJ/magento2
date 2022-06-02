@@ -104,6 +104,13 @@ class SetNativeShipping implements DataPatchInterface
         $websiteGetId
     );
 
+    $this->writer->save (
+        "carriers/flatrate/active",
+        "0",
+        "websites",
+        $websiteGetId
+    );
+
     }
 
     public function setShippingStore(string $storeViewCode, string $language) {
