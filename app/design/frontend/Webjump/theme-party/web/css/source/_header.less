@@ -200,6 +200,11 @@ textarea:not([disabled]):focus {
         height: 26px;
         background: url("@{baseDir}images/bag.png");
     }
+
+    .action.showcart:hover::before,
+    .action.showcart.active:hover::before {
+        transform: scale(1.05);
+    }
 }
 
 @media (max-width: 767px) {
