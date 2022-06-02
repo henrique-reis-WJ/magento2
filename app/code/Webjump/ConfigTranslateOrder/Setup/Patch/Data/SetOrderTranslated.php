@@ -3,6 +3,7 @@ namespace Webjump\ConfigTranslateOrder\Setup\Patch\Data;
 
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
+use Magento\Store\Model\StoreManagerInterface;
 use Magento\Sales\Model\Order\StatusFactory;
 
 class SetOrderTranslated implements DataPatchInterface
@@ -12,11 +13,13 @@ class SetOrderTranslated implements DataPatchInterface
 
     function __construct(
         ModuleDataSetupInterface $moduleDataSetup,
-        StatusFactory $statusFactory
+        StatusFactory $statusFactory,
+        StoreManagerInterface $storeManager
         )
     {
         $this->moduleDataSetup = $moduleDataSetup;
         $this->statusFactory = $statusFactory;
+        $this->storeManager = $storeManager;
     }
 
 
@@ -34,9 +37,17 @@ class SetOrderTranslated implements DataPatchInterface
 
     private function getStoreLabels(): array
     {
+    $storeViewFestasId = $this->storeManager
+        ->getStore("party_store_view_us")
+        ->getId();
+        
+    $storeViewAutomotivoId = $this->storeManager
+        ->getStore("automotive_store_view_us")
+        ->getId();
+
       return [
-         'store_view_id_1' => 'Label 1',
-         'store_view_id_2' => 'Label 2',
+         $storeViewFestasId => "Canceled", // Here we define Status Label
+         $storeViewAutomotivoId => "Canceled" // Here we define Status Label
       ];
     }
 
@@ -44,14 +55,14 @@ class SetOrderTranslated implements DataPatchInterface
     {
         $this->moduleDataSetup->getConnection()->startSetup();
 
-        $code = 'status_code';
+        $code = "canceled";
         $status = $this->statusFactory->create()->load($code);
         if(!$status->getStatus()) {
            // lançar exceção
         }
         $status->setData('store_labels', $this->getStoreLabels());
         $status->save();
-        
+
         $this->moduleDataSetup->getConnection()->endSetup();
     }
 }
