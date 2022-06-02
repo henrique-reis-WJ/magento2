@@ -79,31 +79,16 @@ class ConfigAttributeOptionsTranslation implements DataPatchInterface
         );
 
         $attribute = $this->productAttributeRepository->get($attributeId);
-
-        var_dump($attribute);
-
-        $options = $attribute->getSource()->getAllOptions();
         
-        /*
-        $whiteOption = $attribute->getSource()->getOption("White");
-        $blackOption = $attribute->getSource()->getOption("Black");
-        $redOption = $attribute->getSource()->getOption("Red");
-        $blueOption = $attribute->getSource()->getOption("Blue");
-        $yellowOption = $attribute->getSource()->getOption("Yellow");
-        $greenOption = $attribute->getSource()->getOption("Green");
-        $orangeOption = $attribute->getSource()->getOption("Orange");
-        $pinkOption = $attribute->getSource()->getOption("Pink");
-        */
+        $whiteOption = $attribute->getSource()->getOptionId("White");
+        $blackOption = $attribute->getSource()->getOptionId("Black");
+        $redOption = $attribute->getSource()->getOptionId("Red");
+        $blueOption = $attribute->getSource()->getOptionId("Blue");
+        $yellowOption = $attribute->getSource()->getOptionId("Yellow");
+        $greenOption = $attribute->getSource()->getOptionId("Green");
+        $orangeOption = $attribute->getSource()->getOptionId("Orange");
+        $pinkOption = $attribute->getSource()->getOptionId("Pink");
         
-        //$whiteOption->setLabel("Branco")->setStoreId($festasPtStoreId);
-
-        foreach($options as $option)
-        {
-            $option->setStoreId($festasPtStoreId);
-            $option->setLabel("teste");
-        }
-
-        /*
         $options = [
             'attribute_id' => $attributeId,
             'values' => [
@@ -158,11 +143,8 @@ class ConfigAttributeOptionsTranslation implements DataPatchInterface
                 ]
         ];
 
-        //$eavSetup->addAttributeOption($options);
+        $attribute->setData($options);
 
-        $attribute->addData($options);
-        $attribute->save();
-        */
 
         $this->moduleDataSetup->getConnection()->endSetup();
     }
