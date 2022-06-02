@@ -19,6 +19,16 @@
         li:nth-child(3) {
             margin-top: 3.5px;
         }
+
+        li {
+            a {
+                img {
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -34,7 +44,7 @@
 
 .page-footer {
     background-color: #de6100;
-    font-family: 'Poppins-Regular';
+    font-family: "Poppins-Regular";
     margin-top: -1px;
 
     .footer.content {
@@ -45,7 +55,7 @@
         .footer__links-wrapper {
             width: 55%;
 
-            &>div {
+            & > div {
                 display: flex;
                 justify-content: space-around;
             }
@@ -58,7 +68,7 @@
                     width: 154px;
                     height: 28px;
                     color: @footer-text-color;
-                    font-family: 'Poppins-Bold';
+                    font-family: "Poppins-Bold";
                     font-size: 20px;
                     font-weight: 700;
                     font-style: normal;
@@ -107,7 +117,7 @@
                     width: 154px;
                     height: 28px;
                     color: @footer-text-color;
-                    font-family: 'Poppins-Bold';
+                    font-family: "Poppins-Bold";
                     font-size: 20px;
                     font-weight: 700;
                     font-style: normal;
@@ -115,7 +125,6 @@
                     line-height: normal;
                     margin-bottom: 20px;
                     text-transform: uppercase;
-
                 }
             }
 
@@ -140,7 +149,7 @@
 
                                 &::placeholder {
                                     color: @footer-text-color;
-                                    font-family: 'Poppins-Regular';
+                                    font-family: "Poppins-Regular";
                                     font-weight: 100;
                                 }
                             }
@@ -158,7 +167,7 @@
                             margin-left: 45px;
 
                             span {
-                                font-family: 'Poppins-Bold';
+                                font-family: "Poppins-Bold";
                                 text-transform: uppercase;
                                 color: @menu-button-color;
                             }
@@ -198,11 +207,8 @@
 }
 
 @media only screen and (max-width: 1135px) {
-
-
     .page-footer {
         .footer.content {
-
             .block.newsletter {
                 margin-bottom: 30px;
                 width: 100%;
@@ -272,9 +278,8 @@
             padding: 30px 20px 80px 20px;
 
             .footer__links-wrapper {
-                &>div {
+                & > div {
                     flex-direction: column;
-
                 }
 
                 .footer__links-container {
@@ -286,12 +291,7 @@
                 margin-bottom: 40px;
                 width: 100%;
                 max-width: 440px;
-
-
-
             }
-
-
         }
     }
 
@@ -317,11 +317,9 @@
         .footer__links-container.links-account {
             order: 4;
         }
-
     }
 
     .form.subscribe {
-
         width: 200px !important;
 
         .actions {
@@ -341,13 +339,10 @@
     .footer__links-wrapper {
         justify-content: space-evenly !important;
 
-
         .footer__links-container.links-suport {
             margin-top: 90px !important;
             margin-left: -47.5% !important;
-
         }
-
     }
 }
 
