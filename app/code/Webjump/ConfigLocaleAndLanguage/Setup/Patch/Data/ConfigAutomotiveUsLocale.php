@@ -4,7 +4,7 @@ namespace Webjump\ConfigLocaleAndLanguage\Setup\Patch\Data;
 
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Store\Model\StoreManagerInterface;
-use Webjump\ConfigLocaleAndLanguage\LocaleAndLanguageWriter;
+use Webjump\ConfigLocaleAndLanguage\Model\LocaleAndLanguageWriter;
 
 class ConfigAutomotiveUsLocale implements DataPatchInterface
 {
