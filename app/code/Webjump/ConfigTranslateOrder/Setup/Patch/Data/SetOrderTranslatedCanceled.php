@@ -6,7 +6,7 @@ use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Store\Model\StoreManagerInterface;
 use Magento\Sales\Model\Order\StatusFactory;
 
-class SetOrderTranslated implements DataPatchInterface
+class SetOrderTranslatedCanceled implements DataPatchInterface
 {
     private $moduleDataSetup;
     private $statusFactory; 
