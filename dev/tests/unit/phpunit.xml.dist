@@ -44,7 +44,8 @@
         </testsuite>
     </testsuites>
     <logging>
-        <junit outputFile="test-reports/coverage"/>
+        <testdoxHtml outputFile="test-reports/html"/>
+        <text outputFile="test-reports/text"/>
     </logging>
     <php>
         <ini name="memory_limit" value="-1"/>
