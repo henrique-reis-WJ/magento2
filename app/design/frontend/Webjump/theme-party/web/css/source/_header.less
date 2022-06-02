@@ -3,8 +3,8 @@
 @search-input-text-color: #666666;
 @menu-button-color: #6215e1;
 
-input:not([disabled]):focus, 
-select:not([disabled]):focus, 
+input:not([disabled]):focus,
+select:not([disabled]):focus,
 textarea:not([disabled]):focus {
     box-shadow: 0 0 3px 1px;
 }
@@ -16,7 +16,7 @@ textarea:not([disabled]):focus {
         span {
             height: 22px;
             color: @header-text-color;
-            font-family: 'Poppins-Regular';
+            font-family: "Poppins-Regular";
             font-size: 16px;
             font-weight: 400;
             font-style: normal;
@@ -27,12 +27,80 @@ textarea:not([disabled]):focus {
 
         .switcher {
             .options {
-
                 .action.toggle:after,
                 .action.toggle:hover,
                 .action.toggle.active:hover:after {
                     color: @header-text-color;
-                    line-height: 26px;
+                }
+
+                .action.toggle {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+
+                .view-festas_store_view_pt,
+                .view-party_store_view_us {
+                    span {
+                        line-height: 0;
+                        font-size: 0;
+                        color: transparent;
+                        text-align: center;
+
+                        &::before {
+                            display: inline-block;
+                        }
+                    }
+                }
+
+                .view-festas_store_view_pt {
+                    span {
+                        &::before {
+                            content: url("@{baseDir}images/brasil.png");
+                        }
+                    }
+                }
+
+                .view-party_store_view_us {
+                    span {
+                        &::before {
+                            content: url("@{baseDir}images/usa.png");
+                        }
+                    }
+                }
+
+                .dropdown.switcher-dropdown {
+                    min-width: 80px;
+
+                    .view-party_store_view_us,
+                    .view-festas_store_view_pt {
+                        a {
+                            line-height: 0;
+                            font-size: 0;
+                            color: transparent;
+                            text-align: center;
+
+                            &::before {
+                                display: inline-block;
+                            }
+                        }
+                    }
+
+                    .view-festas_store_view_pt {
+                        a {
+                            &::before {
+                                content: url("@{baseDir}images/brasil.png");
+                            }
+                        }
+                    }
+
+                    .view-party_store_view_us {
+                        a {
+                            &::before {
+                                content: url("@{baseDir}images/usa.png");
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -45,13 +113,13 @@ textarea:not([disabled]):focus {
     .header.links {
         li {
             color: @header-text-color;
-            font-family: 'Poppins-Regular';
+            font-family: "Poppins-Regular";
 
             a,
             a:visited {
                 height: 22px;
                 color: @header-text-color;
-                font-family: 'Poppins-Regular';
+                font-family: "Poppins-Regular";
                 font-size: 16px;
                 font-weight: 400;
                 font-style: normal;
@@ -67,7 +135,6 @@ textarea:not([disabled]):focus {
             .not-logged-in {
                 display: none;
             }
-
         }
     }
 }
@@ -83,8 +150,8 @@ textarea:not([disabled]):focus {
             }
         }
 
-        .link.wishlist{
-            .counter.qty{
+        .link.wishlist {
+            .counter.qty {
                 font-size: 14px;
                 color: lighten(@header-text-color, 40%);
             }
@@ -96,7 +163,7 @@ textarea:not([disabled]):focus {
     .action.switch {
         height: 22px;
         color: @header-text-color;
-        font-family: 'Poppins-Regular';
+        font-family: "Poppins-Regular";
         font-size: 16px;
         font-weight: 400;
         font-style: normal;
@@ -107,15 +174,13 @@ textarea:not([disabled]):focus {
     }
 }
 
-
 .block-search {
     width: 400px;
     margin-top: 20px;
 
     input {
         border: 1px solid #000000;
-        font-family: 'Poppins-Regular';
-
+        font-family: "Poppins-Regular";
     }
 }
 
@@ -124,29 +189,25 @@ textarea:not([disabled]):focus {
         .counter.qty {
             margin-top: 24px;
             background: @menu-button-color;
-
         }
     }
 
     .action.showcart::before,
     .action.showcart.active::before {
         margin-top: 20px;
-        content: '';
+        content: "";
         width: 23px;
         height: 26px;
-        background: url('@{baseDir}images/bag.png');
+        background: url("@{baseDir}images/bag.png");
     }
-
 }
 
 @media (max-width: 767px) {
-
     .logo {
         margin-top: 10px;
         margin-bottom: 20px;
         width: 140px;
         height: 52px;
-
     }
 
     .nav-toggle:hover:before,
@@ -156,7 +217,6 @@ textarea:not([disabled]):focus {
         font-weight: bold;
         padding-top: 20px;
     }
-
 
     .minicart-wrapper {
         .action.showcart {
@@ -188,5 +248,4 @@ textarea:not([disabled]):focus {
         border-bottom: none;
         margin-bottom: none;
     }
-
 }
