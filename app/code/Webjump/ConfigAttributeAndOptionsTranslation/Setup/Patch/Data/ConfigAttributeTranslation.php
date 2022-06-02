@@ -23,8 +23,7 @@ class ConfigAttributeTranslation implements DataPatchInterface
         ProductAttributeRepositoryInterface $productAttributeRepository,
         AttributeFrontendLabelInterfaceFactory $attributeFrontendLabel,
         ModuleDataSetupInterface $moduleDataSetup
-    )
-    {
+    ) {
         $this->moduleDataSetup = $moduleDataSetup;
         $this->storeManager = $storeManager;
         $this->eavSetupFactory = $eavSetupFactory;
@@ -85,7 +84,7 @@ class ConfigAttributeTranslation implements DataPatchInterface
             $entityTypeId,
             'acceleration'
         );
-        
+
         $festasStoreId = $this->storeManager
         ->getStore("festas_store_view_pt")
         ->getId();
@@ -94,24 +93,23 @@ class ConfigAttributeTranslation implements DataPatchInterface
         ->getStore("automotivo_store_view_pt")
         ->getId();
 
-        $this->translateAttribute("Cor",$festasStoreId,$automotivoStoreId,$colorAttributeId);
-        $this->translateAttribute("Tamanho",$festasStoreId,$automotivoStoreId,$sizeAttributeId);
-        $this->translateAttribute("Tema da Festa",$festasStoreId,$automotivoStoreId,$partythemeAttributeId);
-        $this->translateAttribute("Velocidade Máxima",$festasStoreId,$automotivoStoreId,$topspeedAttributeId);
-        $this->translateAttribute("Aceleração",$festasStoreId,$automotivoStoreId,$accelerationAttributeId);
+        $this->translateAttribute("Cor", $festasStoreId, $automotivoStoreId, $colorAttributeId);
+        $this->translateAttribute("Tamanho", $festasStoreId, $automotivoStoreId, $sizeAttributeId);
+        $this->translateAttribute("Tema da Festa", $festasStoreId, $automotivoStoreId, $partythemeAttributeId);
+        $this->translateAttribute("Velocidade Máxima", $festasStoreId, $automotivoStoreId, $topspeedAttributeId);
+        $this->translateAttribute("Aceleração", $festasStoreId, $automotivoStoreId, $accelerationAttributeId);
 
-        $this->moduleDataSetup->getConnection()->endSetup();       
+        $this->moduleDataSetup->getConnection()->endSetup();
     }
 
     public function translateAttribute(
         $newName,
-        $festasStoreId, 
-        $automotivoStoreId, 
+        $festasStoreId,
+        $automotivoStoreId,
         $attributeId
-        )
-    {
+    ) {
         $attribute = $this->productAttributeRepository->get($attributeId);
-        
+
         $frontendLabels = [
             $this->attributeFrontendLabel->create()
                 ->setStoreId($festasStoreId)
