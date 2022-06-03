@@ -19,27 +19,30 @@ body{
 .action.reload.captcha-reload,
 .action.action-show-popup,
 .action.action-edit-address,
+.action.action-select-shipping-item,
+.action.create.primary,
+.action.login.primary,
+.action.update,
+.action.action-login.secondary,
+.action.reload.captcha-reload,
+.action.submit.primary,
+.action.share,
+.action.tocart,
+.action.action-show-popup,
+.action.action-edit-address,
 .action.action-select-shipping-item {
     background: @menu-button-color;
     border-color: @menu-button-color;
     color: @catalog-topnav-text-color !important;
     font-family: 'Poppins-Regular' !important;
-    border-radius: 10px;
+    border-radius: 5px;
+    transition: all 0.25s ease;
 
-    &:hover{
+    &:hover,
+    &:active,
+    &:focus{
         background: @hover-button-color;
         border-color: @hover-button-color;
-        color: @catalog-topnav-text-color;
-    }
-
-    &:active{
-        background: @menu-button-color;
-        border-color: @menu-button-color;
-        color: @catalog-topnav-text-color;
-    }
-    &:focus{
-        background: @menu-button-color;
-        border-color: @menu-button-color;
         color: @catalog-topnav-text-color;
     }
 }
@@ -54,24 +57,11 @@ body{
     color: @catalog-topnav-text-color !important;
     box-shadow: unset !important;
     border-radius: 0 5px 5px 0 !important;
+    padding: 7px 15px !important;
 
     &:hover{
         background: @hover-button-color !important;
     }
-}
-
-.action.create.primary,
-.action.login.primary,
-.action.update,
-.action.action-login.secondary,
-.action.reload.captcha-reload,
-.action.submit.primary,
-.action.share,
-.action.tocart,
-.action.action-show-popup,
-.action.action-edit-address,
-.action.action-select-shipping-item {
-    border-radius: 5px !important;
 }
 
 .modal-footer{
