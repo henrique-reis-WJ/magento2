@@ -4,6 +4,7 @@ namespace Webjump\ConfigCartPriceRules\Setup\Patch\Data;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\SalesRule\Model\RuleFactory;
+use Magento\Store\Model\StoreManagerInterface;
 use Magento\Framework\App\State;
 
 class SetCartPriceRules implements DataPatchInterface
@@ -15,12 +16,14 @@ class SetCartPriceRules implements DataPatchInterface
     public function __construct(
         ModuleDataSetupInterface $moduleDataSetup,
         RuleFactory $ruleFactory,
-        State $state
+        State $state,
+        StoreManagerInterface $storeManager
         )
     {
         $this->moduleDataSetup = $moduleDataSetup;
         $this->ruleFactory = $ruleFactory;
         $this->state = $state;
+        $this->storeManager = $storeManager;
     }
 
     public function getAliases()
@@ -37,6 +40,22 @@ class SetCartPriceRules implements DataPatchInterface
 
 
     public function createRuleCart(string $name, string $description, string $discount){
+        $storeViewUSFestasId = $this->storeManager
+        ->getStore("party_store_view_us")
+        ->getId();
+        
+        $storeViewUSAutomotivoId = $this->storeManager
+        ->getStore("automotive_store_view_us")
+        ->getId();
+
+        $storeViewBRFestasId = $this->storeManager
+        ->getStore("festas_store_view_pt")
+        ->getId();
+
+        $storeViewBRAutomotivoId = $this->storeManager
+        ->getStore("automotivo_store_view_pt")
+        ->getId();
+        
         $ruleData = [
             "name" => $name,
             "description" => $description,
@@ -62,7 +81,12 @@ class SetCartPriceRules implements DataPatchInterface
             "customer_group_ids" => [0, 1, 2, 3], // 0 = Not Logged, 1 = General, 2 = Wholesale, 3 = Retailer
             "website_ids" => [1, 2, 3],
             "coupon_code" => null,
-            "store_labels" => [],
+            "store_labels" => [
+                $storeViewUSFestasId => "10% off with 5 or more items in the cart",
+                $storeViewUSAutomotivoId => "10% off with 5 or more items in the cart",
+                $storeViewBRFestasId => "Desconto de 10% com 5 ou mais itens no carrinho",
+                $storeViewBRAutomotivoId => "Desconto de 10% com 5 ou mais itens no carrinho"
+            ],
             'conditions_serialized' => json_encode([
                 'type' => \Magento\SalesRule\Model\Rule\Condition\Combine::class,
                 'attribute' => null,
