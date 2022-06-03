@@ -27,12 +27,9 @@ body{
 .action.action-select-shipping-item,
 .action.create.primary,
 .action.login.primary,
-.action.update,
 .action.action-login.secondary,
 .action.reload.captcha-reload,
 .action.submit.primary,
-.action.share,
-.action.tocart,
 .action.action-show-popup,
 .action.action-edit-address,
 .action.action-select-shipping-item,
@@ -41,7 +38,7 @@ body{
     border-color: @smoke;
     color: @white !important;
     font-family: 'Montserrat-Regular' !important;
-    transition: all 0.25s ease;
+    transition: background 0.25s ease;
     border-radius: 5px;
     box-shadow: unset !important;
 
@@ -68,6 +65,12 @@ body{
 
     &:hover{
         background: @black !important;
+    }
+}
+
+.action.tocart.primary{
+    &:hover{
+        transform: scale(1.01);
     }
 }
 
