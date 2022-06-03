@@ -84,8 +84,8 @@ class SetCartPriceRules implements DataPatchInterface
             "store_labels" => [
                 $storeViewUSFestasId => "10% off with 5 or more items in the cart",
                 $storeViewUSAutomotivoId => "10% off with 5 or more items in the cart",
-                $storeViewBRFestasId => "Desconto de 10% com 5 ou mais itens no carrinho",
-                $storeViewBRAutomotivoId => "Desconto de 10% com 5 ou mais itens no carrinho"
+                $storeViewBRFestasId => "de 10% com 5 ou mais itens no carrinho",
+                $storeViewBRAutomotivoId => "de 10% com 5 ou mais itens no carrinho"
             ],
             'conditions_serialized' => json_encode([
                 'type' => \Magento\SalesRule\Model\Rule\Condition\Combine::class,

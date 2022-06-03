@@ -83,8 +83,8 @@ class SetFestasRules implements DataPatchInterface
             "store_labels" => [
                 $storeViewUSFestasId => "5% off",
                 $storeViewUSAutomotivoId => "5% off",
-                $storeViewBRFestasId => "Desconto de 5%",
-                $storeViewBRAutomotivoId => "Desconto de 5%"
+                $storeViewBRFestasId => "de 5%",
+                $storeViewBRAutomotivoId => "de 5%"
             ],
             "conditions_serialized" => '',
             "actions_serialized" => ''

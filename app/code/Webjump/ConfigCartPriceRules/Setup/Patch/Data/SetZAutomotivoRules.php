@@ -83,8 +83,8 @@ class SetZAutomotivoRules implements DataPatchInterface
             "store_labels" => [
                 $storeViewUSFestasId => "10% off",
                 $storeViewUSAutomotivoId => "10% off",
-                $storeViewBRFestasId => "Desconto de 10%",
-                $storeViewBRAutomotivoId => "Desconto de 10%"
+                $storeViewBRFestasId => "de 10%",
+                $storeViewBRAutomotivoId => "de 10%"
             ],
             "conditions_serialized" => '',
             "actions_serialized" => ''
