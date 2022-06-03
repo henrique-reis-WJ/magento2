@@ -1,5 +1,18 @@
 @import "_colors.less";
 
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 14px;
+}
+*::-webkit-scrollbar-track {
+    background: @white;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: @smoke;
+    border-radius: 15px;
+    border: 3px solid @white;
+}
+
 .page-wrapper {
     .page-main-full-width {
         background: @black;
