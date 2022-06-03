@@ -138,6 +138,10 @@ body{
     border-color: @grey;
 }
 
+.sidebar .product-items .action.delete{
+    right: -30px;
+}
+
 @media only screen and (max-width: 767px) {
     .page-main {
         .columns {
@@ -163,6 +167,9 @@ body{
         .content.block-collapsible-nav-content.active{
             padding: 0;
         }
+    }
+    .products-grid .product-item-actions {
+        margin: 0;
     }
 }
 
@@ -199,13 +206,13 @@ body{
 
 @media only screen and (max-width: 480px){
     .actions-primary{
-        padding: 7px 15px;
+        padding: 0;
 
         .action.tocart.primary{
-            width: 100% !important;
+            white-space: normal;
 
             span{
-                font-size: 12px !important;
+                font-size: 12px;
             }
         }
     }
