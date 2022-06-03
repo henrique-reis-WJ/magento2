@@ -4,4 +4,7 @@
 "Enter your email address","Fique informado sobre o Volt"
 "Installment up to 10 times with minimum installment of $100.00","Parcelamento em até 10 vezes com parcela mínima de R$ 500,00",module,Magento_Catalog
 "Order now","Adquira agora",module,Magento_PageBuilder
-"Newsletter","Newsletter"
+"Newsletter","Newsletter",
+"Show Password", "Mostrar senha", module, Magento_Customer
+"Allow remote shopping assistance", "Permitir assistência remota para compras", module, Magento_Customer
+This allows merchants to "see what you see" and take actions on your behalf in order to provide better assistance.,Isso permite que os comerciantes "vejam o que você vê" e realizem ações em seu nome para fornecer uma melhor assistência., module, Magento_LoginAsCustomerAssistance
