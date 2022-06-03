@@ -7,7 +7,7 @@ use Magento\SalesRule\Model\RuleFactory;
 use Magento\Framework\App\State;
 use Magento\Store\Model\StoreManagerInterface;
 
-class SetAutomotivoRules implements DataPatchInterface
+class SetFestasRules implements DataPatchInterface
 {
     private ModuleDataSetupInterface $moduleDataSetup;
     private RuleFactory $ruleFactory;
