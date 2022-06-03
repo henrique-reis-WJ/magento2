@@ -5,5 +5,8 @@ Create an Account,"Cadastre-se",module,Magento_Customer
 "Enter your email address","Insira seu e-mail aqui"
 "Default welcome msg!","Bem vindo!",module,Magento_Theme
 "Newsletter","Newsletter"
-"Shop Now","Comprar",module,Magento_PageBuilder
+"Shop Now","Comprar",module,Magento_PageBuilder,
+"Show Password", "Mostrar senha", module, Magento_Customer
+"Allow remote shopping assistance", "Permitir assistência remota para compras", module, Magento_Customer
+This allows merchants to "see what you see" and take actions on your behalf in order to provide better assistance.,Isso permite que os comerciantes "vejam o que você vê" e realizem ações em seu nome para fornecer uma melhor assistência., module, Magento_LoginAsCustomerAssistance
 
