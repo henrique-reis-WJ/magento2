@@ -113,10 +113,6 @@ body{
         .columns {
             .column.main {
                 .product-item {
-                    width: 100%;
-                    .product-item-info {
-                        width: 100%;
-                    }
                     .product-item-inner {
                         .action.tocart.primary {
                             margin-left: 0;
@@ -166,6 +162,20 @@ body{
                         box-shadow: none;
                     }
                 }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px){
+    .actions-primary{
+        padding: 7px 15px;
+
+        .action.tocart.primary{
+            width: 100% !important;
+
+            span{
+                font-size: 12px !important;
             }
         }
     }
