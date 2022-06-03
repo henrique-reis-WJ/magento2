@@ -23,28 +23,36 @@ body{
 .action.reload.captcha-reload,
 .action.action-show-popup,
 .action.action-edit-address,
+.action.action-select-shipping-item,
+.action.create.primary,
+.action.login.primary,
+.action.update,
+.action.action-login.secondary,
+.action.reload.captcha-reload,
+.action.submit.primary,
+.action.share,
+.action.tocart,
+.action.action-show-popup,
+.action.action-edit-address,
 .action.action-select-shipping-item {
     background: @smoke;
-    border-color: @black;
+    border-color: @smoke;
     color: @white !important;
     font-family: 'Montserrat-Regular' !important;
+    transition: all 0.25s ease;
+    border-radius: 5px;
 
-    &:hover{
+    &:hover,
+    &:active,
+    &:focus{
         background: @black;
         border-color: @black;
         color: @white;
     }
+}
 
-    &:active{
-        background: @smoke;
-        border-color: @black;
-        color: @white;
-    }
-    &:focus{
-        background: @smoke;
-        border-color: @black;
-        color: @white;
-    }
+.action.subscribe.primary{
+    border-radius:unset;
 }
 
 .action.action-apply,
@@ -52,6 +60,8 @@ body{
     background: @smoke !important;
     color: @white !important;
     box-shadow: unset !important;
+    border-radius: 0 5px 5px 0 !important;
+    padding: 7px 15px !important;
 
     &:hover{
         background: @black !important;
