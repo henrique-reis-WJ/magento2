@@ -1,7 +1,18 @@
-@import '_colors.less';
+@import "_colors.less";
 
-.page-wrapper{
+.page-wrapper {
     .page-main-full-width {
         background: @black;
+    }
+    .breadcrumbs {
+        padding-top: 20px;
+    }
+
+    .page-main {
+        padding-top: 40px;
+    }
+
+    .breadcrumbs ~ .page-main {
+        padding-top: 10px;
     }
 }
