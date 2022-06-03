@@ -5,8 +5,9 @@ use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\SalesRule\Model\RuleFactory;
 use Magento\Framework\App\State;
+use Magento\Store\Model\StoreManagerInterface;
 
-class SetCustomerGroups implements DataPatchInterface
+class SetAutomotivoRules implements DataPatchInterface
 {
     private ModuleDataSetupInterface $moduleDataSetup;
     private RuleFactory $ruleFactory;
@@ -15,12 +16,14 @@ class SetCustomerGroups implements DataPatchInterface
     public function __construct(
         ModuleDataSetupInterface $moduleDataSetup,
         RuleFactory $ruleFactory,
-        State $state
+        State $state,
+        StoreManagerInterface $storeManager
         )
     {
         $this->moduleDataSetup = $moduleDataSetup;
         $this->ruleFactory = $ruleFactory;
         $this->state = $state;
+        $this->storeManager = $storeManager;
     }
 
     public function getAliases()
@@ -36,6 +39,22 @@ class SetCustomerGroups implements DataPatchInterface
     }
 
     public function createRuleCustomerGroup(string $name, string $description, string $discount, int $customerGroupId, int $websiteId){
+        $storeViewUSFestasId = $this->storeManager
+        ->getStore("party_store_view_us")
+        ->getId();
+        
+        $storeViewUSAutomotivoId = $this->storeManager
+        ->getStore("automotive_store_view_us")
+        ->getId();
+
+        $storeViewBRFestasId = $this->storeManager
+        ->getStore("festas_store_view_pt")
+        ->getId();
+
+        $storeViewBRAutomotivoId = $this->storeManager
+        ->getStore("automotivo_store_view_pt")
+        ->getId();
+        
         $ruleData = [
             "name" => $name,
             "description" => $description,
@@ -61,7 +80,12 @@ class SetCustomerGroups implements DataPatchInterface
             "customer_group_ids" => [$customerGroupId], // 0 = Not Logged, 1 = General, 2 = Wholesale, 3 = Retailer
             "website_ids" => [$websiteId],
             "coupon_code" => null,
-            "store_labels" => [],
+            "store_labels" => [
+                $storeViewUSFestasId => "10% off",
+                $storeViewUSAutomotivoId => "10% off",
+                $storeViewBRFestasId => "Desconto de 10%",
+                $storeViewBRAutomotivoId => "Desconto de 10%"
+            ],
             "conditions_serialized" => '',
             "actions_serialized" => ''
         ];
