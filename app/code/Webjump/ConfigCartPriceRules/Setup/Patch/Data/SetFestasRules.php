@@ -4,10 +4,10 @@ namespace Webjump\ConfigCartPriceRules\Setup\Patch\Data;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\SalesRule\Model\RuleFactory;
-use Magento\Store\Model\StoreManagerInterface;
 use Magento\Framework\App\State;
+use Magento\Store\Model\StoreManagerInterface;
 
-class SetCartPriceRules implements DataPatchInterface
+class SetFestasRules implements DataPatchInterface
 {
     private ModuleDataSetupInterface $moduleDataSetup;
     private RuleFactory $ruleFactory;
@@ -38,8 +38,7 @@ class SetCartPriceRules implements DataPatchInterface
         ];
     }
 
-
-    public function createRuleCart(string $name, string $description, string $discount){
+    public function createRuleCustomerGroup(string $name, string $description, string $discount, int $customerGroupId, int $websiteId){
         $storeViewUSFestasId = $this->storeManager
         ->getStore("party_store_view_us")
         ->getId();
@@ -78,32 +77,16 @@ class SetCartPriceRules implements DataPatchInterface
             "use_auto_generation" => "0",
             "uses_per_coupon" => "0",
             "simple_free_shipping" => "0",
-            "customer_group_ids" => [0, 1, 2, 3], // 0 = Not Logged, 1 = General, 2 = Wholesale, 3 = Retailer
-            "website_ids" => [1, 2, 3],
+            "customer_group_ids" => [$customerGroupId], // 0 = Not Logged, 1 = General, 2 = Wholesale, 3 = Retailer
+            "website_ids" => [$websiteId],
             "coupon_code" => null,
             "store_labels" => [
-                $storeViewUSFestasId => "10% off with 5 or more items in the cart",
-                $storeViewUSAutomotivoId => "10% off with 5 or more items in the cart",
-                $storeViewBRFestasId => "Desconto de 10% com 5 ou mais itens no carrinho",
-                $storeViewBRAutomotivoId => "Desconto de 10% com 5 ou mais itens no carrinho"
+                $storeViewUSFestasId => "5% off",
+                $storeViewUSAutomotivoId => "5% off",
+                $storeViewBRFestasId => "Desconto de 5%",
+                $storeViewBRAutomotivoId => "Desconto de 5%"
             ],
-            'conditions_serialized' => json_encode([
-                'type' => \Magento\SalesRule\Model\Rule\Condition\Combine::class,
-                'attribute' => null,
-                'operator' => null,
-                'value' => '1',
-                'is_value_processed' => null,
-                'aggregator' => 'all',
-                'conditions' => [
-                    [
-                        'type' => \Magento\SalesRule\Model\Rule\Condition\Address::class,
-                        'attribute' => 'total_qty',
-                        'operator' => '>=',
-                        'value' => '5',
-                        'is_value_processed' => false,
-                    ],
-                ],
-            ]),
+            "conditions_serialized" => '',
             "actions_serialized" => ''
         ];
 
@@ -112,12 +95,11 @@ class SetCartPriceRules implements DataPatchInterface
          $ruleModel->save();
     }
 
+
     public function apply() {
         $this->moduleDataSetup->getConnection()->startSetup();
-        
-        $this->state->setAreaCode(\Magento\Framework\App\Area::AREA_FRONTEND);
-
-        $this->createRuleCart("Cart5Itens10Discount", "Carrinho com 5 itens ou mais tem que ter 10% de desconto", "10.000");
+              
+        $this->createRuleCustomerGroup("NotLoggedFestas5", "Usuários não logados recebem 5% de desconto", "5.000", 0, 3);
 
         $this->moduleDataSetup->getConnection()->endSetup();
     }
