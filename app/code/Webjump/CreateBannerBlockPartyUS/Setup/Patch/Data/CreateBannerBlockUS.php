@@ -1,13 +1,17 @@
 <?php
+
 /**
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
+
 namespace Webjump\CreateBannerBlockPartyUS\Setup\Patch\Data;
+
 use Magento\Cms\Model\BlockFactory;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Setup\Patch\PatchRevertableInterface;
+
 class CreateBannerBlockUS implements DataPatchInterface, PatchRevertableInterface
 {
     /**
@@ -18,7 +22,7 @@ class CreateBannerBlockUS implements DataPatchInterface, PatchRevertableInterfac
      * @var BlockFactory
      */
     private $blockFactory;
-    const IDENTIFIER_BLOCK = 'main-banner-party-us';
+    public const IDENTIFIER_BLOCK = 'main-banner-party-us';
     /**
      * CreateBannerBlockUS constructor.
      * @param ModuleDataSetupInterface $moduleDataSetup

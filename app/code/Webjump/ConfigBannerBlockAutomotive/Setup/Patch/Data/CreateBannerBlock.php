@@ -1,13 +1,17 @@
 <?php
+
 /**
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
+
 namespace Webjump\ConfigBannerBlockAutomotive\Setup\Patch\Data;
+
 use Magento\Cms\Model\BlockFactory;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Setup\Patch\PatchRevertableInterface;
+
 class CreateBannerBlock implements DataPatchInterface, PatchRevertableInterface
 {
     /**
@@ -18,7 +22,7 @@ class CreateBannerBlock implements DataPatchInterface, PatchRevertableInterface
      * @var BlockFactory
      */
     private $blockFactory;
-    const IDENTIFIER_BLOCK = 'banner-theme-automotive';
+    public const IDENTIFIER_BLOCK = 'banner-theme-automotive';
     /**
      * CreateBannerBlock constructor.
      * @param ModuleDataSetupInterface $moduleDataSetup

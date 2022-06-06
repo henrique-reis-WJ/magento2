@@ -1,4 +1,5 @@
 <?php
+
 namespace Webjump\ConfigAutomotivoHomepage\Setup\Patch\Data;
 
 use Magento\Cms\Model\PageFactory;
@@ -14,32 +15,32 @@ class SetAutomotivoHomepageBR implements DataPatchInterface
     public function __construct(
         ModuleDataSetupInterface $moduleDataSetup,
         PageFactory $pageFactory,
-        StoreManagerInterface $storeManager)
-{
-    $this->moduleDataSetup = $moduleDataSetup;
-    $this->pageFactory = $pageFactory;
-    $this->storeManager = $storeManager;  
-}
+        StoreManagerInterface $storeManager
+    ) {
+        $this->moduleDataSetup = $moduleDataSetup;
+        $this->pageFactory = $pageFactory;
+        $this->storeManager = $storeManager;
+    }
 
-public function getAliases()
-{
-    return [
-    ];
-}
+    public function getAliases()
+    {
+        return [
+        ];
+    }
 
-public static function getDependencies()
-{
-    return [
-    ];
-}
+    public static function getDependencies()
+    {
+        return [
+        ];
+    }
 
-public function apply()
-{
-    $StoreViewGetId = $this->storeManager
-    ->getStore("automotivo_store_view_pt")
-    ->getId();
+    public function apply()
+    {
+        $StoreViewGetId = $this->storeManager
+        ->getStore("automotivo_store_view_pt")
+        ->getId();
 
-    $pageData = [
+        $pageData = [
         'title' => 'automotivobr', // cms page title
         'page_layout' => 'cms-full-width', // cms page layout
         'meta_keywords' => '', // cms page meta keywords
@@ -52,9 +53,9 @@ public function apply()
         'is_active' => 1, // status enabled or disabled
         'stores' => [$StoreViewGetId], // You can set store id single or multiple values in array.
         'sort_order' => 0, // cms page sort order
-    ];
-    $this->moduleDataSetup->startSetup();
-    $this->pageFactory->create()->setData($pageData)->save();
-    $this->moduleDataSetup->endSetup();
-}
+        ];
+        $this->moduleDataSetup->startSetup();
+        $this->pageFactory->create()->setData($pageData)->save();
+        $this->moduleDataSetup->endSetup();
+    }
 }

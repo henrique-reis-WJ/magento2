@@ -5,19 +5,17 @@ namespace Webjump\ConfigNativePayment;
 use Magento\Framework\App\Config\Storage\WriterInterface;
 use Magento\Store\Model\StoreManagerInterface;
 
-
-Class SetPaymentGlobal {
-
+class SetPaymentGlobal
+{
     public function __construct(
         WriterInterface $writer,
         StoreManagerInterface $storeManager
-    )
-    {
+    ) {
         $this->writer = $writer;
         $this->storeManager = $storeManager;
     }
-    
-    
+
+
     public function setGlobalSettings(string $websiteCode)
     {
         $websiteGetId = $this->storeManager
@@ -43,8 +41,8 @@ Class SetPaymentGlobal {
             "1",
             "websites",
             $websiteGetId
-         );
- 
+        );
+
          $this->writer->save(
              "payment/checkmo/specificcountry",
              "BR,US",
@@ -53,12 +51,12 @@ Class SetPaymentGlobal {
          );
 
          $this->writer->save(
-            "payment/checkmo/sort_order",
-            "0",
-            "websites",
-            $websiteGetId
-        );
-        
+             "payment/checkmo/sort_order",
+             "0",
+             "websites",
+             $websiteGetId
+         );
+
         $this->writer->save(
             "payment/banktransfer/specificcountry",
             "BR,US",
@@ -74,10 +72,10 @@ Class SetPaymentGlobal {
         );
 
         $this->writer->save(
-           "payment/banktransfer/sort_order",
-           "1",
-           "websites",
-           $websiteGetId
+            "payment/banktransfer/sort_order",
+            "1",
+            "websites",
+            $websiteGetId
         );
 
         $this->writer->save(
@@ -86,36 +84,32 @@ Class SetPaymentGlobal {
             "websites",
             $websiteGetId
         );
-
     }
-    
+
     public function setPaymentMoney(string $storeViewCode, string $language)
     {
-        
+
         $StoreViewGetId = $this->storeManager
         ->getStore($storeViewCode)
         ->getId();
-        
-        if ($language == 'br'){
 
+        if ($language == 'br') {
             $this->writer->save(
                 "payment/checkmo/title",
                 "Pagamento em Dinheiro",
                 "stores",
                 $StoreViewGetId
-            ); 
-
-        } else if ($language == "en") {
-
+            );
+        } elseif ($language == "en") {
             $this->writer->save(
                 "payment/checkmo/title",
                 "Money order",
                 "stores",
                 $StoreViewGetId
-            ); 
+            );
         }
-        
-        
+
+
         $this->writer->save(
             "payment/checkmo/active",
             "1",
@@ -123,7 +117,7 @@ Class SetPaymentGlobal {
             $StoreViewGetId
         );
 
-        
+
         $this->writer->save(
             "payment/checkmo/order_status",
             "pending",
@@ -132,10 +126,10 @@ Class SetPaymentGlobal {
         );
 
         $this->writer->save(
-           "payment/checkmo/allowspecific",
-           "1",
-           "stores",
-           $StoreViewGetId
+            "payment/checkmo/allowspecific",
+            "1",
+            "stores",
+            $StoreViewGetId
         );
 
         $this->writer->save(
@@ -160,8 +154,7 @@ Class SetPaymentGlobal {
         ->getStore($storeViewCode)
         ->getId();
 
-        if ($language == "br")
-        {
+        if ($language == "br") {
             $this->writer->save(
                 "payment/banktransfer/instructions",
                 "Nome da conta do banco: AutomotivoWebjump\n
@@ -178,9 +171,7 @@ Class SetPaymentGlobal {
                 "stores",
                 $StoreViewGetId
             );
-
-        } else if ($language == "en") 
-        {
+        } elseif ($language == "en") {
             $this->writer->save(
                 "payment/banktransfer/instructions",
                 "Bank account name: WebjumpParty\n
@@ -198,7 +189,7 @@ Class SetPaymentGlobal {
                 $StoreViewGetId
             );
         }
-        
+
         $this->writer->save(
             "payment/banktransfer/specificcountry",
             "BR,US",
@@ -214,10 +205,10 @@ Class SetPaymentGlobal {
         );
 
         $this->writer->save(
-           "payment/banktransfer/sort_order",
-           "1",
-           "stores",
-           $StoreViewGetId
+            "payment/banktransfer/sort_order",
+            "1",
+            "stores",
+            $StoreViewGetId
         );
 
         $this->writer->save(
@@ -227,6 +218,4 @@ Class SetPaymentGlobal {
             $StoreViewGetId
         );
     }
-
-
 }

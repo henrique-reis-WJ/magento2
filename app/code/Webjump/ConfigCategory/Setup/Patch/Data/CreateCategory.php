@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 namespace Webjump\ConfigCategory\Setup\Patch\Data;
 
 use Magento\Catalog\Model\CategoryFactory;
@@ -85,11 +86,11 @@ class CreateCategory implements DataPatchInterface
 
         $this->createCategories($this->categoryRoot('Automotivo', 'automotivo'));
         //Categoria VOLT3
-        
+
         $this->createCategories($this->subCategories('VOLT3', 'volt3', 'automotivo')); // Categoria, URLKey, ParentCategory
         $this->createCategories($this->subCategories('Monte O Seu VOLT3', 'monte-o-seu3', 'volt3'));
         $this->createCategories($this->subCategories('Especificações técnicas do VOLT3', 'especificacoes-tecnicas3', 'volt3'));
-        
+
         //Categoria VOLT SX
 
         $this->createCategories($this->subCategories('VOLT SX', 'voltsx', 'automotivo')); // Categoria, URLKey, ParentCategory
@@ -108,17 +109,17 @@ class CreateCategory implements DataPatchInterface
         $this->createCategories($this->subCategories('ACESSÓRIOS', 'acessorios', 'automotivo')); // Categoria, URLKey, ParentCategory
         $this->createCategories($this->subCategories('Calha de Chuva', 'calha', 'acessorios'));
         $this->createCategories($this->subCategories('Central Multimídia', 'central', 'acessorios'));
-        
+
         //Categoria SUPPORT
 
         $this->createCategories($this->subCategories('SUPORTE', 'suporte', 'automotivo'));
 
         //Root Category Festas
-        
+
         $this->createCategories($this->categoryRoot('Festas', 'festas'));
 
         //Categoria DATAS COMEMORATIVAS
-        
+
         $this->createCategories($this->subCategories('DATAS COMEMORATIVAS', 'datasComemorativas', 'festas')); // Categoria, URLKey, ParentCategory
         $this->createCategories($this->subCategories('Páscoa', 'pascoa', 'datasComemorativas'));
         $this->createCategories($this->subCategories('Natal', 'natal', 'datasComemorativas'));

@@ -1,4 +1,5 @@
 <?php
+
 namespace Webjump\ConfigCartPriceRules\Setup\Patch\Data;
 
 use Magento\Framework\Setup\ModuleDataSetupInterface;
@@ -18,8 +19,7 @@ class SetZAutomotivoRules implements DataPatchInterface
         RuleFactory $ruleFactory,
         State $state,
         StoreManagerInterface $storeManager
-        )
-    {
+    ) {
         $this->moduleDataSetup = $moduleDataSetup;
         $this->ruleFactory = $ruleFactory;
         $this->state = $state;
@@ -38,11 +38,12 @@ class SetZAutomotivoRules implements DataPatchInterface
         ];
     }
 
-    public function createRuleCustomerGroup(string $name, string $description, string $discount, int $customerGroupId, int $websiteId){
+    public function createRuleCustomerGroup(string $name, string $description, string $discount, int $customerGroupId, int $websiteId)
+    {
         $storeViewUSFestasId = $this->storeManager
         ->getStore("party_store_view_us")
         ->getId();
-        
+
         $storeViewUSAutomotivoId = $this->storeManager
         ->getStore("automotive_store_view_us")
         ->getId();
@@ -54,7 +55,7 @@ class SetZAutomotivoRules implements DataPatchInterface
         $storeViewBRAutomotivoId = $this->storeManager
         ->getStore("automotivo_store_view_pt")
         ->getId();
-        
+
         $ruleData = [
             "name" => $name,
             "description" => $description,
@@ -96,9 +97,10 @@ class SetZAutomotivoRules implements DataPatchInterface
     }
 
 
-    public function apply() {
+    public function apply()
+    {
         $this->moduleDataSetup->getConnection()->startSetup();
-        
+
         $this->createRuleCustomerGroup("NotLoggedAutomotivo10", "Usuários não logados recebem 10% de desconto", "10.000", 1, 2);
 
         $this->moduleDataSetup->getConnection()->endSetup();

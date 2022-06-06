@@ -15,12 +15,10 @@ class SetPaymentMethodStores implements DataPatchInterface
     public function __construct(
         ModuleDataSetupInterface $moduleDataSetup,
         SetPaymentGlobal $storePaymentSet
-    )
+    ) {
 
-    {
         $this->moduleDataSetup = $moduleDataSetup;
         $this->storePaymentSet = $storePaymentSet;
-
     }
 
     public function getAliases()

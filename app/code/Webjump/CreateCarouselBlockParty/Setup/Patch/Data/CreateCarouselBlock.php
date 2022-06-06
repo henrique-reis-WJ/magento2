@@ -1,13 +1,17 @@
 <?php
+
 /**
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
+
 namespace Webjump\CreateCarouselBlockParty\Setup\Patch\Data;
+
 use Magento\Cms\Model\BlockFactory;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Setup\Patch\PatchRevertableInterface;
+
 class CreateCarouselBlock implements DataPatchInterface, PatchRevertableInterface
 {
     /**
@@ -18,7 +22,7 @@ class CreateCarouselBlock implements DataPatchInterface, PatchRevertableInterfac
      * @var BlockFactory
      */
     private $blockFactory;
-    const IDENTIFIER_BLOCK = 'carousel-theme-party';
+    public const IDENTIFIER_BLOCK = 'carousel-theme-party';
     /**
      * CreateBannerBlock constructor.
      * @param ModuleDataSetupInterface $moduleDataSetup

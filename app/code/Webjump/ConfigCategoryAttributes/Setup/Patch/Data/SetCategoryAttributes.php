@@ -1,5 +1,7 @@
 <?php
-declare (strict_types = 1);
+
+declare(strict_types=1);
+
 namespace Webjump\ConfigCategoryAttributes\Setup\Patch\Data;
 
 use Magento\Catalog\Model\Category;
@@ -11,8 +13,8 @@ use Magento\Framework\Setup\Patch\DataPatchInterface;
 
 class SetCategoryAttributes implements DataPatchInterface
 {
-    const ATTRIBUTE_AUTOMOTIVO = "Automotivo";
-    const ATTRIBUTE_FESTA = "Festa";
+    public const ATTRIBUTE_AUTOMOTIVO = "Automotivo";
+    public const ATTRIBUTE_FESTA = "Festa";
 
 
     private ModuleDataSetupInterface $moduleDataSetup;
@@ -37,13 +39,13 @@ class SetCategoryAttributes implements DataPatchInterface
         return [
         ];
     }
-    
+
     public function apply()
     {
         $this->moduleDataSetup->getConnection()->startSetup();
 
         $eavSetup = $this->eavSetupFactory->create(['setup' => $this->moduleDataSetup]);
-        $eavSetup->addAttribute(Category::ENTITY,self::ATTRIBUTE_AUTOMOTIVO, [
+        $eavSetup->addAttribute(Category::ENTITY, self::ATTRIBUTE_AUTOMOTIVO, [
             'type' => 'int',
             'label' => 'Is Car',
             'input' => 'boolean',
@@ -57,7 +59,7 @@ class SetCategoryAttributes implements DataPatchInterface
         ]);
 
         $eavSetup = $this->eavSetupFactory->create(['setup' => $this->moduleDataSetup]);
-        $eavSetup->addAttribute(Category::ENTITY,self::ATTRIBUTE_FESTA, [
+        $eavSetup->addAttribute(Category::ENTITY, self::ATTRIBUTE_FESTA, [
             'type' => 'int',
             'label' => 'Is baloon',
             'input' => 'boolean',
@@ -72,5 +74,4 @@ class SetCategoryAttributes implements DataPatchInterface
 
         $this->moduleDataSetup->getConnection()->endSetup();
     }
-
 }

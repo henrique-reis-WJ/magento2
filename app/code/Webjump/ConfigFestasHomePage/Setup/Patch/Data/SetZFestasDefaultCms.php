@@ -1,4 +1,5 @@
 <?php
+
 namespace Webjump\ConfigFestasHomePage\Setup\Patch\Data;
 
 use Magento\Store\Model\StoreManagerInterface;
@@ -15,47 +16,47 @@ class SetZFestasDefaultCms implements DataPatchInterface
     public function __construct(
         ModuleDataSetupInterface $moduleDataSetup,
         StoreManagerInterface $storeManager,
-        WriterInterface $writer)
-{
-    $this->moduleDataSetup = $moduleDataSetup;
-    $this->storeManager = $storeManager;
-    $this->writer = $writer;  
-}
+        WriterInterface $writer
+    ) {
+        $this->moduleDataSetup = $moduleDataSetup;
+        $this->storeManager = $storeManager;
+        $this->writer = $writer;
+    }
 
-public function getAliases()
-{
-    return [
-    ];
-}
+    public function getAliases()
+    {
+        return [
+        ];
+    }
 
-public static function getDependencies()
-{
-    return [
-    ];
-}
+    public static function getDependencies()
+    {
+        return [
+        ];
+    }
 
-public function setDefaultCmsPage (string $storeViewCode, string $contentUrlKey) {
+    public function setDefaultCmsPage(string $storeViewCode, string $contentUrlKey)
+    {
 
-    $StoreViewGetId = $this->storeManager
-    ->getStore($storeViewCode)
-    ->getId();
+        $StoreViewGetId = $this->storeManager
+        ->getStore($storeViewCode)
+        ->getId();
 
-    $this->writer->save (
-        "web/default/cms_home_page",
-        $contentUrlKey, // Here we put the value that is set in contentUrlKey
-        "stores",
-        $StoreViewGetId // Here we put the StoreId
-    );
+        $this->writer->save(
+            "web/default/cms_home_page",
+            $contentUrlKey, // Here we put the value that is set in contentUrlKey
+            "stores",
+            $StoreViewGetId // Here we put the StoreId
+        );
+    }
 
-}
+    public function apply()
+    {
+        $this->moduleDataSetup->startSetup();
 
-public function apply()
-{
-    $this->moduleDataSetup->startSetup();
+        $this->setDefaultCmsPage("festas_store_view_pt", "festasbr");
+        $this->setDefaultCmsPage("party_store_view_us", "festasus");
 
-    $this->setDefaultCmsPage("festas_store_view_pt", "festasbr");
-    $this->setDefaultCmsPage("party_store_view_us", "festasus");
-
-    $this->moduleDataSetup->endSetup();
-}
+        $this->moduleDataSetup->endSetup();
+    }
 }

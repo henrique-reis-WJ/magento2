@@ -1,14 +1,18 @@
 <?php
+
 /**
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
+
 namespace Webjump\CreateFooterLinksAutomotiveUs\Setup\Patch\Data;
+
 use Magento\Cms\Model\BlockFactory;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Setup\Patch\PatchRevertableInterface;
 use Magento\Store\Model\StoreManagerInterface;
+
 class CreateFooterLinksUs implements DataPatchInterface, PatchRevertableInterface
 {
     /**
@@ -19,7 +23,7 @@ class CreateFooterLinksUs implements DataPatchInterface, PatchRevertableInterfac
      * @var BlockFactory
      */
     private $blockFactory;
-    const IDENTIFIER_BLOCK = 'footer-links-automotive-us';
+    public const IDENTIFIER_BLOCK = 'footer-links-automotive-us';
     private StoreManagerInterface $storeManager;
     /**
      * CreateBannerBlock constructor.

@@ -1,4 +1,5 @@
 <?php
+
 namespace Webjump\ConfigThemeParty\Setup\Patch\Data;
 
 use Magento\Framework\App\Config\Storage\WriterInterface;
@@ -11,19 +12,18 @@ use Magento\Setup\Module\Setup;
 
 class SetThemeParty implements DataPatchInterface
 {
-    const THEME_PATH = "design/theme/theme_id";
+    public const THEME_PATH = "design/theme/theme_id";
     private $moduleDataSetup;
     private $writer;
     private $themeProvider;
     private $websiteRepository;
 
-    function __construct(
+    public function __construct(
         ModuleDataSetupInterface $moduleDataSetup,
         WriterInterface $writer,
         ThemeProviderInterface $themeProvider,
         WebsiteRepositoryInterface $websiteRepository
-    )
-    {
+    ) {
         $this->moduleDataSetup = $moduleDataSetup;
         $this->writer = $writer;
         $this->themeProvider = $themeProvider;

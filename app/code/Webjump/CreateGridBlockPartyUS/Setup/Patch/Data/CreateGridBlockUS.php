@@ -1,13 +1,17 @@
 <?php
+
 /**
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
+
 namespace Webjump\CreateGridBlockPartyUS\Setup\Patch\Data;
+
 use Magento\Cms\Model\BlockFactory;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Setup\Patch\PatchRevertableInterface;
+
 class CreateGridBlockUS implements DataPatchInterface, PatchRevertableInterface
 {
     /**
@@ -18,7 +22,7 @@ class CreateGridBlockUS implements DataPatchInterface, PatchRevertableInterface
      * @var BlockFactory
      */
     private $blockFactory;
-    const IDENTIFIER_BLOCK = 'grid-banner-party-us';
+    public const IDENTIFIER_BLOCK = 'grid-banner-party-us';
     /**
      * CreateBannerBlock constructor.
      * @param ModuleDataSetupInterface $moduleDataSetup

@@ -1,13 +1,17 @@
 <?php
+
 /**
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
+
 namespace Webjump\CreateFooterSocialLinksParty\Setup\Patch\Data;
+
 use Magento\Cms\Model\BlockFactory;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Setup\Patch\PatchRevertableInterface;
+
 class CreateFooterSocialLinks implements DataPatchInterface, PatchRevertableInterface
 {
     /**
@@ -18,7 +22,7 @@ class CreateFooterSocialLinks implements DataPatchInterface, PatchRevertableInte
      * @var BlockFactory
      */
     private $blockFactory;
-    const IDENTIFIER_BLOCK = 'footer-social-links-party';
+    public const IDENTIFIER_BLOCK = 'footer-social-links-party';
     /**
      * CreateFooterSocialLinks constructor.
      * @param ModuleDataSetupInterface $moduleDataSetup
