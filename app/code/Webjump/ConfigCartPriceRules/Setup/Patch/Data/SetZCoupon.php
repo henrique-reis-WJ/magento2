@@ -115,8 +115,6 @@ class SetZCoupon implements DataPatchInterface
 
     public function apply() {
         $this->moduleDataSetup->getConnection()->startSetup();
-        
-        $this->state->setAreaCode(\Magento\Framework\App\Area::AREA_FRONTEND);
 
         $this->createCouponRule();
 
