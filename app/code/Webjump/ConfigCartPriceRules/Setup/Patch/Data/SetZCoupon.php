@@ -1,4 +1,5 @@
 <?php
+
 namespace Webjump\ConfigCartPriceRules\Setup\Patch\Data;
 
 use Magento\Framework\Setup\ModuleDataSetupInterface;
@@ -18,8 +19,7 @@ class SetZCoupon implements DataPatchInterface
         RuleFactory $ruleFactory,
         State $state,
         StoreManagerInterface $storeManager
-        )
-    {
+    ) {
         $this->moduleDataSetup = $moduleDataSetup;
         $this->ruleFactory = $ruleFactory;
         $this->state = $state;
@@ -38,11 +38,12 @@ class SetZCoupon implements DataPatchInterface
         ];
     }
 
-    public function createCouponRule(){
+    public function createCouponRule()
+    {
         $storeViewUSFestasId = $this->storeManager
         ->getStore("party_store_view_us")
         ->getId();
-        
+
         $storeViewUSAutomotivoId = $this->storeManager
         ->getStore("automotive_store_view_us")
         ->getId();
@@ -54,7 +55,7 @@ class SetZCoupon implements DataPatchInterface
         $storeViewBRAutomotivoId = $this->storeManager
         ->getStore("automotivo_store_view_pt")
         ->getId();
-        
+
         $ruleData = [
             "name" => "20% Coupon",
             "description" => null,
@@ -80,7 +81,7 @@ class SetZCoupon implements DataPatchInterface
             "customer_group_ids" => [0, 1, 2, 3], // 0 = Not Logged, 1 = General, 2 = Wholesale, 3 = Retailer
             "website_ids" => [0, 1, 2, 3, 4, 5],
             "coupon_code" => 'QUERO20',
-            "store_labels" => [                
+            "store_labels" => [
             $storeViewUSFestasId => "20% off",
             $storeViewUSAutomotivoId => "20% off",
             $storeViewBRFestasId => "de 20%",
@@ -113,7 +114,8 @@ class SetZCoupon implements DataPatchInterface
 
 
 
-    public function apply() {
+    public function apply()
+    {
         $this->moduleDataSetup->getConnection()->startSetup();
 
         $this->createCouponRule();

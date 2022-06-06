@@ -1,4 +1,5 @@
 <?php
+
 namespace Webjump\ConfigTranslateOrder\Setup\Patch\Data;
 
 use Magento\Framework\Setup\ModuleDataSetupInterface;
@@ -9,14 +10,13 @@ use Magento\Sales\Model\Order\StatusFactory;
 class SetOrderTranslatedHolded implements DataPatchInterface
 {
     private $moduleDataSetup;
-    private $statusFactory; 
+    private $statusFactory;
 
-    function __construct(
+    public function __construct(
         ModuleDataSetupInterface $moduleDataSetup,
         StatusFactory $statusFactory,
         StoreManagerInterface $storeManager
-        )
-    {
+    ) {
         $this->moduleDataSetup = $moduleDataSetup;
         $this->statusFactory = $statusFactory;
         $this->storeManager = $storeManager;
@@ -28,7 +28,7 @@ class SetOrderTranslatedHolded implements DataPatchInterface
         return [
         ];
     }
-    
+
     public function getAliases()
     {
         return [
@@ -37,18 +37,18 @@ class SetOrderTranslatedHolded implements DataPatchInterface
 
     private function getStoreLabels(): array
     {
-    $storeViewFestasId = $this->storeManager
+        $storeViewFestasId = $this->storeManager
         ->getStore("party_store_view_us")
         ->getId();
-        
-    $storeViewAutomotivoId = $this->storeManager
+
+        $storeViewAutomotivoId = $this->storeManager
         ->getStore("automotive_store_view_us")
         ->getId();
 
-      return [
+        return [
          $storeViewFestasId => "Holded", // Here we define Status Label
          $storeViewAutomotivoId => "Holded" // Here we define Status Label
-      ];
+        ];
     }
 
     public function apply()
@@ -57,7 +57,7 @@ class SetOrderTranslatedHolded implements DataPatchInterface
 
         $code = "holded";
         $status = $this->statusFactory->create()->load($code);
-        if(!$status->getStatus()) {
+        if (!$status->getStatus()) {
            // lançar exceção
         }
         $status->setData('store_labels', $this->getStoreLabels());

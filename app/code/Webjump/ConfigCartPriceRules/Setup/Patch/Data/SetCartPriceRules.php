@@ -1,4 +1,5 @@
 <?php
+
 namespace Webjump\ConfigCartPriceRules\Setup\Patch\Data;
 
 use Magento\Framework\Setup\ModuleDataSetupInterface;
@@ -18,8 +19,7 @@ class SetCartPriceRules implements DataPatchInterface
         RuleFactory $ruleFactory,
         State $state,
         StoreManagerInterface $storeManager
-        )
-    {
+    ) {
         $this->moduleDataSetup = $moduleDataSetup;
         $this->ruleFactory = $ruleFactory;
         $this->state = $state;
@@ -39,11 +39,12 @@ class SetCartPriceRules implements DataPatchInterface
     }
 
 
-    public function createRuleCart(string $name, string $description, string $discount){
+    public function createRuleCart(string $name, string $description, string $discount)
+    {
         $storeViewUSFestasId = $this->storeManager
         ->getStore("party_store_view_us")
         ->getId();
-        
+
         $storeViewUSAutomotivoId = $this->storeManager
         ->getStore("automotive_store_view_us")
         ->getId();
@@ -55,7 +56,7 @@ class SetCartPriceRules implements DataPatchInterface
         $storeViewBRAutomotivoId = $this->storeManager
         ->getStore("automotivo_store_view_pt")
         ->getId();
-        
+
         $ruleData = [
             "name" => $name,
             "description" => $description,
@@ -112,9 +113,10 @@ class SetCartPriceRules implements DataPatchInterface
          $ruleModel->save();
     }
 
-    public function apply() {
+    public function apply()
+    {
         $this->moduleDataSetup->getConnection()->startSetup();
-        
+
         $this->state->setAreaCode(\Magento\Framework\App\Area::AREA_FRONTEND);
 
         $this->createRuleCart("Cart5Itens10Discount", "Carrinho com 5 itens ou mais tem que ter 10% de desconto", "10.000");

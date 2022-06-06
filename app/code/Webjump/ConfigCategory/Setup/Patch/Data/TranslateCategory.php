@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 namespace Webjump\ConfigCategory\Setup\Patch\Data;
 
 use Magento\Catalog\Model\CategoryRepository;
@@ -24,7 +25,6 @@ class TranslateCategory implements DataPatchInterface
         CategoryListInterface $categoryList,
         CategoryFactory $categoryFactory,
         StoreManagerInterface $storeManager
-
     ) {
         $this->moduleDataSetup = $moduleDataSetup;
         $this->categoryRepository = $categoryRepository;
@@ -46,7 +46,8 @@ class TranslateCategory implements DataPatchInterface
         ];
     }
 
-    public function getCategoryId(string $urlKey) {
+    public function getCategoryId(string $urlKey)
+    {
         $categoryFactory = $this->categoryFactory->create();
         $category = $categoryFactory->loadByAttribute('url_key', $urlKey);
         $categoryId = $category->getId();
@@ -57,17 +58,17 @@ class TranslateCategory implements DataPatchInterface
     public function translate(string $categoryName, string $newName, $storeId)
     {
 
-  $category = $this->categoryFactory->create()->getCollection()
-              ->addAttributeToFilter('name',$categoryName)->setPageSize(1)->getFirstItem();
+        $category = $this->categoryFactory->create()->getCollection()
+              ->addAttributeToFilter('name', $categoryName)->setPageSize(1)->getFirstItem();
                 $category->setName($newName);
                 $category->setStoreId($storeId);
-                $category->save();  
+                $category->save();
     }
 
     public function apply()
     {
         $this->moduleDataSetup->getConnection()->startSetup();
-        
+
         $partyStoreId = $this->storeManager
         ->getStore("party_store_view_us")
         ->getId();

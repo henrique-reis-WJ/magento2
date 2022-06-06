@@ -1,14 +1,18 @@
 <?php
+
 /**
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
+
 namespace Webjump\CreateFooterSocialLinksAutomotiveUs\Setup\Patch\Data;
+
 use Magento\Cms\Model\BlockFactory;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Setup\Patch\PatchRevertableInterface;
 use Magento\Store\Model\StoreManagerInterface;
+
 class CreateFooterSocialLinksUs implements DataPatchInterface, PatchRevertableInterface
 {
     /**
@@ -19,7 +23,7 @@ class CreateFooterSocialLinksUs implements DataPatchInterface, PatchRevertableIn
      * @var BlockFactory
      */
     private $blockFactory;
-    const IDENTIFIER_BLOCK = 'footer-social-links-automotive-us';
+    public const IDENTIFIER_BLOCK = 'footer-social-links-automotive-us';
     private StoreManagerInterface $storeManager;
     /**
      * CreateBannerBlock constructor.
