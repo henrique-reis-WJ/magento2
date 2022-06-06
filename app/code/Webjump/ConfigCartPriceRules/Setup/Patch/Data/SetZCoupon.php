@@ -7,7 +7,7 @@ use Magento\SalesRule\Model\RuleFactory;
 use Magento\Store\Model\StoreManagerInterface;
 use Magento\Framework\App\State;
 
-class SetCoupon implements DataPatchInterface
+class SetZCoupon implements DataPatchInterface
 {
     private ModuleDataSetupInterface $moduleDataSetup;
     private RuleFactory $ruleFactory;
