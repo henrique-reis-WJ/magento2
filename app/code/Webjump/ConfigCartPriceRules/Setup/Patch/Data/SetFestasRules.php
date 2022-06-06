@@ -99,7 +99,7 @@ class SetFestasRules implements DataPatchInterface
     public function apply() {
         $this->moduleDataSetup->getConnection()->startSetup();
               
-        $this->createRuleCustomerGroup("NotLoggedFestas5", "Usuários não logados recebem 5% de desconto", "5.000", 0, 3);
+        $this->createRuleCustomerGroup("NotLoggedFestas5", "Usuários não logados recebem 5% de desconto", "5.000", 1, 3);
 
         $this->moduleDataSetup->getConnection()->endSetup();
     }

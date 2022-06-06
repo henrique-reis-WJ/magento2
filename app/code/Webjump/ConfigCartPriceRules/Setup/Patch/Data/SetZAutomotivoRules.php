@@ -99,7 +99,7 @@ class SetZAutomotivoRules implements DataPatchInterface
     public function apply() {
         $this->moduleDataSetup->getConnection()->startSetup();
         
-        $this->createRuleCustomerGroup("NotLoggedAutomotivo10", "Usuários não logados recebem 10% de desconto", "10.000", 0, 2);
+        $this->createRuleCustomerGroup("NotLoggedAutomotivo10", "Usuários não logados recebem 10% de desconto", "10.000", 1, 2);
 
         $this->moduleDataSetup->getConnection()->endSetup();
     }
