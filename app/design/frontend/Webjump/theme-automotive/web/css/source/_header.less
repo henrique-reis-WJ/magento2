@@ -1,7 +1,7 @@
 @import "_colors.less";
 
-input:not([disabled]):focus, 
-select:not([disabled]):focus, 
+input:not([disabled]):focus,
+select:not([disabled]):focus,
 textarea:not([disabled]):focus {
     box-shadow: 0 0 3px 1px @smoke;
 }
@@ -190,6 +190,18 @@ textarea:not([disabled]):focus {
                 position: absolute;
                 top: -13px;
                 right: -14px;
+            }
+        }
+    }
+}
+
+html[lang="en"] {
+    .page-header {
+        .header {
+            &.links {
+                li.link.authorization-link > a::after {
+                    content: "\00a0 or";
+                }
             }
         }
     }
