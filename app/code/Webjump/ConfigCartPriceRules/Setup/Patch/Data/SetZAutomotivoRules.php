@@ -65,7 +65,7 @@ class SetZAutomotivoRules implements DataPatchInterface
             "stop_rules_processing" => "1",
             "is_advanced" => "1",
             "product_ids" => null,
-            "sort_order" => "0",
+            "sort_order" => "2",
             "simple_action" => "by_percent",
             "discount_amount" => $discount,
             "discount_qty" => null,
