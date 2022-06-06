@@ -202,6 +202,13 @@ html[lang="en"] {
                 li.link.authorization-link > a::after {
                     content: "\00a0 or";
                 }
+
+                li.customer-welcome,
+                li.customer-welcome.active {
+                    & ~ li.link.authorization-link a::after {
+                        content: "";
+                    }
+                }
             }
         }
     }
