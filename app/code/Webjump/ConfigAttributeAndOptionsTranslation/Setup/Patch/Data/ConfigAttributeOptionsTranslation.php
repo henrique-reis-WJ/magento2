@@ -1,35 +1,37 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Webjump\ConfigAttributeAndOptionsTranslation\Setup\Patch\Data;
 
 use Magento\Store\Model\StoreManagerInterface;
-use Magento\Eav\Setup\EavSetupFactory;
-use Magento\Catalog\Api\ProductAttributeRepositoryInterface;
-use Magento\Eav\Api\Data\AttributeFrontendLabelInterfaceFactory;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
+use Magento\Eav\Api\Data\AttributeOptionInterfaceFactory;
+use Magento\Eav\Api\Data\AttributeOptionLabelInterfaceFactory;
+use Magento\Eav\Api\Data\AttributeOptionLabelInterface;
+use Magento\Catalog\Api\ProductAttributeOptionManagementInterface;
 
 class ConfigAttributeOptionsTranslation implements DataPatchInterface
 {
     private $storeManager;
-    private $eavSetupFactory;
-    private $productAttributeRepository;
-    private $attributeFrontendLabel;
     private $moduleDataSetup;
+    private $attributeOptionInterfaceFactory;
+    private $attributeOptionLabelInterfaceFactory;
+    private $attributeOptionManagement;
 
     public function __construct(
         StoreManagerInterface $storeManager,
-        EavSetupFactory $eavSetupFactory,
-        ProductAttributeRepositoryInterface $productAttributeRepository,
-        AttributeFrontendLabelInterfaceFactory $attributeFrontendLabel,
-        ModuleDataSetupInterface $moduleDataSetup
-    )
-    {
+        ModuleDataSetupInterface $moduleDataSetup,
+        AttributeOptionInterfaceFactory $attributeOptionInterfaceFactory,
+        AttributeOptionLabelInterfaceFactory $attributeOptionLabelInterfaceFactory,
+        ProductAttributeOptionManagementInterface $attributeOptionManagement
+    ) {
         $this->moduleDataSetup = $moduleDataSetup;
         $this->storeManager = $storeManager;
-        $this->eavSetupFactory = $eavSetupFactory;
-        $this->productAttributeRepository = $productAttributeRepository;
-        $this->attributeFrontendLabel = $attributeFrontendLabel;
+        $this->attributeOptionInterfaceFactory = $attributeOptionInterfaceFactory;
+        $this->attributeOptionLabelInterfaceFactory = $attributeOptionLabelInterfaceFactory;
+        $this->attributeOptionManagement = $attributeOptionManagement;
     }
 
     public function getAliases()
@@ -41,17 +43,12 @@ class ConfigAttributeOptionsTranslation implements DataPatchInterface
     public static function getDependencies()
     {
         return [
-            \Webjump\CreateAttributeSets\Setup\Patch\Data\AddColorAttributeToSets::class
         ];
     }
 
     public function apply()
     {
         $this->moduleDataSetup->getConnection()->startSetup();
-
-        $eavSetup = $this->eavSetupFactory->create(
-            ['setup' => $this->moduleDataSetup]
-        );
 
         $festasPtStoreId = $this->storeManager
         ->getStore("festas_store_view_pt")
@@ -61,91 +58,55 @@ class ConfigAttributeOptionsTranslation implements DataPatchInterface
         ->getStore("automotivo_store_view_pt")
         ->getId();
 
-        $festasUsStoreId = $this->storeManager
-        ->getStore("party_store_view_us")
-        ->getId();
+        $options = $this->attributeOptionManagement->getItems("color");
 
-        $automotivoUsStoreId = $this->storeManager
-        ->getStore("automotive_store_view_us")
-        ->getId();
+        foreach ($options as $option) {
+            if ($option->getValue()) {
+                $this->attributeOptionManagement->delete('color', $option->getValue());
+            }
+        }
 
-        $entityTypeId = $eavSetup->getEntityTypeId(
-            \Magento\Catalog\Model\Product::ENTITY
-        );
+        foreach ($this->getData() as $labelUs => $labelPt) {
+            $automotivoLabel = $this->createAttributeOptionLabel($labelPt, (int)$automotivoPtStoreId);
+            $festasLabel = $this->createAttributeOptionLabel($labelPt, (int)$festasPtStoreId);
 
-        $attributeId = $eavSetup->getAttributeId(
-            $entityTypeId,
-            'color'
-        );
+            $option = $this->attributeOptionInterfaceFactory->create();
+            $option
+                ->setLabel($labelUs)
+                ->setStoreLabels([$automotivoLabel,$festasLabel]);
 
-        $attribute = $this->productAttributeRepository->get($attributeId);
-        
-        $whiteOption = $attribute->getSource()->getOptionId("White");
-        $blackOption = $attribute->getSource()->getOptionId("Black");
-        $redOption = $attribute->getSource()->getOptionId("Red");
-        $blueOption = $attribute->getSource()->getOptionId("Blue");
-        $yellowOption = $attribute->getSource()->getOptionId("Yellow");
-        $greenOption = $attribute->getSource()->getOptionId("Green");
-        $orangeOption = $attribute->getSource()->getOptionId("Orange");
-        $pinkOption = $attribute->getSource()->getOptionId("Pink");
-        
-        $options = [
-            'attribute_id' => $attributeId,
-            'values' => [
-                $whiteOption => [
-                    $festasPtStoreId => "Branco",
-                    $automotivoPtStoreId => "Branco",
-                    $festasUsStoreId => "White",
-                    $automotivoUsStoreId => "White"
-                ],
-                $blackOption => [
-                    $festasPtStoreId => "Preto",
-                    $automotivoPtStoreId => "Preto",
-                    $festasUsStoreId => "Black",
-                    $automotivoUsStoreId => "Black"
-                ],
-                $redOption => [
-                    $festasPtStoreId => "Vermelho",
-                    $automotivoPtStoreId => "Vermelho",
-                    $festasUsStoreId => "Red",
-                    $automotivoUsStoreId => "Red"
-                ],
-                $blueOption => [
-                    $festasPtStoreId => "Azul",
-                    $automotivoPtStoreId => "Azul",
-                    $festasUsStoreId => "Blue",
-                    $automotivoUsStoreId => "Blue"
-                ],
-                $yellowOption => [
-                    $festasPtStoreId => "Amarelo",
-                    $automotivoPtStoreId => "Amarelo",
-                    $festasUsStoreId => "Yellow",
-                    $automotivoUsStoreId => "Yellow"
-                ],
-                $greenOption => [
-                    $festasPtStoreId => "Verde",
-                    $automotivoPtStoreId => "Verde",
-                    $festasUsStoreId => "Green",
-                    $automotivoUsStoreId => "Green"
-                ],
-                $orangeOption => [
-                    $festasPtStoreId => "Laranja",
-                    $automotivoPtStoreId => "Laranja",
-                    $festasUsStoreId => "Orange",
-                    $automotivoUsStoreId => "Orange"
-                ],
-                $pinkOption => [
-                    $festasPtStoreId => "Rosa",
-                    $automotivoPtStoreId => "Rosa",
-                    $festasUsStoreId => "Pink",
-                    $automotivoUsStoreId => "Pink"
-                ]
-                ]
-        ];
-
-        $attribute->setData($options);
-
+            $this->attributeOptionManagement->add(
+                'color',
+                $option
+            );
+        }
 
         $this->moduleDataSetup->getConnection()->endSetup();
+    }
+
+    private function getData(): array
+    {
+        return [
+            "White" => "Branco",
+            "Black" => "Preto",
+            "Red" => "Vermelho",
+            "Blue" => "Azul",
+            "Yellow" => "Amarelo",
+            "Green" => "Verde",
+            "Orange" => "Laranja",
+            "Pink" => "Rosa"
+        ];
+    }
+
+    private function createAttributeOptionLabel(string $labelPt, int $storeId)
+    {
+        /** @var AttributeOptionLabelInterface $attributeOptionLabel */
+        $attributeOptionLabel = $this->attributeOptionLabelInterfaceFactory->create();
+
+        $attributeOptionLabel
+            ->setLabel($labelPt)
+            ->setStoreId($storeId);
+
+        return $attributeOptionLabel;
     }
 }
