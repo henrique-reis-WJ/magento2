@@ -35,5 +35,35 @@
             <li style="color: #555753;">✓ Set locale and language br</li>
             <li style="color: #555753;">✓ Set locale and language us</li>
         </ul>
+        <h2 id="Webjump\ConfigLocaleAndLanguage\Test\Unit\Setup\Patch\Data\ConfigAutomotiveBrLocaleTest">Config Automotive Br Locale (Webjump\ConfigLocaleAndLanguage\Test\Unit\Setup\Patch\Data\ConfigAutomotiveBrLocale)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Apply</li>
+            <li style="color: #555753;">✓ Get dependencies</li>
+            <li style="color: #555753;">✓ Get aliases</li>
+        </ul>
+        <h2 id="Webjump\ConfigLocaleAndLanguage\Test\Unit\Setup\Patch\Data\ConfigAutomotiveUsLocaleTest">Config Automotive Us Locale (Webjump\ConfigLocaleAndLanguage\Test\Unit\Setup\Patch\Data\ConfigAutomotiveUsLocale)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Apply</li>
+            <li style="color: #555753;">✓ Get dependencies</li>
+            <li style="color: #555753;">✓ Get aliases</li>
+        </ul>
+        <h2 id="Webjump\ConfigLocaleAndLanguage\Test\Unit\Setup\Patch\Data\ConfigPartyBrLocaleTest">Config Party Br Locale (Webjump\ConfigLocaleAndLanguage\Test\Unit\Setup\Patch\Data\ConfigPartyBrLocale)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Apply</li>
+            <li style="color: #555753;">✓ Get dependencies</li>
+            <li style="color: #555753;">✓ Get aliases</li>
+        </ul>
+        <h2 id="Webjump\ConfigLocaleAndLanguage\Test\Unit\Setup\Patch\Data\ConfigPartyUsLocaleTest">Config Party Us Locale (Webjump\ConfigLocaleAndLanguage\Test\Unit\Setup\Patch\Data\ConfigPartyUsLocale)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Apply</li>
+            <li style="color: #555753;">✓ Get dependencies</li>
+            <li style="color: #555753;">✓ Get aliases</li>
+        </ul>
+        <h2 id="Webjump\ConfigLocaleAndLanguage\Test\Unit\Setup\Patch\Data\InstallUSDTest">Install USD (Webjump\ConfigLocaleAndLanguage\Test\Unit\Setup\Patch\Data\InstallUSD)</h2>
+        <ul>
+            <li style="color: #555753;">✓ Apply</li>
+            <li style="color: #555753;">✓ Get dependencies</li>
+            <li style="color: #555753;">✓ Get aliases</li>
+        </ul>
     </body>
 </html>
